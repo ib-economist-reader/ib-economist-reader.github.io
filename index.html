@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>IB Economist Reader — Sample Volume 01</title>
+<style>
+  :root{
+    --red:#E3120B;
+    --ink:#2B2B29;
+    --ink-soft:#55534E;
+    --paper:#FFFFFF;
+    --paper-2:#F7F6F3;
+    --line:#D9D9D6;
+    --line-soft:#ECEBE7;
+    --card:#FFFFFF;
+    --quote-bg:#FBFAF8;
+    --shadow:0 1px 2px rgba(20,20,18,.06), 0 8px 24px rgba(20,20,18,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#EDEBE6;
+      --ink-soft:#B6B2A9;
+      --paper:#171716;
+      --paper-2:#1E1E1C;
+      --line:#3A3A37;
+      --line-soft:#2A2A28;
+      --card:#1E1E1C;
+      --quote-bg:#1E1E1C;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,"Noto Sans TC",sans-serif;
+    font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  button,[role="button"],a.btn,select,summary,input:not([type="checkbox"],[type="radio"]){min-height:44px}
+  a{color:var(--ink); text-decoration-color:var(--red); text-underline-offset:3px}
+  a:hover{color:var(--red)}
+  .wrap{max-width:1060px; margin:0 auto; padding:0 20px 72px}
+  .serif{font-family:Georgia,"Times New Roman","Songti TC",serif}
+  .redbar{width:56px; height:4px; background:var(--red); margin:28px 0 18px}
+  /* header */
+  .masthead{padding-bottom:22px; border-bottom:1px solid var(--line)}
+  .masthead h1{font-family:Georgia,"Times New Roman",serif; font-size:clamp(32px,6vw,52px); line-height:1.08; margin:0 0 10px; font-weight:700; letter-spacing:-.01em}
+  .masthead .vol{font-size:15px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); margin:0 0 14px}
+  .masthead .lede{font-size:19px; line-height:1.6; max-width:44em; margin:0; color:var(--ink)}
+  .masthead .lede-zh{font-size:16.5px; line-height:1.75; max-width:44em; margin:14px 0 0; color:var(--ink-soft)}
+  .meta-row{display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:18px; font-size:14px; color:var(--ink-soft)}
+  .meta-row b{color:var(--ink); font-weight:600}
+  /* nav */
+  .topnav{display:flex; flex-wrap:wrap; gap:8px; padding:16px 0 4px}
+  .topnav button{
+    appearance:none; border:1px solid var(--line); background:var(--card); color:var(--ink);
+    padding:10px 16px; font-size:15px; font-weight:600; cursor:pointer; border-radius:6px;
+  }
+  .topnav button[aria-current="true"]{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+  .topnav button:hover{border-color:var(--ink)}
+  /* sections */
+  section.block{padding:34px 0 6px}
+  .sec-head{display:flex; align-items:baseline; gap:12px; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:18px}
+  .sec-head .no{color:var(--red); font-weight:700; font-size:15px; letter-spacing:.06em; white-space:nowrap}
+  .sec-head h2{font-size:24px; line-height:1.25; margin:0; font-weight:700}
+  .sec-head .zh{color:var(--ink-soft); font-size:15px}
+  p{margin:0 0 14px}
+  .small{font-size:14.5px; color:var(--ink-soft); line-height:1.7}
+  /* three layers */
+  .layers{display:grid; grid-template-columns:1fr; gap:0}
+  @media(min-width:760px){.layers{grid-template-columns:1fr 1fr 1fr; gap:22px}}
+  .layer{border-top:3px solid var(--ink); padding:14px 2px 18px}
+  .layer .n{color:var(--red); font-weight:700; font-size:14px; letter-spacing:.08em}
+  .layer h3{margin:6px 0 8px; font-size:19px}
+  .layer p{font-size:15.5px; color:var(--ink-soft); line-height:1.7; margin:0}
+  /* how to use */
+  .howgrid{display:grid; grid-template-columns:1fr; gap:22px}
+  @media(min-width:760px){.howgrid{grid-template-columns:1fr 1fr}}
+  .howbox{background:var(--paper-2); border:1px solid var(--line-soft); border-radius:8px; padding:20px 20px 8px}
+  .howbox h3{margin:0 0 12px; font-size:17px}
+  .howbox ol,.howbox ul{margin:0 0 12px; padding-left:22px}
+  .howbox li{margin-bottom:10px; font-size:15.5px; line-height:1.65}
+  /* article list */
+  .alist{display:flex; flex-direction:column}
+  .arow{
+    display:grid; grid-template-columns:44px 1fr; gap:6px 14px;
+    padding:20px 4px; border-bottom:1px solid var(--line-soft); cursor:pointer; text-align:left;
+    background:none; border-top:none; border-left:none; border-right:none; width:100%; font:inherit; color:inherit;
+  }
+  .arow:hover{background:var(--paper-2)}
+  .arow .idx{color:var(--red); font-weight:700; font-size:20px; font-family:Georgia,serif; padding-top:2px}
+  .arow .unit{font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:3px}
+  .arow h3{font-family:Georgia,serif; font-size:21px; line-height:1.3; margin:0 0 6px; font-weight:700}
+  .arow .thesis{font-size:15.5px; color:var(--ink-soft); line-height:1.6; margin:0}
+  .arow .tags{grid-column:2; display:flex; flex-wrap:wrap; gap:6px; margin-top:8px}
+  .tag{font-size:13px; border:1px solid var(--line); border-radius:999px; padding:4px 10px; color:var(--ink-soft); background:var(--card)}
+  .arow .go{grid-column:2; font-size:14px; font-weight:600; color:var(--red); margin-top:4px}
+  /* syllabus table -> stacked */
+  .maprow{display:grid; grid-template-columns:1fr; gap:2px; padding:14px 4px; border-bottom:1px solid var(--line-soft)}
+  @media(min-width:760px){.maprow{grid-template-columns:1.3fr 1.5fr 1.5fr 1.4fr; gap:14px}}
+  .maprow.head{display:none}
+  @media(min-width:760px){.maprow.head{display:grid; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); border-bottom:1px solid var(--line); padding-bottom:8px}}
+  .maprow .c1{font-weight:700}
+  .maprow .lab{font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--red); display:block}
+  @media(min-width:760px){.maprow .lab{display:none}}
+  .maprow div{font-size:15px; line-height:1.55}
+  /* tracks */
+  .tracks{display:grid; grid-template-columns:1fr; gap:18px}
+  @media(min-width:760px){.tracks{grid-template-columns:1fr 1fr}}
+  .track{border:1px solid var(--line); border-radius:8px; padding:20px; background:var(--card); box-shadow:var(--shadow)}
+  .track h3{margin:0 0 4px; font-size:19px}
+  .track .who{font-size:14px; color:var(--red); font-weight:600; margin-bottom:10px}
+  .track p{font-size:15.5px; color:var(--ink-soft); line-height:1.7}
+  .track button{appearance:none; border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:10px 16px; border-radius:6px; font-size:15px; font-weight:600; cursor:pointer}
+  .track .ghost{background:transparent; color:var(--ink)}
+  /* reader */
+  .reader-nav{display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 6px}
+  .reader-nav button{appearance:none; border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:999px; padding:9px 15px; font-size:14.5px; font-weight:600; cursor:pointer}
+  .reader-nav button[aria-current="true"]{background:var(--red); border-color:var(--red); color:#fff}
+  .r-head{border-bottom:1px solid var(--line); padding:18px 0 16px}
+  .r-kicker{color:var(--red); font-weight:700; font-size:14px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px}
+  .r-head h2{font-family:Georgia,serif; font-size:clamp(26px,4.6vw,38px); line-height:1.2; margin:0 0 10px}
+  .r-source{font-size:14.5px; color:var(--ink-soft); line-height:1.6}
+  .r-source a{font-weight:600}
+  .r-unit{margin-top:12px; font-size:15px; line-height:1.65}
+  .pullquote{border-left:3px solid var(--red); background:var(--quote-bg); padding:16px 18px; margin:22px 0; font-size:20px; line-height:1.5; font-weight:700}
+  .r-sec{margin:26px 0 0}
+  .r-sec h3{font-size:18px; margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid var(--line-soft)}
+  .r-sec p{font-size:16.5px; line-height:1.75}
+  .r-sec ul{margin:0 0 6px; padding-left:22px}
+  .r-sec li{margin-bottom:10px; font-size:16px; line-height:1.7}
+  .vocab{display:grid; grid-template-columns:1fr; gap:0}
+  @media(min-width:640px){.vocab{grid-template-columns:1fr 1fr; gap:0 28px}}
+  .vocab div{padding:9px 0; border-bottom:1px solid var(--line-soft); font-size:15.5px; line-height:1.6}
+  .vocab b{font-weight:700}
+  .tasks .task{margin-bottom:18px}
+  .tasks .task b.tl{color:var(--red)}
+  .tasks p{margin-bottom:8px}
+  .model-toggle{appearance:none; width:100%; text-align:left; border:1px solid var(--ink); background:var(--card); color:var(--ink); border-radius:8px; padding:14px 16px; font-size:16px; font-weight:700; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px}
+  .model-toggle:hover{background:var(--paper-2)}
+  .model-body{border:1px solid var(--line); border-top:none; border-radius:0 0 8px 8px; padding:18px 18px 6px; background:var(--paper-2)}
+  .model-body h4{margin:16px 0 8px; font-size:16px}
+  .model-body h4:first-child{margin-top:0}
+  .model-body p{font-size:15.5px; line-height:1.75}
+  .pager{display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; margin-top:34px; padding-top:18px; border-top:1px solid var(--line)}
+  .pager button{appearance:none; border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:6px; padding:11px 16px; font-size:15px; font-weight:600; cursor:pointer; max-width:100%}
+  .pager button:hover{border-color:var(--ink)}
+  .backbtn{appearance:none; border:none; background:none; color:var(--red); font-size:15.5px; font-weight:700; cursor:pointer; padding:10px 4px; margin-top:8px}
+  footer{margin-top:56px; border-top:1px solid var(--line); padding-top:18px; font-size:14px; color:var(--ink-soft); line-height:1.7}
+  .note-box{border:1px solid var(--line); border-radius:8px; padding:16px 18px; background:var(--paper-2); font-size:15px; line-height:1.7}
+  [hidden]{display:none !important}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= HOME ================= -->
+  <div id="view-home">
+    <div class="redbar" aria-hidden="true"></div>
+    <header class="masthead">
+      <p class="vol">IB Economist Reader · Sample Volume 01</p>
+      <h1>Reading The Economist<br />the IB way.</h1>
+      <p class="lede">Every week, <i>The Economist</i> publishes around 74 articles. Students do not need more articles — they need the right five, mapped to the IB syllabus, with the vocabulary, background and tasks that turn reading into analysis.</p>
+      <p class="lede-zh">這個項目把每週《經濟學人》重編成 IB 學生的閱讀材料：按考綱篩選、對齊，再配詞彙、背景、讀法指引和任務連範文。學生缺的不是文章本身，而是篩選和腳手架——這兩樣就是本卷的價值。本頁是首頁介紹，點入任何一篇即可逐篇閱讀完整指南。</p>
+      <div class="meta-row">
+        <span><b>Issue</b> · The Economist, 17 October 2026</span>
+        <span><b>Contents</b> · 5 article guides + model answers</span>
+        <span><b>Format</b> · Guide model — no original text reproduced</span>
+      </div>
+    </header>
+
+    <nav class="topnav" aria-label="Page sections">
+      <button type="button" data-scroll="#how">How this volume works</button>
+      <button type="button" data-scroll="#contents">Contents — 5 articles</button>
+      <button type="button" data-scroll="#map">Syllabus map</button>
+      <button type="button" data-scroll="#tracks">Two tracks &amp; podcast</button>
+    </nav>
+
+    <section class="block" id="how">
+      <div class="sec-head"><span class="no">01</span><h2>How this volume works</h2><span class="zh">編排邏輯：篩選 · 對齊 · 腳手架</span></div>
+      <div class="layers">
+        <div class="layer">
+          <div class="n">LAYER 1</div>
+          <h3>Selection</h3>
+          <p>Five articles chosen from 74. Each maps cleanly onto an IB Economics unit, argues a complete case — thesis, evidence, counterargument, evaluation — and is data-rich enough to support a diagram-based commentary. Pure news reports with no point of view are screened out.</p>
+        </div>
+        <div class="layer">
+          <div class="n">LAYER 2</div>
+          <h3>Alignment</h3>
+          <p>Every article carries its IB unit and subtopics (current guide, first assessment 2022), its key concept, and its best IB use — IA commentary, Paper 1 essay evidence, or Paper 2 data response. The full crosswalk is in the syllabus map below.</p>
+        </div>
+        <div class="layer">
+          <div class="n">LAYER 3</div>
+          <h3>Scaffolding</h3>
+          <p>For each article: what it argues, the background numbers you need before reading, key vocabulary, how to read it — and tasks that test analysis and evaluation, never recall. Every task is followed by a model answer in the appendix: attempt first, then compare.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><span class="no">02</span><h2>Read to analyse, not to retell</h2><span class="zh">使用方法</span></div>
+      <div class="howgrid">
+        <div class="howbox">
+          <h3>For every article, ask three questions</h3>
+          <ol>
+            <li><b>What is the author's argument or purpose?</b> To persuade, to warn, to explain, to criticise?</li>
+            <li><b>How is it built?</b> What structure, evidence, data and language choices carry the argument?</li>
+            <li><b>What is the effect, and where is it weakest?</b> What does the reader come away believing, and what would a critic challenge?</li>
+          </ol>
+        </div>
+        <div class="howbox">
+          <h3>Three rules for all your answers</h3>
+          <ul>
+            <li><b>Logic beats vocabulary.</b> Track how sentences connect: contrast words (yet, but, however), causal claims, and scope words (most, some, only). A correct answer restates the logic; it rarely repeats the article's words.</li>
+            <li><b>Every claim needs evidence.</b> Point to a specific detail, number or phrase. Never just assert.</li>
+            <li><b>Watch the traps.</b> Same-word distractors reuse the article's words but change the logic. Pronoun references (this / they) may point to a whole event, not the nearest noun — substitute your reading back and check it still makes sense.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small" style="margin-top:14px">Guide model: this volume reproduces no original Economist text. Read each original first through a school subscription (link at the top of every guide), then work through the guide. Summaries, vocabulary, reading pointers and tasks are original teaching material written for this volume.</p>
+    </section>
+
+    <section class="block" id="contents">
+      <div class="sec-head"><span class="no">03</span><h2>Contents — Sample Volume 01</h2><span class="zh">點入逐篇閱讀</span></div>
+      <div class="alist" role="list">
+        <button type="button" class="arow" data-open="1" role="listitem">
+          <span class="idx">1</span>
+          <span>
+            <span class="unit">Microeconomics · 2.2 Supply · 2.3 Equilibrium</span>
+            <h3>A shortage of sulphur could hurt mines and farms everywhere</h3>
+            <p class="thesis">A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.</p>
+          </span>
+          <span class="tags"><span class="tag">IA commentary (micro)</span><span class="tag">Supply &amp; demand diagram</span><span class="tag">Finance and economics</span></span>
+          <span class="go">Read the guide →</span>
+        </button>
+        <button type="button" class="arow" data-open="2" role="listitem">
+          <span class="idx">2</span>
+          <span>
+            <span class="unit">Macroeconomics · 3.2 AD/AS · 3.3 Objectives</span>
+            <h3>Another warning sign for China's economy: falling consumer credit</h3>
+            <p class="thesis">Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings. That is a warning sign for domestic demand.</p>
+          </span>
+          <span class="tags"><span class="tag">IA commentary (macro)</span><span class="tag">AD/AS diagram</span><span class="tag">Finance and economics</span></span>
+          <span class="go">Read the guide →</span>
+        </button>
+        <button type="button" class="arow" data-open="3" role="listitem">
+          <span class="idx">3</span>
+          <span>
+            <span class="unit">The global economy · 4.5 Exchange rates · 4.6 Balance of payments</span>
+            <h3>Lessons from Britain's humiliating IMF bail-out</h3>
+            <p class="thesis">The year 2026 echoes 1976, but the parallels are superficial. Another trip to the IMF is unlikely, because the fundamentals are very different.</p>
+          </span>
+          <span class="tags"><span class="tag">IA commentary (global)</span><span class="tag">Paper 1 essay evidence</span><span class="tag">TOK extension</span><span class="tag">Britain section</span></span>
+          <span class="go">Read the guide →</span>
+        </button>
+        <button type="button" class="arow" data-open="4" role="listitem">
+          <span class="idx">4</span>
+          <span>
+            <span class="unit">The global economy · 4.7 Sustainable development · 4.10 Development strategies</span>
+            <h3>China is channelling much more money to poor countries</h3>
+            <p class="thesis">As America steps back from multilateral giving, a gap opens. China, though giving more, is neither willing nor able to fill it, while seeking a greater say in the institutions that hand aid out.</p>
+          </span>
+          <span class="tags"><span class="tag">IA commentary (global)</span><span class="tag">Paper 2 data response</span><span class="tag">China section</span></span>
+          <span class="go">Read the guide →</span>
+        </button>
+        <button type="button" class="arow" data-open="5" role="listitem">
+          <span class="idx">5</span>
+          <span>
+            <span class="unit">Microeconomics &amp; development · 2.2 · 2.3 · 2.7 Intervention</span>
+            <h3>Can Asian governments prevent a food shock?</h3>
+            <p class="thesis">A fierce El Niño is hitting Asian countries already weakened by an energy shock, threatening food supplies. Governments must decide whether they can prevent a shock, and how.</p>
+          </span>
+          <span class="tags"><span class="tag">IA commentary (micro)</span><span class="tag">Supply &amp; demand diagram</span><span class="tag">Asia section</span></span>
+          <span class="go">Read the guide →</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="block" id="map">
+      <div class="sec-head"><span class="no">04</span><h2>Article-to-syllabus map</h2><span class="zh">附錄對照表</span></div>
+      <div class="maprow head" aria-hidden="true"><div>Article</div><div>Primary — current guide</div><div>Key concept</div><div>Best IB use</div></div>
+      <div class="maprow"><div class="c1">Sulphur shortage</div><div><span class="lab">Primary</span>2.2 Supply; 2.3 Equilibrium</div><div><span class="lab">Key concept</span>Supply shift; cost of production</div><div><span class="lab">Best IB use</span>IA commentary (micro)</div></div>
+      <div class="maprow"><div class="c1">China consumer credit</div><div><span class="lab">Primary</span>3.2 AD / AS; 3.3 Objectives</div><div><span class="lab">Key concept</span>Consumption; aggregate demand</div><div><span class="lab">Best IB use</span>IA commentary (macro)</div></div>
+      <div class="maprow"><div class="c1">Britain IMF bail-out</div><div><span class="lab">Primary</span>4.5 Exchange rates; 4.6 Balance of payments</div><div><span class="lab">Key concept</span>Exchange-rate crisis; IMF</div><div><span class="lab">Best IB use</span>IA commentary (global); Paper 1 essay</div></div>
+      <div class="maprow"><div class="c1">China aid to poor countries</div><div><span class="lab">Primary</span>4.7 Sustainable development; 4.10 Development strategies</div><div><span class="lab">Key concept</span>Multilateral aid; institutions</div><div><span class="lab">Best IB use</span>IA commentary (global); Paper 2 data response</div></div>
+      <div class="maprow"><div class="c1">Asian food shock</div><div><span class="lab">Primary</span>2.2 Supply; 2.3 Equilibrium; 2.7 Intervention</div><div><span class="lab">Key concept</span>Supply shock; intervention</div><div><span class="lab">Best IB use</span>IA commentary (micro)</div></div>
+      <p class="small" style="margin-top:14px">Primary subtopics follow the IB Diploma Economics guide for first assessment 2022. Under that guide, the former “International economics” and “Development economics” sections both sit inside Unit 4, The global economy: trade, protection, integration, exchange rates and the balance of payments are 4.1–4.6; sustainable development, measuring development, barriers and strategies are 4.7–4.10.</p>
+      <div class="note-box"><b>Gaps flagged for the next volume:</b> 4.1–4.4 trade and integration · 3.6–3.7 fiscal and supply-side policy · 2.5–2.6 elasticity · 3.4 inequality · 4.8–4.9 measuring development and barriers. First reserves from this issue: China's tax crackdown (→ 3.6) and two Japanese towns managing population decline (→ 3.7 / 4.9).</div>
+    </section>
+
+    <section class="block" id="tracks">
+      <div class="sec-head"><span class="no">05</span><h2>Two tracks, one pipeline</h2><span class="zh">兩條線，共用一條管線</span></div>
+      <div class="tracks">
+        <div class="track">
+          <h3>IB student track</h3>
+          <div class="who">IBDP students · guide model</div>
+          <p>The five guides above. Original difficulty is kept — the value added is selection, syllabus alignment and scaffolding. No original text is printed; students read the originals via school subscription. Volumes are compiled from single-article guides, so each article can also be used on its own.</p>
+          <button type="button" data-open="1">Start with Article 1</button>
+        </div>
+        <div class="track">
+          <h3>Katherine track</h3>
+          <div class="who">Primary 6 · heavy adaptation · family use</div>
+          <p>The prototype line: ideas stay, language comes down. Issue 01 rewrites <i>The Economist</i>'s leader on the millennial comeback at 733 words, keeping the full argument skeleton — thesis, evidence, counterargument, evaluation — with vocabulary and Summary / Essay / Analysis tasks.</p>
+          <button type="button" class="ghost" data-open="k">Read Katherine Issue 01</button>
+        </div>
+      </div>
+      <div class="note-box" style="margin-top:18px"><b>Podcast — Episode 01: The Sulphur Shortage.</b> A discussion, not a read-aloud: Katherine leads, Dad asks and reacts. Recorded 23 October 2026 (9:49), built from the Article 1 guide, its reading model and a P6 adaptation. The episode trains grasp of events, logic and analytical method out loud — it is not yet published; release needs a separate go-ahead.</div>
+    </section>
+
+    <footer>
+      IB Economist Reader · Sample Volume 01 · Source issue: The Economist, 17 October 2026 (74 articles; 5 selected).<br />
+      Layout follows the project's Economist-style standard v1 (adopted 30 October 2026): red #E3120B used only as a marker — top rule, numbered labels, pull-quote rule — body in dark grey, generous spacing. Print editions: sample volume 13pp, each single guide 3pp, syllabus map 6pp.
+    </footer>
+  </div>
+
+  <!-- ================= READER ================= -->
+  <div id="view-reader" hidden>
+    <button type="button" class="backbtn" data-home>← Back to volume home</button>
+    <nav class="reader-nav" aria-label="Articles in this volume">
+      <button type="button" data-open="1">1 · Sulphur</button>
+      <button type="button" data-open="2">2 · China credit</button>
+      <button type="button" data-open="3">3 · Britain IMF</button>
+      <button type="button" data-open="4">4 · China aid</button>
+      <button type="button" data-open="5">5 · Food shock</button>
+      <button type="button" data-open="k">K · Millennials</button>
+    </nav>
+
+    <!-- Article 1 -->
+    <article class="reader-page" id="reader-1">
+      <div class="redbar" aria-hidden="true"></div>
+      <div class="r-head">
+        <div class="r-kicker">Article 1 · Microeconomics</div>
+        <h2>A shortage of sulphur could hurt mines and farms everywhere</h2>
+        <p class="r-source">Finance and economics, <i>The Economist</i>, 17 October 2026 issue.<br /><a href="https://www.economist.com/finance-and-economics/2026/10/15/a-shortage-of-sulphur-could-hurt-mines-and-farms-everywhere" target="_blank" rel="noopener">Read the original at economist.com</a></p>
+        <p class="r-unit"><b>IB unit:</b> Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium. <i>Also useful:</i> Macroeconomics: 3.3 Cost-push inflation.<br /><b>Best IB use:</b> IA commentary (micro) with a supply-and-demand diagram.</p>
+      </div>
+      <div class="pullquote">A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.</div>
+      <div class="r-sec"><h3>What it argues</h3><p>A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.</p></div>
+      <div class="r-sec"><h3>Before you read</h3><p>Sulphur is a by-product of turning oil into fuel, so a refining squeeze is automatically a sulphur squeeze. Russia had already banned sulphur exports, cutting shipments from 4.8 million tonnes in 2025 (15% of globally traded volumes) to 1.8 million tonnes in 2026 so far. In February, Middle Eastern solid bulk sulphur fetched USD 500 a tonne, up from USD 340 a year earlier. The Strait of Hormuz closure trapped nearly a quarter of global sulphur production and half of seaborne exports; shipments remain two-thirds below pre-war levels.</p></div>
+      <div class="r-sec"><h3>Key vocabulary</h3><div class="vocab">
+        <div><b>by-product</b> — something produced in the course of making something else.</div>
+        <div><b>refinery</b> — a plant that turns crude oil into usable fuels.</div>
+        <div><b>seaborne</b> — carried by ship.</div>
+        <div><b>exacerbate</b> — to make a problem worse.</div>
+        <div><b>bulk</b> — large quantities of unpackaged goods.</div>
+        <div><b>fertiliser</b> — a substance added to soil to help crops grow.</div>
+        <div><b>squeeze</b> — a situation where supply tightens and pressure builds.</div>
+      </div></div>
+      <div class="r-sec"><h3>How to read it</h3><ul>
+        <li>The article opens with diesel (the loud shock) and then pivots to sulphur (the quiet one). Why start with the familiar story? What does the pivot do to your sense of the problem's scale?</li>
+        <li>The case is built almost entirely on quantities and prices. List them, and for each one ask: what exactly does this number prove?</li>
+        <li>Note the language of quietness: “quieter side-effect”, “only beginning to show”. What tone does that set, and what does it imply about the damage still to come?</li>
+      </ul></div>
+      <div class="r-sec tasks"><h3>Tasks</h3>
+        <div class="task"><p><b class="tl">A. Analysis.</b> Analyse the diesel-to-sulphur pivot as a structural choice. Why does the author not open with sulphur itself? Support your answer with two details from the article.</p></div>
+        <div class="task"><p><b class="tl">B. Logic.</b> The article states that sulphur markets were already tight before the war. What does that do to a simple “the war caused it” reading? Name the two causes a good commentary must keep separate.</p></div>
+        <div class="task"><p><b class="tl">C. IA commentary (800 words).</b> Using this article as your extract, analyse the effect of the sulphur shortage on the market for fertiliser, with a supply-and-demand diagram. Evaluate one possible response, such as a subsidy to fertiliser producers or a strategic stockpile.</p></div>
+      </div>
+      <div class="r-sec">
+        <button type="button" class="model-toggle" data-model="m1" aria-expanded="false"><span>Model answers — Article 1</span><span aria-hidden="true">＋</span></button>
+        <div class="model-body" id="m1" hidden>
+          <p class="small">Read these only after attempting the tasks. Each model shows the moves a strong answer makes: a clear thesis, evidence tied to specific details, and an evaluation that considers both sides.</p>
+          <h4>Task A model</h4>
+          <p>The author opens with diesel for a reason: it is the shock readers already understand. Fuel prices are visible at the pump, and the war's effect on refineries is an established story. Sulphur, by contrast, is invisible to most readers, yet it is produced by the same refining process. By starting with the familiar shock and then revealing its quieter side-effect, the author builds a causal chain the reader can follow (war, refineries cut off, fuel squeeze) and then extends it one link further (refining produces sulphur, so the same disruption starves fertiliser, mining and chipmaking). The pivot reframes the crisis: it is no longer only a fuel story but an input story, wider than the price at the pump suggests. The warning that the damage is only beginning to show raises the stakes rather than settling them: the reader is left expecting more damage, not less. That is why the structure works. The familiar story earns attention, and the pivot spends it on the unfamiliar one.</p>
+          <h4>Task B model</h4>
+          <p>Two causes must be kept separate. First, pre-war tightness: Russia had already banned sulphur exports, cutting shipments from 4.8 million tonnes in 2025 to 1.8 million tonnes in 2026 so far, while attacks on Red Sea shipping and the threat of American tariffs on Canada added further pressure. Prices had already risen from USD 340 to USD 500 a tonne before the Hormuz closure. Second, the war shock itself: the Strait's closure trapped nearly a quarter of global production and half of seaborne exports, leaving shipments two-thirds below pre-war levels. The distinction matters because the two causes imply different durations and remedies: a war shock may reverse with a ceasefire, but structural tightness will not.</p>
+          <h4>Task C model: IA commentary</h4>
+          <p>The market for fertiliser is a useful place to see the sulphur shortage at work. Sulphur is an input in fertiliser production, so a shortage raises producers' costs. On a supply-and-demand diagram, the supply curve for fertiliser shifts left, from S1 to S2. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. Because fertiliser is an essential input with few short-term substitutes, demand for it is relatively price-inelastic: the price rise is proportionately large while the quantity fall is small, so farmers' total spending on fertiliser rises even as they use less of it.</p>
+          <p>The effects spread beyond the diagram. Farmers face higher costs and thinner margins; some will cut fertiliser use, which lowers crop yields and tightens food supply further. Consumers then face higher food prices. The same input shock hits mining and chipmaking, so industries compete for the same scarce sulphur, pushing its price higher still. The burden is uneven: low-income households spend a larger share of income on food, so a fertiliser-driven food price rise hits them hardest.</p>
+          <p>Can policy fix this? A subsidy to fertiliser producers would cushion farmers in the short term, but it has clear limits. It burdens the government budget, it may keep inefficient producers alive, and it does not increase the supply of sulphur itself: it treats the symptom, not the cause. Strategic stockpiles and diversified sourcing would build resilience, but they are slow and costly to assemble, and they cannot be created after the shortage has arrived. In the long run, recycling sulphur and developing alternative processes would address the structural cause, but that takes years.</p>
+          <p>The evaluation, then, is mixed. Government action can cushion the blow and buy time, especially for the poorest consumers, but it cannot cure a physical shortage. The priority should be protecting vulnerable households while supply adjusts, rather than pretending the price signal can be wished away.</p>
+        </div>
+      </div>
+      <div class="pager"><button type="button" data-home>← Volume home</button><button type="button" data-open="2">Next: China consumer credit →</button></div>
+    </article>
+
+    <!-- Article 2 -->
+    <article class="reader-page" id="reader-2" hidden>
+      <div class="redbar" aria-hidden="true"></div>
+      <div class="r-head">
+        <div class="r-kicker">Article 2 · Macroeconomics</div>
+        <h2>Another warning sign for China's economy: falling consumer credit</h2>
+        <p class="r-source">Finance and economics, <i>The Economist</i>, 17 October 2026 issue.<br /><a href="https://www.economist.com/finance-and-economics/2026/10/14/another-warning-sign-for-chinas-economy-falling-consumer-credit" target="_blank" rel="noopener">Read the original at economist.com</a></p>
+        <p class="r-unit"><b>IB unit:</b> Macroeconomics: 3.2 Aggregate demand and aggregate supply, 3.3 Macroeconomic objectives.<br /><b>Best IB use:</b> IA commentary (macro) with an AD/AS diagram.</p>
+      </div>
+      <div class="pullquote">Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings.</div>
+      <div class="r-sec"><h3>What it argues</h3><p>Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings. That is a warning sign for domestic demand.</p></div>
+      <div class="r-sec"><h3>Before you read</h3><p>Short-term loans to consumers fell by 8.3% in September compared with a year earlier, the steepest drop on record. In August the stock of consumer loans was the lowest since the harsh zero-covid lockdowns. During a public holiday at the start of October, the typical holidaymaker spent 2% less than in the same festive period in 2025. Household debt stood at 60% of GDP in 2020, stayed flat, then declined slightly (rich countries as a whole are just below 70%). The property crash means fewer mortgages and early repayments. The finance ministry has been subsidising banks so they can charge lower interest on consumer loans for big-ticket items such as new cars and home renovations.</p></div>
+      <div class="r-sec"><h3>Key vocabulary</h3><div class="vocab">
+        <div><b>frugal</b> — careful with money, reluctant to spend.</div>
+        <div><b>purse-strings</b> — control over spending (to loosen them is to encourage spending).</div>
+        <div><b>mortgage</b> — a loan used to buy a home.</div>
+        <div><b>indebtedness</b> — the state of owing money.</div>
+        <div><b>subsidy</b> — a payment by government that lowers a cost or price.</div>
+        <div><b>big-ticket</b> — expensive, bought rarely (cars, renovations).</div>
+        <div><b>crackdown</b> — strict enforcement action.</div>
+        <div><b>prudent</b> — careful and sensible with money.</div>
+      </div></div>
+      <div class="r-sec"><h3>How to read it</h3><ul>
+        <li>Find the sentence beginning “Yet that does not explain…”. What is the author signalling there, and why does the argument need a second explanation?</li>
+        <li>The property crash explains mortgages, but not consumer credit. How does the author separate the two stories instead of merging them?</li>
+        <li>The article sets a policy (subsidised loan rates) against an outcome (falling credit). What would you need to know before judging whether the policy failed?</li>
+      </ul></div>
+      <div class="r-sec tasks"><h3>Tasks</h3>
+        <div class="task"><p><b class="tl">A. Analysis.</b> Analyse how the author uses data to build a “warning sign”. Which single number does the most work, and why? Quote or paraphrase it precisely.</p></div>
+        <div class="task"><p><b class="tl">B. Logic trap.</b> “Households are borrowing less because they are frugal.” The article offers this explanation and then qualifies it. State the qualified version in your own words, without letting “frugal” carry the whole explanation.</p></div>
+        <div class="task"><p><b class="tl">C. IA commentary (800 words).</b> Using this article as your extract, analyse the effect of falling consumption on aggregate demand, with an AD/AS diagram. Evaluate the interest-rate subsidy policy: why might cheaper loans fail to raise borrowing?</p></div>
+      </div>
+      <div class="r-sec">
+        <button type="button" class="model-toggle" data-model="m2" aria-expanded="false"><span>Model answers — Article 2</span><span aria-hidden="true">＋</span></button>
+        <div class="model-body" id="m2" hidden>
+          <h4>Task A model</h4>
+          <p>The number that does the most work is the 8.3% fall in short-term consumer loans in September, described as the steepest drop on record. A record break converts a vague mood, households are “frugal”, into a measurable break with the past: this is not normal caution but something historically unusual. It is reinforced by the August stock of consumer loans being the lowest since the zero-covid lockdowns, a comparison that frames the fall against an extreme benchmark. The holiday figure, spending 2% less than in the same festive period in 2025, then confirms that the borrowing data reflect real spending, not a statistical quirk. Together the three numbers move the reader from impression to evidence: the warning sign is not a feeling but a fact.</p>
+          <h4>Task B model</h4>
+          <p>Households are borrowing less, but frugality is only part of the story. The property crash has cut mortgage demand and encouraged early repayment, and a mortgage is the largest loan most households take on, so that alone would shrink total borrowing. Consumer credit, however, has fallen even though the finance ministry subsidises banks to charge lower interest on loans for big-ticket items such as cars and renovations. If cheaper loans cannot lift borrowing, the cause is more likely weak confidence about incomes and house prices, or banks reluctant to lend, than a simple change in household character. The article's qualified version is therefore: borrowing is falling because demand is weak and credit conditions are tight, not merely because households have become careful.</p>
+          <h4>Task C model: IA commentary</h4>
+          <p>Consumption is the largest component of aggregate demand in most economies, so falling consumption shifts aggregate demand left, from AD1 to AD2, on an AD/AS diagram. Real output falls, the price level comes under downward pressure, and unemployment is likely to rise as firms cut production. The multiplier amplifies the effect: lower spending means lower incomes for others, which leads to further spending cuts, so the initial fall in consumption produces a larger final fall in output.</p>
+          <p>The government's response has been to subsidise banks so they can offer lower interest rates on consumer loans for big-ticket items. The evaluation of this policy is sceptical. First, cheaper loans help only if households want to borrow, and with house prices falling and incomes uncertain, confidence, not the interest rate, is the binding constraint. Second, banks may pocket the subsidy or lend only to the safest borrowers, so transmission to actual borrowing is weak. Third, the subsidy targets big-ticket items while the weakness is broad-based, so it misses much of the problem. Direct transfers to households would likely do more, because lower-income households have a higher propensity to spend, but they cost the budget and add to government debt. The policy treats a demand problem as a price problem: it may help at the margin, but it cannot by itself reverse a confidence-driven contraction.</p>
+        </div>
+      </div>
+      <div class="pager"><button type="button" data-open="1">← Previous: Sulphur</button><button type="button" data-open="3">Next: Britain IMF →</button></div>
+    </article>
+
+    <!-- Article 3 -->
+    <article class="reader-page" id="reader-3" hidden>
+      <div class="redbar" aria-hidden="true"></div>
+      <div class="r-head">
+        <div class="r-kicker">Article 3 · The global economy — international</div>
+        <h2>Lessons from Britain's humiliating IMF bail-out</h2>
+        <p class="r-source">Britain, <i>The Economist</i>, 17 October 2026 issue.<br /><a href="https://www.economist.com/britain/2026/10/15/lessons-from-britains-humiliating-imf-bail-out" target="_blank" rel="noopener">Read the original at economist.com</a></p>
+        <p class="r-unit"><b>IB unit:</b> The global economy: 4.5 Exchange rates, 4.6 Balance of payments. <i>Also useful:</i> Macroeconomics: 3.6 Fiscal policy, government debt.<br /><b>Best IB use:</b> IA commentary (global) or Paper 1 essay evidence.</p>
+      </div>
+      <div class="pullquote">The year 2026 echoes 1976, but the parallels are superficial.</div>
+      <div class="r-sec"><h3>What it argues</h3><p>The year 2026 echoes 1976, but the parallels are superficial. Another trip to the IMF is unlikely, because the fundamentals are very different.</p></div>
+      <div class="r-sec"><h3>Before you read</h3><p>In 1976, sterling's freefall forced Chancellor Denis Healey to turn back from a plane on 28 September and apply for an emergency IMF loan. A USD 3.9 billion bail-out, agreed in December, imposed conditions of the sort normally reserved for the world's weakest economies. Then: inflation 13.7%, ten-year gilt yields 15.7%, marginal tax rates as high as 98%. Now: inflation 3.8% (IMF estimate), ten-year gilt yields 5.4%, though Britain pays more to borrow than any other G7 country. The Chancellor prepares a budget on 28 October.</p></div>
+      <div class="r-sec"><h3>Key vocabulary</h3><div class="vocab">
+        <div><b>bail-out</b> — an emergency loan or rescue for a government, bank or firm in trouble.</div>
+        <div><b>gilt</b> — a British government bond.</div>
+        <div><b>yield</b> — the return a bond pays its holder, as a percentage of its price.</div>
+        <div><b>sterling</b> — the British pound.</div>
+        <div><b>freefall</b> — a rapid, uncontrolled fall.</div>
+        <div><b>conditionality</b> — the conditions a lender (such as the IMF) attaches to a loan.</div>
+        <div><b>fiscal</b> — relating to government revenue and spending.</div>
+        <div><b>embattled</b> — under attack, struggling to survive.</div>
+      </div></div>
+      <div class="r-sec"><h3>How to read it</h3><ul>
+        <li>The article builds the parallel first, then dismantles it. Track where the turn happens and what evidence marks it.</li>
+        <li>The 1976-versus-2026 comparison does the persuading. Pick two pairs of numbers and state, in one sentence each, what each pair proves.</li>
+        <li>Note the word choice: “humiliating”, “sketchiest”. What stance does that language reveal, and does it weaken or strengthen the analysis?</li>
+      </ul></div>
+      <div class="r-sec tasks"><h3>Tasks</h3>
+        <div class="task"><p><b class="tl">A. Analysis.</b> Analyse the historical parallel as a rhetorical device. What does the 1976 parallel make the reader feel before the evidence arrives, and how does the article then redirect that feeling?</p></div>
+        <div class="task"><p><b class="tl">B. Logic.</b> “In both years the embattled Labour Party appointed a new prime minister.” Is this evidence of an economic parallel, or a coincidence? How do you tell the difference?</p></div>
+        <div class="task"><p><b class="tl">C. Essay / TOK.</b> “A country that issues its own currency cannot face a 1976-style crisis.” Evaluate this claim, using the article's evidence. TOK extension: is historical analogy a valid form of economic evidence, and what are its limits?</p></div>
+      </div>
+      <div class="r-sec">
+        <button type="button" class="model-toggle" data-model="m3" aria-expanded="false"><span>Model answers — Article 3</span><span aria-hidden="true">＋</span></button>
+        <div class="model-body" id="m3" hidden>
+          <h4>Task A model</h4>
+          <p>The parallel works emotionally before it works logically. 1976 is remembered as a humiliation: a Chancellor turning back from a plane, a loan with conditions normally reserved for the world's weakest economies. Invoking that memory primes the reader to fear repetition. The article then redirects that feeling with the comparison of fundamentals: inflation 13.7% then against 3.8% now, ten-year gilt yields 15.7% against 5.4%. The turn is where the analysis actually happens: the reader arrives worried and leaves reassured, not because the parallel was wrong but because it was tested. That is the device's strength. It lets the reader feel the risk first and think it through second. And it is also its danger, because a reader who stops at the parallel will carry away a fear the evidence does not support.</p>
+          <h4>Task B model</h4>
+          <p>It is a coincidence, not economic evidence. The test is mechanism: does the fact transmit economic pressure? A shared party, a new prime minister two years into office, even a shared surname (Healey) describe political timing; they do not move bond yields, the exchange rate or inflation. The economic parallels — bond yields, inflation, competitiveness, energy shocks — do carry causal weight, because each one affects borrowing costs, purchasing power or trade. Confusing the two is the classic correlation trap: narrative resemblance is not an economic mechanism, and an argument built on it will collapse as soon as the mechanisms are examined.</p>
+          <h4>Task C model: essay</h4>
+          <p>A government that issues its own currency borrows in that currency, so it cannot be forced to default in the way a foreign-currency borrower can. The central bank can always buy government bonds, as it did in 2008 and during the pandemic. The 1976 crisis also occurred under different monetary arrangements, when sterling's international role and exchange-rate commitments constrained policy in ways that no longer apply. On this view, a 1976-style crisis, understood as running out of money, is close to impossible.</p>
+          <p>The case against is strong, however. A currency can still fall sharply, raising import prices and inflation. Bond markets can demand much higher yields, raising debt-service costs: Britain already pays more to borrow than any other G7 country. And fiscal space is political as well as technical. Markets judge credibility, and an IMF programme is often about credibility rather than cash: a government may not need the money but may need the market to believe it will act. The article's own evidence points this way. Inflation and yields are far below 1976 levels, yet borrowing costs are still the highest in the G7, which suggests markets are pricing risk, not just fundamentals.</p>
+          <p>The defensible conclusion is therefore weaker than the claim. “Cannot” is too strong; “less likely, and different in form” is the version the evidence supports. As a TOK extension: historical analogy is useful for generating hypotheses — watch bond yields, watch sterling — but weak as proof, because it selects similarities and hides differences. It is valid only when the underlying mechanisms match, not merely the surface features.</p>
+        </div>
+      </div>
+      <div class="pager"><button type="button" data-open="2">← Previous: China credit</button><button type="button" data-open="4">Next: China aid →</button></div>
+    </article>
+
+    <!-- Article 4 -->
+    <article class="reader-page" id="reader-4" hidden>
+      <div class="redbar" aria-hidden="true"></div>
+      <div class="r-head">
+        <div class="r-kicker">Article 4 · The global economy — development</div>
+        <h2>China is channelling much more money to poor countries</h2>
+        <p class="r-source">China, <i>The Economist</i>, 17 October 2026 issue.<br /><a href="https://www.economist.com/china/2026/10/15/china-is-channelling-much-more-money-to-poor-countries" target="_blank" rel="noopener">Read the original at economist.com</a></p>
+        <p class="r-unit"><b>IB unit:</b> The global economy: 4.7 Sustainable development, 4.10 Development strategies.<br /><b>Best IB use:</b> IA commentary (global) or Paper 2 data-response evidence.</p>
+      </div>
+      <div class="pullquote">As America steps back from multilateral giving, a gap opens.</div>
+      <div class="r-sec"><h3>What it argues</h3><p>As America steps back from multilateral giving, a gap opens. China, though giving more, is neither willing nor able to fill it, while seeking a greater say in the institutions that hand aid out.</p></div>
+      <div class="r-sec"><h3>Before you read</h3><p>America has tired of the international institutions it helped create: last year the aid it channelled through multilateral organisations such as the World Bank and the UN fell by half, it has withdrawn from the World Health Organisation, and it still owes the WHO money. China has put up more cash, but cautiously. The article frames the situation with an idea from the economic historian Charles Kindleberger: danger arises when a stabilising power gives up its global role before an emerging power is ready or willing to take it on. The article draws on estimates by researchers at the Centre for Global Development in Washington.</p></div>
+      <div class="r-sec"><h3>Key vocabulary</h3><div class="vocab">
+        <div><b>multilateral</b> — involving several countries or international organisations together.</div>
+        <div><b>incumbent</b> — the current holder of a position or role.</div>
+        <div><b>upstart</b> — a newcomer challenging an established power.</div>
+        <div><b>cede</b> — to give up power or territory.</div>
+        <div><b>assertiveness</b> — confident, forceful behaviour.</div>
+        <div><b>arrears</b> — money owed and overdue.</div>
+        <div><b>think-tank</b> — an institute that researches policy questions.</div>
+        <div><b>channel</b> — to direct money or resources through a particular route.</div>
+      </div></div>
+      <div class="r-sec"><h3>How to read it</h3><ul>
+        <li>The article opens with two “traps”: the Thucydides trap and the Kindleberger trap. What does each frame make you expect, and which one does the article actually use?</li>
+        <li>The argument rests on who gives what, through which institutions. Before judging the conclusion, map the actors: the US, China, the World Bank, the UN, the WHO.</li>
+        <li>Note the author's stance. Words such as “sadly” (of the absent rivalry) reveal a view of great-power competition. Does that stance help or hurt the analysis?</li>
+      </ul></div>
+      <div class="r-sec tasks"><h3>Tasks</h3>
+        <div class="task"><p><b class="tl">A. Analysis.</b> Analyse the two-trap opening. Why introduce a frame the article then sets aside? What does the discarded frame do for the reader?</p></div>
+        <div class="task"><p><b class="tl">B. Logic.</b> “China is giving more” and “China cannot fill the gap” sound contradictory. Reconcile them in two sentences, using the article's focus on multilateral channels.</p></div>
+        <div class="task"><p><b class="tl">C. IA commentary / essay.</b> Using this article as your extract, evaluate whether multilateral aid is more effective than bilateral aid for development. Or, as a Paper 2 question: discuss the view that aid is driven by donor interests rather than recipient needs.</p></div>
+      </div>
+      <div class="r-sec">
+        <button type="button" class="model-toggle" data-model="m4" aria-expanded="false"><span>Model answers — Article 4</span><span aria-hidden="true">＋</span></button>
+        <div class="model-body" id="m4" hidden>
+          <h4>Task A model</h4>
+          <p>The discarded Thucydides frame does real work. It names what the reader might expect — a rising power challenging an incumbent, a contest for influence — and then sets it aside, so that the Kindleberger frame lands harder: the danger is not rivalry but absence, a stabiliser stepping back before a successor is ready or willing to take over. The discarded frame also signals the author's stance: rivalry, the article implies, would at least be energetic, whereas the actual danger is a vacuum, sadly empty. The opening therefore reframes the story from competition to gap, and the reader who understands that reframing understands the article's thesis before the evidence arrives.</p>
+          <h4>Task B model</h4>
+          <p>There is no contradiction, because the two statements describe different things: direction and scale. “Giving more” describes China's direction of travel: its contributions through multilateral channels have risen. “Cannot fill the gap” describes the scale of the hole left by the United States, whose aid through multilateral organisations fell by half, and China's willingness and capacity relative to that hole. Beijing, the article argues, seeks a greater say in the institutions that hand aid out rather than replacing American funding outright. Direction is real; scale is insufficient. Confusing the two is how a true statement, “China gives more”, becomes a false conclusion, “China has replaced America”.</p>
+          <h4>Task C model: essay</h4>
+          <p>Multilateral aid pools resources, coordinates donors, and is less tied to any single donor's commercial or political interests, so it can support global public goods such as health and climate programmes. Its weaknesses are speed and accountability: it is slow, bureaucratic, and voting power still reflects donor wealth, so influence follows money even inside a multilateral body. Bilateral aid is faster and donor-controlled, and it can be targeted precisely, but it is often tied to donor exports or contracts, and it fragments recipient planning when many donors pursue separate projects.</p>
+          <p>The article's evidence sharpens the comparison. The American retreat from multilateral organisations creates a coordination gap that bilateral deals cannot easily replace: fifty bilateral programmes do not add up to one coordinated health system. China's multilateral rise, meanwhile, buys institutional voice, but voice is not the same as development outcomes, and a seat at the table does not guarantee that funds reach the poorest. The evaluation, then, is that effectiveness depends less on the channel than on recipient ownership, transparency, and whether aid builds domestic capacity or creates dependence. The channel matters, but the gap the article describes is a governance gap as much as a funding gap: who decides matters as much as who pays.</p>
+        </div>
+      </div>
+      <div class="pager"><button type="button" data-open="3">← Previous: Britain IMF</button><button type="button" data-open="5">Next: Food shock →</button></div>
+    </article>
+
+    <!-- Article 5 -->
+    <article class="reader-page" id="reader-5" hidden>
+      <div class="redbar" aria-hidden="true"></div>
+      <div class="r-head">
+        <div class="r-kicker">Article 5 · Microeconomics and development</div>
+        <h2>Can Asian governments prevent a food shock?</h2>
+        <p class="r-source">Asia, <i>The Economist</i>, 17 October 2026 issue.<br /><a href="https://www.economist.com/asia/2026/10/14/can-asian-governments-prevent-a-food-shock" target="_blank" rel="noopener">Read the original at economist.com</a></p>
+        <p class="r-unit"><b>IB unit:</b> Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium, 2.7 Role of government in microeconomics. <i>Also useful:</i> The global economy: 4.9 Barriers to development; Macroeconomics: 3.3 Inflation.<br /><b>Best IB use:</b> IA commentary (micro) with a supply-and-demand diagram.</p>
+      </div>
+      <div class="pullquote">A fierce El Niño is hitting Asian countries already weakened by an energy shock, threatening food supplies.</div>
+      <div class="r-sec"><h3>What it argues</h3><p>A fierce El Niño is hitting Asian countries already weakened by an energy shock, threatening food supplies. Governments must decide whether they can prevent a shock, and how.</p></div>
+      <div class="r-sec"><h3>Before you read</h3><p>El Niño is a recurring climate pattern: shifts in Pacific winds bring hotter, drier conditions to much of South and South-East Asia. This episode began in May and is due to peak next month; on one daily measure, sea-surface temperature anomalies have already exceeded the peak of every previous event on record. The World Meteorological Organisation expects it to last into February. India's monsoon, which supplies nearly 70% of annual rainfall, ended about 13% below normal, the driest in a decade. Indonesia is enduring its worst fire season for 11 years. Seven provinces in the Philippines are already in drought, and officials in Manila have warned that the capital's water supply may soon be reduced.</p></div>
+      <div class="r-sec"><h3>Key vocabulary</h3><div class="vocab">
+        <div><b>monsoon</b> — the seasonal wind system that brings most of South Asia's rain.</div>
+        <div><b>drought</b> — a long period with abnormally low rainfall.</div>
+        <div><b>anomaly</b> — a deviation from what is normal or expected.</div>
+        <div><b>receding</b> — going back, withdrawing (of water levels).</div>
+        <div><b>exposed</b> — left vulnerable to harm.</div>
+        <div><b>grappling</b> — struggling with a difficult problem.</div>
+        <div><b>havoc</b> — widespread damage or disorder.</div>
+        <div><b>livelihood</b> — the means by which people earn a living.</div>
+      </div></div>
+      <div class="r-sec"><h3>How to read it</h3><ul>
+        <li>The opening lists scattered local events: dead fish in a Cambodian lake, a submerged village exposed in Indonesia, a water warning in Manila. What argument does a list like that build before any data appears?</li>
+        <li>Two shocks run through the article: the climate shock and the energy shock. How does the article connect them, and why does that connection matter for policy?</li>
+        <li>The title is a question. What would count as an answer, and what evidence would you need before accepting one?</li>
+      </ul></div>
+      <div class="r-sec tasks"><h3>Tasks</h3>
+        <div class="task"><p><b class="tl">A. Analysis.</b> Analyse the opening list as a technique. What effect does piling up small local events have, compared with opening with a statistic?</p></div>
+        <div class="task"><p><b class="tl">B. Logic chain.</b> “El Niño causes food prices to rise” is too short. Write the full chain in your own words (El Niño, drought, harvests, supply, prices), and mark the points where government action could break it.</p></div>
+        <div class="task"><p><b class="tl">C. IA commentary (800 words).</b> Using this article as your extract, analyse the effect of a supply shock on the market for a staple food, with a supply-and-demand diagram. Evaluate two responses: export bans and subsidies, one against the other.</p></div>
+      </div>
+      <div class="r-sec">
+        <button type="button" class="model-toggle" data-model="m5" aria-expanded="false"><span>Model answers — Article 5</span><span aria-hidden="true">＋</span></button>
+        <div class="model-body" id="m5" hidden>
+          <h4>Task A model</h4>
+          <p>The list works by accumulation. Each event is small and local: dead fish in a Cambodian lake, a submerged village exposed by falling water in Indonesia, a warning about Manila's water supply. But together they form a pattern the reader assembles before any expert speaks. A statistic argues; a list shows. The effect is immediacy and breadth: the shock is already here, in many places, not a forecast for next year. The risk of the technique is that anecdote can mislead: local events may not sum to a regional crisis, and a vivid list can outrun its evidence. That is why the article then adds the data — a monsoon 13% below normal, the worst Indonesian fire season in 11 years — converting impression into evidence. The list opens the case; the data closes it.</p>
+          <h4>Task B model</h4>
+          <p>El Niño shifts Pacific winds, bringing hotter, drier conditions to South and South-East Asia. The monsoon, which supplies nearly 70% of India's annual rainfall, ends about 13% below normal; drought takes hold in seven Philippine provinces, and Indonesia suffers its worst fire season in 11 years. Harvests fall, so the supply of food shifts left and food prices rise. Because food is a necessity, demand is price-inelastic: the price rise is large, the quantity fall is small, and households spend more for less, with the heaviest burden on low-income families. Governments can break the chain at three points: before the harvest (irrigation, drought-resistant crops, early warning); at the market (releasing strategic reserves, targeted cash transfers rather than price ceilings, which discourage supply); and at the border (resisting export bans, which lower domestic prices briefly but cut farmer incentives, shrink supply further, and export the shock to importers, where it can spiral).</p>
+          <h4>Task C model: IA commentary</h4>
+          <p>Drought shifts the supply of a staple food left, from S1 to S2, on a supply-and-demand diagram. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. Because a staple is a necessity, demand is price-inelastic: the price rise is proportionately large, the quantity fall is small, and total spending on the staple rises. The burden falls hardest on low-income households, for whom food is a large share of the budget, so the shock quickly becomes a food-security problem rather than a mere price problem.</p>
+          <p>Two responses can be evaluated. Export bans help domestic consumers briefly by keeping food at home, but they reduce farmer incomes and incentives, which lowers future supply, and they push prices up for import-dependent neighbours. That is a beggar-thy-neighbour policy: it exports the shock, invites retaliation, and can spiral into a wider crisis. Subsidies and transfers, by contrast, protect consumers without destroying the price signal: targeted cash transfers to low-income households are more efficient than universal subsidies, because they reach those who need help without subsidising those who do not. Their limit is fiscal: they strain government budgets, especially where the shock is region-wide. The conclusion is that the shock itself cannot be prevented by policy, but its human cost can be limited. The best response protects the vulnerable without breaking the market signals farmers need to plant again next season.</p>
+        </div>
+      </div>
+      <div class="pager"><button type="button" data-open="4">← Previous: China aid</button><button type="button" data-open="k">Next: Katherine Issue 01 →</button></div>
+    </article>
+
+    <!-- Katherine Issue 01 -->
+    <article class="reader-page" id="reader-k" hidden>
+      <div class="redbar" aria-hidden="true"></div>
+      <div class="r-head">
+        <div class="r-kicker">Katherine Track · Issue 01 · P6 adaptation</div>
+        <h2>Millennials' success deserves a toast (not the avocado sort)</h2>
+        <p class="r-source">Adapted from <i>The Economist</i>, Leaders, 15 October 2026.<br /><a href="https://www.economist.com/leaders/2026/10/15/millennials-success-deserves-a-toast-not-the-avocado-sort" target="_blank" rel="noopener">Original at economist.com</a> · Adapted text: 733 words · Topic: Generations / economics</p>
+        <p class="r-unit"><b>What this article argues:</b> a generation that was once called “lost” has proved everyone wrong — and its comeback has lessons for all of us. Ideas stay, language comes down: the full argument skeleton is preserved at P6 reading level.</p>
+      </div>
+      <div class="pullquote">A generation that was once called “lost” has proved everyone wrong.</div>
+      <div class="r-sec"><h3>A brutal start</h3>
+        <p>If you were born between the early 1980s and the mid-1990s, you are a millennial. Your parents may well be millennials themselves. When this generation was young, its future looked dark.</p>
+        <p>Many millennials finished school or university just after the global financial crisis — a huge banking crash in 2008 that damaged economies all over the world. The crisis began when banks lent money carelessly, especially to buy houses. When those loans failed, banks collapsed, companies closed, and jobs vanished across the world. Jobs were scarce. In some parts of Europe, more than half of all young people could not find work. People began to call them a “lost generation”, as if they would never catch up. Many kept living with their parents because they could not afford a home of their own. And unsympathetic older people lectured them for wasting money on brunch — especially avocado toast, which became the symbol of supposed millennial extravagance.</p>
+      </div>
+      <div class="r-sec"><h3>The comeback</h3>
+        <p>Today the picture looks very different. Millennials are now aged about 30 to 45, and they have dramatically turned their fortunes around. They earn more than any recent generation did at the same age, and they are catching up on home-ownership. At the same time, millennial culture is back: their television shows, music, games, and even fashion. Their famously tight trousers — skinny jeans — are cool again.</p>
+        <p>Some of this is simply the way of the world. As people grow older, they usually get better jobs, earn more, and buy homes. And every generation, on reaching middle age, rediscovers the culture of its youth. In the 1970s, people revived the rock'n'roll and films of the 1950s, like “Happy Days” and “Grease”. In the 1990s, bell-bottom trousers and tie-dye shirts came back. Nostalgia — a warm feeling for the past — seems to run on a twenty-year timetable. That is why songs and shows from your parents' youth can feel familiar to you, even though they were made before you were born.</p>
+      </div>
+      <div class="r-sec"><h3>Luck — and something bigger</h3>
+        <p>But the millennial comeback is different, and not just because of nostalgia.</p>
+        <p>Part of it is luck. During the covid-19 pandemic, many older workers retired early. That left a gap at the top of companies — a management vacuum — and millennials stepped into it.</p>
+        <p>A bigger part of the story, however, is innovation and hard work. The technology industry has created enormous wealth, and many of its leading figures are millennials. They hold more than twice the share of America's billionaires that the previous generation, Generation X, held at the same age. And the next great leap in technology, artificial intelligence, is likely to strengthen their position further: the people leading the AI revolution — Dario Amodei, Mark Zuckerberg, and Sam Altman — are themselves millennials.</p>
+        <p>Technology has also powered the cultural comeback. Online platforms encourage people to revisit the entertainment of their youth. YouTube and Spotify act as nostalgia machines. Netflix, with its huge library, introduces new viewers to millennial hits like “The Big Bang Theory” (2007), which is the fifth-most-streamed series in America this year. Social media have also frightened Hollywood: studios now prefer sequels and reboots — safer bets than original stories. That is why “The Devil Wears Prada 2” is one of the world's highest-grossing films this year.</p>
+      </div>
+      <div class="r-sec"><h3>Why it matters</h3>
+        <p>So even people who dread the return of skinny jeans should cheer the millennial revival. Its economic story shows that a “lost” generation can find its way. There is a lesson here for policymakers too: millennials' prospects improved thanks to markets and events, not because of the big state-funded rescue that some people once demanded. And as artificial intelligence causes fresh alarm about young people's job opportunities today, the millennial bounce offers a cautious reason for optimism.</p>
+        <p>The cultural comeback has lessons too. Some will look at the flood of 1990s reboots — a new “Baywatch” series, for example — and feel that Hollywood's creativity needs saving. But technology helps here as well. The endless libraries of online platforms mean you have plenty of alternatives if millennial favourites are not to your taste. And because those back catalogues store the hits of every era, the best of every generation is now available to everyone. Twenty years ago, one generation bore the brunt of the financial crisis. Today, all generations should celebrate the millennials' deserved rebound. The writer calls this rebound “deserved” — not a gift, but something earned through a difficult start.</p>
+      </div>
+      <div class="r-sec"><h3>Key vocabulary</h3><div class="vocab">
+        <div><b>millennial</b> — a person born between the early 1980s and the mid-1990s.</div>
+        <div><b>financial crisis</b> — a time when banks fail and economies suffer badly (the big one here was in 2008).</div>
+        <div><b>unemployment</b> — the state of not having a job although you want one.</div>
+        <div><b>nostalgia</b> — a warm, fond feeling for the past.</div>
+        <div><b>pandemic</b> — a disease that spreads across many countries at once (covid-19).</div>
+        <div><b>vacuum</b> — an empty space left behind when people or things leave.</div>
+        <div><b>billionaire</b> — a person whose wealth is 1,000 million or more.</div>
+        <div><b>policymaker</b> — someone in government who makes decisions and laws.</div>
+        <div><b>sequel</b> — a film or show that continues an earlier story.</div>
+        <div><b>reboot</b> — a new version of an old film or series.</div>
+      </div></div>
+      <div class="r-sec tasks"><h3>Tasks</h3>
+        <div class="task"><p><b class="tl">Task A — Summary (about 100 words).</b> In your own words, summarise the argument of this article: why were millennials called a “lost generation”, and why does the writer think they deserve a toast today? Do not copy sentences from the article.</p></div>
+        <div class="task"><p><b class="tl">Task B — Argumentative Essay (250–350 words).</b> Do you agree that a generation which starts with bad luck can still succeed? Use the millennial story and one example of your own. Your essay must include at least one counterargument — a reason someone might disagree — and your reply to it.</p></div>
+        <div class="task"><p><b class="tl">Task C — Analysis questions.</b></p>
+          <p>1. In one sentence, what is the writer's main argument (thesis)?</p>
+          <p>2. The writer admits that part of the comeback is “simply the way of the world”. What evidence does the writer give for this? Does admitting this weaken or strengthen the argument? Explain your answer.</p>
+          <p>3. Which does the writer say matters more for the comeback — luck or hard work? Find two pieces of evidence from the article for your answer.</p>
+          <p>4. Disagree with the writer: the article celebrates the millennial comeback. Give one reason why someone might NOT celebrate it. (There is no single right answer — defend your reason.)</p>
+        </div>
+      </div>
+      <div class="pager"><button type="button" data-open="5">← Previous: Food shock</button><button type="button" data-home>Back to volume home →</button></div>
+    </article>
+  </div>
+
+</div>
+<script>
+(function(){
+  var home = document.getElementById('view-home');
+  var reader = document.getElementById('view-reader');
+  function showHome(){
+    home.hidden = false; reader.hidden = true;
+    window.scrollTo(0,0);
+  }
+  function showArticle(key){
+    var id = 'reader-' + key;
+    var pages = document.querySelectorAll('.reader-page');
+    for(var i=0;i<pages.length;i++){ pages[i].hidden = (pages[i].id !== id); }
+    home.hidden = true; reader.hidden = false;
+    var btns = document.querySelectorAll('.reader-nav button');
+    for(var j=0;j<btns.length;j++){
+      var k = btns[j].getAttribute('data-open');
+      if(k === String(key)){ btns[j].setAttribute('aria-current','true'); } else { btns[j].removeAttribute('aria-current'); }
+    }
+    window.scrollTo(0,0);
+  }
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-open],[data-home],[data-scroll]');
+    if(!t) return;
+    if(t.hasAttribute('data-home')){ showHome(); return; }
+    if(t.hasAttribute('data-open')){ showArticle(t.getAttribute('data-open')); return; }
+    if(t.hasAttribute('data-scroll')){
+      var el = document.querySelector(t.getAttribute('data-scroll'));
+      if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+  });
+  var toggles = document.querySelectorAll('.model-toggle');
+  for(var i=0;i<toggles.length;i++){
+    toggles[i].addEventListener('click', function(){
+      var body = document.getElementById(this.getAttribute('data-model'));
+      if(!body) return;
+      var open = body.hidden;
+      body.hidden = !open;
+      this.setAttribute('aria-expanded', open ? 'true' : 'false');
+      var sign = this.querySelector('span:last-child');
+      if(sign){ sign.textContent = open ? '－' : '＋'; }
+    });
+  }
+})();
+</script>
+</body>
+</html>
