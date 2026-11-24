@@ -1,0 +1,25 @@
+# IB EconLens
+
+> IB EconLens turns weekly global current affairs into IB Diploma Economics revision guides. Each guide gives background, argument breakdown, vocabulary, chart reading, three tasks and model answers, with the IB syllabus unit labelled. Built for IB Diploma Economics students (SL/HL) and their parents. Full guide text: see llms-full.txt.
+
+## Site
+
+- [IB EconLens — home](https://ibeconlens.geledtech.com/): free guides, subscription plans, FAQ.
+- [Sitemap](https://ibeconlens.geledtech.com/sitemap.xml)
+
+## Free guides
+
+- [Sample Volume 01 — 5 guides, all free](https://ibeconlens.geledtech.com/): a sulphur shortage and mines and farms; falling consumer credit in China; Britain's IMF bail-out; China channelling money to poor countries; Asian governments and a food shock.
+- [Volume 02 free guide — China's clean-tech exports to South-East Asia (PDF)](https://ibeconlens.geledtech.com/2026-11-14-chinas-exports-of-clean-tech-to-south-east-asia-are-soaring-guide.pdf): IB Unit 4.1–4.2, trade and trade protection.
+
+## Subscription
+
+- [Subscribe monthly — USD 9.90/month](https://buy.stripe.com/eVqcN452C4Lk6k299L9k403)
+- [Subscribe annually — USD 79.20/year, save 33%](https://buy.stripe.com/dRm4gy0Mmgu2cIq2Ln9k402)
+- Paid subscribers get a new volume of 5 guides every month, all audio versions, and the full archive during subscription. Cancel anytime.
+
+## Key facts
+
+- Each monthly volume: 5 guides, 15 tasks, 15 model answers, 13-page volume PDF.
+- Each guide: background, argument breakdown, vocabulary, chart reading, 3 tasks, model answers, IB unit labelled.
+- Publisher: Growth Education Limited. Contact: https://ibeconlens.geledtech.com/
