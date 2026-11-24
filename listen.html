@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
-    <meta name="description" content="IB economics revision for bedtime: listen to six study guides read aloud — background, core argument, key vocabulary and reading notes — with a sleep timer. Free on IB EconLens." />
+    <meta name="description" content="Listen to six free IB economics guides read aloud, two ways: a bedtime review of guides already read, or a morning briefing with tasks and model answers." />
     <link rel="canonical" href="https://ibeconlens.geledtech.com/listen.html" />
     <link rel="icon" href="data:," />
-    <title>Bedtime Listening — IB Economics Revision | IB EconLens</title>
+    <title>Listen — IB Economics Revision | IB EconLens</title>
     <style>
       :root {
         --bg: #0b0a08;
@@ -52,6 +52,25 @@
       }
       .intro { color: var(--muted); margin: 0 0 8px; max-width: 56ch; }
       .intro strong { color: var(--text); font-weight: 600; }
+      .intro[hidden] { display: none; }
+
+      /* ---------- Mode switcher ---------- */
+      .mode-switch { display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0 16px; }
+      .mode-btn {
+        appearance: none; flex: 1 1 200px; text-align: left; cursor: pointer;
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        color: var(--text); font-family: inherit; padding: 14px 16px; min-height: 56px;
+      }
+      .mode-btn:hover { border-color: var(--accent); }
+      .mode-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      .mode-btn[aria-pressed="true"] { border-color: var(--accent); background: var(--surface-2); }
+      .mode-name { display: block; font-size: 17px; font-weight: 700; line-height: 1.3; }
+      .mode-btn[aria-pressed="true"] .mode-name { color: var(--accent); }
+      .mode-sub { display: block; font-size: 14px; color: var(--muted); margin-top: 4px; line-height: 1.45; }
+
+      /* Sleep timer is de-emphasised outside Bedtime Review */
+      .timer-block.quiet { opacity: 0.62; }
+      .timer-block.quiet .timer-btn { min-height: 48px; }
 
       /* ---------- Player ---------- */
       .player {
@@ -193,14 +212,30 @@
       </header>
 
       <main>
-        <h1>Bedtime listening</h1>
-        <p class="intro">
-          Six free study guides, read aloud by your browser: the background first,
-          then the core argument, the key vocabulary and notes on how to read each
-          piece. <strong>Each guide runs about 2 minutes — the last one about 3 —
-          and the whole playlist about 12 minutes.</strong> Set a sleep timer,
-          press play, and let the playlist run through in order. Playback only
-          starts when you tap play.
+        <h1>Listen</h1>
+
+        <div class="mode-switch" role="group" aria-label="Listening mode">
+          <button class="mode-btn" type="button" id="modeBedtimeBtn" aria-pressed="true">
+            <span class="mode-name">Bedtime Review</span>
+            <span class="mode-sub">Background, argument and vocabulary only. About 1–2 minutes per guide, about 8 minutes in total.</span>
+          </button>
+          <button class="mode-btn" type="button" id="modeMorningBtn" aria-pressed="false">
+            <span class="mode-name">Morning Briefing</span>
+            <span class="mode-sub">The full guide, including tasks and model answers. About 5–7 minutes per guide, about 36 minutes in total.</span>
+          </button>
+        </div>
+
+        <p class="intro" id="introBedtime">
+          A review of guides you have already read: sleep consolidates what you
+          studied while awake — it does not teach new material. Set the sleep
+          timer, press play, and let the playlist run through in order. Playback
+          only starts when you tap play.
+        </p>
+        <p class="intro" id="introMorning" hidden>
+          One guide each morning, about 6 minutes, as active study: the full
+          guide read aloud, and the player pauses after the tasks so you can
+          try them before hearing the model answers. Playback only starts when
+          you tap play.
         </p>
 
         <p class="notice" id="voiceNotice" hidden></p>
@@ -232,7 +267,7 @@
 
           <p class="status" id="statusText" aria-live="polite">Tap play to begin with the first guide.</p>
 
-          <div class="timer-block">
+          <div class="timer-block" id="timerBlock">
             <div class="timer-head">
               <p class="timer-label">Sleep timer</p>
               <p class="timer-count" id="timerCount" aria-live="polite"></p>
@@ -247,7 +282,7 @@
         </section>
 
         <h2>Free guides</h2>
-        <p class="section-note">Tap a guide to start listening from the beginning of that guide.</p>
+        <p class="section-note" id="guideNote">Tap a guide to start listening from the beginning of that guide.</p>
         <ol class="guide-list" id="guideList"></ol>
 
         <h2>Volume 02</h2>
@@ -269,7 +304,6 @@
             "title": "A shortage of sulphur could hurt mines and farms everywhere",
             "ib_unit": "Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium. Also useful: Macroeconomics: 3.3 Cost-push inflation.",
             "badge": "Units 2.2 · 2.3 · 3.3",
-            "duration": "About 2 minutes",
             "background": "Sulphur is a by-product of turning oil into fuel, so a refining squeeze is automatically a sulphur squeeze. Russia had already banned sulphur exports, cutting shipments from 4.8 million tonnes in 2025 (15% of globally traded volumes) to 1.8 million tonnes in 2026 so far. In February, Middle Eastern solid bulk sulphur fetched USD 500 a tonne, up from USD 340 a year earlier. The Strait of Hormuz closure trapped nearly a quarter of global sulphur production and half of seaborne exports; shipments remain two-thirds below pre-war levels.",
             "argument": "A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.",
             "vocabulary": [
@@ -306,13 +340,42 @@
               "The article opens with diesel (the loud shock) and then pivots to sulphur (the quiet one). Why start with the familiar story? What does the pivot do to your sense of the problem's scale?",
               "The case is built almost entirely on quantities and prices. List them, and for each one ask: what exactly does this number prove?",
               "Note the language of quietness: \"quieter side-effect\", \"only beginning to show\". What tone does that set, and what does it imply about the damage still to come?"
-            ]
+            ],
+            "tasks": [
+              {
+                "label": "Task A: Analysis",
+                "text": "Analyse the diesel-to-sulphur pivot as a structural choice. Why does the author not open with sulphur itself? Support your answer with two details from the article."
+              },
+              {
+                "label": "Task B: Logic",
+                "text": "The article states that sulphur markets were already tight before the war. What does that do to a simple \"the war caused it\" reading? Name the two causes a good commentary must keep separate."
+              },
+              {
+                "label": "Task C: IA commentary (800 words)",
+                "text": "Using this article as your extract, analyse the effect of the sulphur shortage on the market for fertiliser, with a supply-and-demand diagram. Evaluate one possible response, such as a subsidy to fertiliser producers or a strategic stockpile."
+              }
+            ],
+            "model_answers": [
+              {
+                "label": "Task A model",
+                "text": "The author opens with diesel for a reason: it is the shock readers already understand. Fuel prices are visible at the pump, and the war's effect on refineries is an established story. Sulphur, by contrast, is invisible to most readers, yet it is produced by the same refining process. By starting with the familiar shock and then revealing its quieter side-effect, the author builds a causal chain the reader can follow (war, refineries cut off, fuel squeeze) and then extends it one link further (refining produces sulphur, so the same disruption starves fertiliser, mining and chipmaking). The pivot reframes the crisis: it is no longer only a fuel story but an input story, wider than the price at the pump suggests. The warning that the damage is only beginning to show raises the stakes rather than settling them: the reader is left expecting more damage, not less. That is why the structure works. The familiar story earns attention, and the pivot spends it on the unfamiliar one."
+              },
+              {
+                "label": "Task B model",
+                "text": "Two causes must be kept separate. First, pre-war tightness: Russia had already banned sulphur exports, cutting shipments from 4.8 million tonnes in 2025 to 1.8 million tonnes in 2026 so far, while attacks on Red Sea shipping and the threat of American tariffs on Canada added further pressure. Prices had already risen from USD 340 to USD 500 a tonne before the Hormuz closure. Second, the war shock itself: the Strait's closure trapped nearly a quarter of global production and half of seaborne exports, leaving shipments two-thirds below pre-war levels. The distinction matters because the two causes imply different durations and remedies: a war shock may reverse with a ceasefire, but structural tightness will not."
+              },
+              {
+                "label": "Task C model: IA commentary",
+                "text": "The market for fertiliser is a useful place to see the sulphur shortage at work. Sulphur is an input in fertiliser production, so a shortage raises producers' costs. On a supply-and-demand diagram, the supply curve for fertiliser shifts left, from S1 to S2. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. Because fertiliser is an essential input with few short-term substitutes, demand for it is relatively price-inelastic: the price rise is proportionately large while the quantity fall is small, so farmers' total spending on fertiliser rises even as they use less of it. The effects spread beyond the diagram. Farmers face higher costs and thinner margins; some will cut fertiliser use, which lowers crop yields and tightens food supply further. Consumers then face higher food prices. The same input shock hits mining and chipmaking, so industries compete for the same scarce sulphur, pushing its price higher still. The burden is uneven: low-income households spend a larger share of income on food, so a fertiliser-driven food price rise hits them hardest. Can policy fix this? A subsidy to fertiliser producers would cushion farmers in the short term, but it has clear limits. It burdens the government budget, it may keep inefficient producers alive, and it does not increase the supply of sulphur itself: it treats the symptom, not the cause. Strategic stockpiles and diversified sourcing would build resilience, but they are slow and costly to assemble, and they cannot be created after the shortage has arrived. In the long run, recycling sulphur and developing alternative processes would address the structural cause, but that takes years. The evaluation, then, is mixed. Government action can cushion the blow and buy time, especially for the poorest consumers, but it cannot cure a physical shortage. The priority should be protecting vulnerable households while supply adjusts, rather than pretending the price signal can be wished away."
+              }
+            ],
+            "bedtime_duration": "About 1 minute",
+            "morning_duration": "About 6 minutes"
           },
           {
             "title": "Another warning sign for China's economy: falling consumer credit",
             "ib_unit": "Macroeconomics: 3.2 Aggregate demand and aggregate supply, 3.3 Macroeconomic objectives.",
             "badge": "Units 3.2 · 3.3",
-            "duration": "About 2 minutes",
             "background": "Short-term loans to consumers fell by 8.3% in September compared with a year earlier, the steepest drop on record. In August the stock of consumer loans was the lowest since the harsh zero-covid lockdowns. During a public holiday at the start of October, the typical holidaymaker spent 2% less than in the same festive period in 2025. Household debt stood at 60% of GDP in 2020, stayed flat, then declined slightly (rich countries as a whole are just below 70%). The property crash means fewer mortgages and early repayments. The finance ministry has been subsidising banks so they can charge lower interest on consumer loans for big-ticket items such as new cars and home renovations.",
             "argument": "Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings. That is a warning sign for domestic demand.",
             "vocabulary": [
@@ -353,13 +416,42 @@
               "Find the sentence beginning \"Yet that does not explain...\". What is the author signalling there, and why does the argument need a second explanation?",
               "The property crash explains mortgages, but not consumer credit. How does the author separate the two stories instead of merging them?",
               "The article sets a policy (subsidised loan rates) against an outcome (falling credit). What would you need to know before judging whether the policy failed?"
-            ]
+            ],
+            "tasks": [
+              {
+                "label": "Task A: Analysis",
+                "text": "Analyse how the author uses data to build a \"warning sign\". Which single number does the most work, and why? Quote or paraphrase it precisely."
+              },
+              {
+                "label": "Task B: Logic trap",
+                "text": "\"Households are borrowing less because they are frugal.\" The article offers this explanation and then qualifies it. State the qualified version in your own words, without letting \"frugal\" carry the whole explanation."
+              },
+              {
+                "label": "Task C: IA commentary (800 words)",
+                "text": "Using this article as your extract, analyse the effect of falling consumption on aggregate demand, with an AD/AS diagram. Evaluate the interest-rate subsidy policy: why might cheaper loans fail to raise borrowing?"
+              }
+            ],
+            "model_answers": [
+              {
+                "label": "Task A model",
+                "text": "The number that does the most work is the 8.3% fall in short-term consumer loans in September, described as the steepest drop on record. A record break converts a vague mood, households are \"frugal\", into a measurable break with the past: this is not normal caution but something historically unusual. It is reinforced by the August stock of consumer loans being the lowest since the zero-covid lockdowns, a comparison that frames the fall against an extreme benchmark. The holiday figure, spending 2% less than in the same festive period in 2025, then confirms that the borrowing data reflect real spending, not a statistical quirk. Together the three numbers move the reader from impression to evidence: the warning sign is not a feeling but a fact."
+              },
+              {
+                "label": "Task B model",
+                "text": "Households are borrowing less, but frugality is only part of the story. The property crash has cut mortgage demand and encouraged early repayment, and a mortgage is the largest loan most households take on, so that alone would shrink total borrowing. Consumer credit, however, has fallen even though the finance ministry subsidises banks to charge lower interest on loans for big-ticket items such as cars and renovations. If cheaper loans cannot lift borrowing, the cause is more likely weak confidence about incomes and house prices, or banks reluctant to lend, than a simple change in household character. The article's qualified version is therefore: borrowing is falling because demand is weak and credit conditions are tight, not merely because households have become careful."
+              },
+              {
+                "label": "Task C model: IA commentary",
+                "text": "Consumption is the largest component of aggregate demand in most economies, so falling consumption shifts aggregate demand left, from AD1 to AD2, on an AD/AS diagram. Real output falls, the price level comes under downward pressure, and unemployment is likely to rise as firms cut production. The multiplier amplifies the effect: lower spending means lower incomes for others, which leads to further spending cuts, so the initial fall in consumption produces a larger final fall in output. The government's response has been to subsidise banks so they can offer lower interest rates on consumer loans for big-ticket items. The evaluation of this policy is sceptical. First, cheaper loans help only if households want to borrow, and with house prices falling and incomes uncertain, confidence, not the interest rate, is the binding constraint. Second, banks may pocket the subsidy or lend only to the safest borrowers, so transmission to actual borrowing is weak. Third, the subsidy targets big-ticket items while the weakness is broad-based, so it misses much of the problem. Direct transfers to households would likely do more, because lower-income households have a higher propensity to spend, but they cost the budget and add to government debt. The policy treats a demand problem as a price problem: it may help at the margin, but it cannot by itself reverse a confidence-driven contraction."
+              }
+            ],
+            "bedtime_duration": "About 1 minute",
+            "morning_duration": "About 6 minutes"
           },
           {
             "title": "Lessons from Britain's humiliating IMF bail-out",
             "ib_unit": "The global economy: 4.5 Exchange rates, 4.6 Balance of payments. Also useful: Macroeconomics: 3.6 Fiscal policy, government debt.",
             "badge": "Units 4.5 · 4.6 · 3.6",
-            "duration": "About 2 minutes",
             "background": "In 1976, sterling's freefall forced Chancellor Denis Healey to turn back from a plane on 28 September and apply for an emergency IMF loan. A USD 3.9 billion bail-out, agreed in December, imposed conditions of the sort normally reserved for the world's weakest economies. Then: inflation 13.7%, ten-year gilt yields 15.7%, marginal tax rates as high as 98%. Now: inflation 3.8% (IMF estimate), ten-year gilt yields 5.4%, though Britain pays more to borrow than any other G7 country. The Chancellor prepares a budget on 28 October.",
             "argument": "The year 2026 echoes 1976, but the parallels are superficial. Another trip to the IMF is unlikely, because the fundamentals are very different.",
             "vocabulary": [
@@ -400,13 +492,42 @@
               "The article builds the parallel first, then dismantles it. Track where the turn happens and what evidence marks it.",
               "The 1976-versus-2026 comparison does the persuading. Pick two pairs of numbers and state, in one sentence each, what each pair proves.",
               "Note the word choice: \"humiliating\", \"sketchiest\". What stance does that language reveal, and does it weaken or strengthen the analysis?"
-            ]
+            ],
+            "tasks": [
+              {
+                "label": "Task A: Analysis",
+                "text": "Analyse the historical parallel as a rhetorical device. What does the 1976 parallel make the reader feel before the evidence arrives, and how does the article then redirect that feeling?"
+              },
+              {
+                "label": "Task B: Logic",
+                "text": "\"In both years the embattled Labour Party appointed a new prime minister.\" Is this evidence of an economic parallel, or a coincidence? How do you tell the difference?"
+              },
+              {
+                "label": "Task C: Essay / TOK",
+                "text": "\"A country that issues its own currency cannot face a 1976-style crisis.\" Evaluate this claim, using the article's evidence. TOK extension: is historical analogy a valid form of economic evidence, and what are its limits?"
+              }
+            ],
+            "model_answers": [
+              {
+                "label": "Task A model",
+                "text": "The parallel works emotionally before it works logically. 1976 is remembered as a humiliation: a Chancellor turning back from a plane, a loan with conditions normally reserved for the world's weakest economies. Invoking that memory primes the reader to fear repetition. The article then redirects that feeling with the comparison of fundamentals: inflation 13.7% then against 3.8% now, ten-year gilt yields 15.7% against 5.4%. The turn is where the analysis actually happens: the reader arrives worried and leaves reassured, not because the parallel was wrong but because it was tested. That is the device's strength. It lets the reader feel the risk first and think it through second. And it is also its danger, because a reader who stops at the parallel will carry away a fear the evidence does not support."
+              },
+              {
+                "label": "Task B model",
+                "text": "It is a coincidence, not economic evidence. The test is mechanism: does the fact transmit economic pressure? A shared party, a new prime minister two years into office, even a shared surname (Healey) describe political timing; they do not move bond yields, the exchange rate or inflation. The economic parallels, bond yields, inflation, competitiveness, energy shocks, do carry causal weight, because each one affects borrowing costs, purchasing power or trade. Confusing the two is the classic correlation trap: narrative resemblance is not an economic mechanism, and an argument built on it will collapse as soon as the mechanisms are examined."
+              },
+              {
+                "label": "Task C model: essay",
+                "text": "A government that issues its own currency borrows in that currency, so it cannot be forced to default in the way a foreign-currency borrower can. The central bank can always buy government bonds, as it did in 2008 and during the pandemic. The 1976 crisis also occurred under different monetary arrangements, when sterling's international role and exchange-rate commitments constrained policy in ways that no longer apply. On this view, a 1976-style crisis, understood as running out of money, is close to impossible. The case against is strong, however. A currency can still fall sharply, raising import prices and inflation. Bond markets can demand much higher yields, raising debt-service costs: Britain already pays more to borrow than any other G7 country. And fiscal space is political as well as technical. Markets judge credibility, and an IMF programme is often about credibility rather than cash: a government may not need the money but may need the market to believe it will act. The article's own evidence points this way. Inflation and yields are far below 1976 levels, yet borrowing costs are still the highest in the G7, which suggests markets are pricing risk, not just fundamentals. The defensible conclusion is therefore weaker than the claim. \"Cannot\" is too strong; \"less likely, and different in form\" is the version the evidence supports. As a TOK extension: historical analogy is useful for generating hypotheses, watch bond yields, watch sterling, but weak as proof, because it selects similarities and hides differences. It is valid only when the underlying mechanisms match, not merely the surface features."
+              }
+            ],
+            "bedtime_duration": "About 1 minute",
+            "morning_duration": "About 6 minutes"
           },
           {
             "title": "China is channelling much more money to poor countries",
             "ib_unit": "The global economy: 4.7 Sustainable development, 4.10 Development strategies.",
             "badge": "Units 4.7 · 4.10",
-            "duration": "About 2 minutes",
             "background": "America has tired of the international institutions it helped create: last year the aid it channelled through multilateral organisations such as the World Bank and the UN fell by half, it has withdrawn from the World Health Organisation, and it still owes the WHO money. China has put up more cash, but cautiously. The article frames the situation with an idea from the economic historian Charles Kindleberger: danger arises when a stabilising power gives up its global role before an emerging power is ready or willing to take it on. The article draws on estimates by researchers at the Centre for Global Development in Washington.",
             "argument": "As America steps back from multilateral giving, a gap opens. China, though giving more, is neither willing nor able to fill it, while seeking a greater say in the institutions that hand aid out.",
             "vocabulary": [
@@ -447,13 +568,42 @@
               "The article opens with two \"traps\": the Thucydides trap and the Kindleberger trap. What does each frame make you expect, and which one does the article actually use?",
               "The argument rests on who gives what, through which institutions. Before judging the conclusion, map the actors: the US, China, the World Bank, the UN, the WHO.",
               "Note the author's stance. Words such as \"sadly\" (of the absent rivalry) reveal a view of great-power competition. Does that stance help or hurt the analysis?"
-            ]
+            ],
+            "tasks": [
+              {
+                "label": "Task A: Analysis",
+                "text": "Analyse the two-trap opening. Why introduce a frame the article then sets aside? What does the discarded frame do for the reader?"
+              },
+              {
+                "label": "Task B: Logic",
+                "text": "\"China is giving more\" and \"China cannot fill the gap\" sound contradictory. Reconcile them in two sentences, using the article's focus on multilateral channels."
+              },
+              {
+                "label": "Task C: IA commentary / essay",
+                "text": "Using this article as your extract, evaluate whether multilateral aid is more effective than bilateral aid for development. Or, as a Paper 2 question: discuss the view that aid is driven by donor interests rather than recipient needs."
+              }
+            ],
+            "model_answers": [
+              {
+                "label": "Task A model",
+                "text": "The discarded Thucydides frame does real work. It names what the reader might expect, a rising power challenging an incumbent, a contest for influence, and then sets it aside, so that the Kindleberger frame lands harder: the danger is not rivalry but absence, a stabiliser stepping back before a successor is ready or willing to take over. The discarded frame also signals the author's stance: rivalry, the article implies, would at least be energetic, whereas the actual danger is a vacuum, sadly empty. The opening therefore reframes the story from competition to gap, and the reader who understands that reframing understands the article's thesis before the evidence arrives."
+              },
+              {
+                "label": "Task B model",
+                "text": "There is no contradiction, because the two statements describe different things: direction and scale. \"Giving more\" describes China's direction of travel: its contributions through multilateral channels have risen. \"Cannot fill the gap\" describes the scale of the hole left by the United States, whose aid through multilateral organisations fell by half, and China's willingness and capacity relative to that hole. Beijing, the article argues, seeks a greater say in the institutions that hand aid out rather than replacing American funding outright. Direction is real; scale is insufficient. Confusing the two is how a true statement, \"China gives more\", becomes a false conclusion, \"China has replaced America\"."
+              },
+              {
+                "label": "Task C model: essay",
+                "text": "Multilateral aid pools resources, coordinates donors, and is less tied to any single donor's commercial or political interests, so it can support global public goods such as health and climate programmes. Its weaknesses are speed and accountability: it is slow, bureaucratic, and voting power still reflects donor wealth, so influence follows money even inside a multilateral body. Bilateral aid is faster and donor-controlled, and it can be targeted precisely, but it is often tied to donor exports or contracts, and it fragments recipient planning when many donors pursue separate projects. The article's evidence sharpens the comparison. The American retreat from multilateral organisations creates a coordination gap that bilateral deals cannot easily replace: fifty bilateral programmes do not add up to one coordinated health system. China's multilateral rise, meanwhile, buys institutional voice, but voice is not the same as development outcomes, and a seat at the table does not guarantee that funds reach the poorest. The evaluation, then, is that effectiveness depends less on the channel than on recipient ownership, transparency, and whether aid builds domestic capacity or creates dependence. The channel matters, but the gap the article describes is a governance gap as much as a funding gap: who decides matters as much as who pays."
+              }
+            ],
+            "bedtime_duration": "About 1 minute",
+            "morning_duration": "About 5 minutes"
           },
           {
             "title": "Can Asian governments prevent a food shock?",
             "ib_unit": "Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium, 2.7 Role of government in microeconomics. Also useful: The global economy: 4.9 Barriers to development; Macroeconomics: 3.3 Inflation.",
             "badge": "Units 2.2 · 2.3 · 2.7 · 4.9 · 3.3",
-            "duration": "About 2 minutes",
             "background": "El Nino is a recurring climate pattern: shifts in Pacific winds bring hotter, drier conditions to much of South and South-East Asia. This episode began in May and is due to peak next month; on one daily measure, sea-surface temperature anomalies have already exceeded the peak of every previous event on record. The World Meteorological Organisation expects it to last into February. India's monsoon, which supplies nearly 70% of annual rainfall, ended about 13% below normal, the driest in a decade. Indonesia is enduring its worst fire season for 11 years. Seven provinces in the Philippines are already in drought, and officials in Manila have warned that the capital's water supply may soon be reduced.",
             "argument": "A fierce El Nino is hitting Asian countries already weakened by an energy shock, threatening food supplies. Governments must decide whether they can prevent a shock, and how.",
             "vocabulary": [
@@ -494,13 +644,42 @@
               "The opening lists scattered local events: dead fish in a Cambodian lake, a submerged village exposed in Indonesia, a water warning in Manila. What argument does a list like that build before any data appears?",
               "Two shocks run through the article: the climate shock and the energy shock. How does the article connect them, and why does that connection matter for policy?",
               "The title is a question. What would count as an answer, and what evidence would you need before accepting one?"
-            ]
+            ],
+            "tasks": [
+              {
+                "label": "Task A: Analysis",
+                "text": "Analyse the opening list as a technique. What effect does piling up small local events have, compared with opening with a statistic?"
+              },
+              {
+                "label": "Task B: Logic chain",
+                "text": "\"El Nino causes food prices to rise\" is too short. Write the full chain in your own words (El Nino, drought, harvests, supply, prices), and mark the points where government action could break it."
+              },
+              {
+                "label": "Task C: IA commentary (800 words)",
+                "text": "Using this article as your extract, analyse the effect of a supply shock on the market for a staple food, with a supply-and-demand diagram. Evaluate two responses: export bans and subsidies, one against the other."
+              }
+            ],
+            "model_answers": [
+              {
+                "label": "Task A model",
+                "text": "The list works by accumulation. Each event is small and local: dead fish in a Cambodian lake, a submerged village exposed by falling water in Indonesia, a warning about Manila's water supply. But together they form a pattern the reader assembles before any expert speaks. A statistic argues; a list shows. The effect is immediacy and breadth: the shock is already here, in many places, not a forecast for next year. The risk of the technique is that anecdote can mislead: local events may not sum to a regional crisis, and a vivid list can outrun its evidence. That is why the article then adds the data, a monsoon 13% below normal, the worst Indonesian fire season in 11 years, converting impression into evidence. The list opens the case; the data closes it."
+              },
+              {
+                "label": "Task B model",
+                "text": "El Nino shifts Pacific winds, bringing hotter, drier conditions to South and South-East Asia. The monsoon, which supplies nearly 70% of India's annual rainfall, ends about 13% below normal; drought takes hold in seven Philippine provinces, and Indonesia suffers its worst fire season in 11 years. Harvests fall, so the supply of food shifts left and food prices rise. Because food is a necessity, demand is price-inelastic: the price rise is large, the quantity fall is small, and households spend more for less, with the heaviest burden on low-income families. Governments can break the chain at three points: before the harvest (irrigation, drought-resistant crops, early warning); at the market (releasing strategic reserves, targeted cash transfers rather than price ceilings, which discourage supply); and at the border (resisting export bans, which lower domestic prices briefly but cut farmer incentives, shrink supply further, and export the shock to importers, where it can spiral)."
+              },
+              {
+                "label": "Task C model: IA commentary",
+                "text": "Drought shifts the supply of a staple food left, from S1 to S2, on a supply-and-demand diagram. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. Because a staple is a necessity, demand is price-inelastic: the price rise is proportionately large, the quantity fall is small, and total spending on the staple rises. The burden falls hardest on low-income households, for whom food is a large share of the budget, so the shock quickly becomes a food-security problem rather than a mere price problem. Two responses can be evaluated. Export bans help domestic consumers briefly by keeping food at home, but they reduce farmer incomes and incentives, which lowers future supply, and they push prices up for import-dependent neighbours. That is a beggar-thy-neighbour policy: it exports the shock, invites retaliation, and can spiral into a wider crisis. Subsidies and transfers, by contrast, protect consumers without destroying the price signal: targeted cash transfers to low-income households are more efficient than universal subsidies, because they reach those who need help without subsidising those who do not. Their limit is fiscal: they strain government budgets, especially where the shock is region-wide. The conclusion is that the shock itself cannot be prevented by policy, but its human cost can be limited. The best response protects the vulnerable without breaking the market signals farmers need to plant again next season."
+              }
+            ],
+            "bedtime_duration": "About 1 minute",
+            "morning_duration": "About 6 minutes"
           },
           {
             "title": "China's exports of clean tech to South-East Asia are soaring",
             "ib_unit": "The global economy: 4.1 Benefits of international trade, 4.2 Types of trade protection. Also useful: 4.3 Arguments for and against trade control / protection.",
             "badge": "Units 4.1 · 4.2 · 4.3",
-            "duration": "About 3 minutes",
             "background": "Chinese producers of solar panels, batteries and electric vehicles once looked mainly to Europe, where demand grew as households and governments moved away from fossil fuels. European governments, worried about their own industries, have begun restricting the inflow, including EV quotas. Meanwhile, exports to South-East Asia have risen fast: in the first nine months of 2026, China's exports of solar technology to the region rose by almost 60% measured by output capacity, while exports to Europe fell by 11%. In May 2026 the Philippines became the world's second-largest buyer of Chinese solar panels. Some goods are repackaged and sold on to Western markets, helping China avoid American and European tariffs. Governments in the region are nevertheless keen buyers: Laos has suspended fossil-fuelled vehicle imports, and Indonesia's president has promised to raise solar capacity from about 1.5 GW to 100 GW by 2029.",
             "argument": "Chinese clean-technology exports are shifting rapidly from Europe to South-East Asia, where governments welcome rather than resist them. Europe is curbing the inflow while South-East Asian demand surges, sharpened by the war over the Strait of Hormuz and pressure on electricity prices. Both sides gain in the short run, but dependence and tariff evasion raise questions.",
             "vocabulary": [
@@ -533,7 +712,37 @@
               "The article contrasts two destinations for the same exports: Europe, where governments are anxious, and South-East Asia, where they are welcoming. For each region, ask what explains the difference — local industry, or urgent energy needs?",
               "The case rests on a mix of trade data and on-the-ground detail. List the numbers, and for each one ask: does it show demand, supply, or a policy decision?",
               "Notice the two different reasons the goods cross borders: to be used in South-East Asia, and to be passed on to the West. Keep those two flows separate."
-            ]
+            ],
+            "tasks": [
+              {
+                "label": "Task A: Analysis",
+                "text": "Analyse the contrast between Europe and South-East Asia as a structural choice. Why does the author open with Europe before turning to South-East Asia? Support your answer with two details from the article."
+              },
+              {
+                "label": "Task B: Logic",
+                "text": "The article gives two different explanations for rising South-East Asian demand: the war shock and the region's own energy goals. What does that distinction do to a simple \"the war caused it\" reading? Name the two causes, and explain why each matters for how long the boom will last."
+              },
+              {
+                "label": "Task C: IA commentary (800 words)",
+                "text": "Using this article as your extract, analyse the effects of European trade protection on the market for Chinese clean technology in Europe, with a supply-and-demand diagram. Evaluate whether South-East Asia gains or loses from the resulting redirection of Chinese exports."
+              }
+            ],
+            "model_answers": [
+              {
+                "label": "Task A model",
+                "text": "The author opens with Europe for a reason: it is the market readers expect, and the one where the story is about resistance. European demand for green technology has surged, yet governments there are becoming anxious about the effect on their own industries and are trying to curb the inflow, including through quotas on electric vehicles. South-East Asia is then introduced as the contrast: the same exports, the same Chinese firms, but a reception that is welcoming rather than defensive. The contrast shows that the trade flow is not driven by the product alone, but by the policy and industrial context in each destination — the Philippines, for example, has little domestic industry that feels threatened, so its priority is building renewable capacity as fast as possible."
+              },
+              {
+                "label": "Task B model",
+                "text": "Two causes must be kept separate. First, the war shock: fighting over the Strait of Hormuz has choked oil and gas supplies from the Gulf, on which many South-East Asian countries depend, pushing up electricity prices and prompting a scramble for cheaper power. Second, the region's own energy goals: governments want energy security and more renewable capacity, as the vehicle, tax and solar targets in Laos, Malaysia and Indonesia show. The distinction matters because the two causes imply different durations: a war shock may reverse when fighting ends, so demand driven only by high electricity prices could fall back, while demand driven by policy targets is more durable."
+              },
+              {
+                "label": "Task C model: IA commentary",
+                "text": "European protection changes the market for Chinese clean technology in Europe by restricting supply. A quota on electric vehicles, or a tariff on solar panels, limits the quantity of Chinese goods that can enter, or raises their price. On a supply-and-demand diagram for the European market, the supply curve shifts left, from S1 to S2. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. Demand is relatively price-elastic in the medium term, so the fall in quantity is likely to be significant. The effects on European producers and consumers pull in opposite directions. Domestic producers gain: they face less competition, can sell more at higher prices, and may invest and hire. Consumers lose: they pay higher prices, and some are priced out of buying clean technology at all, slowing the shift away from fossil fuels. The net welfare effect is a loss: the consumer loss exceeds the producer gain plus any government revenue, leaving a deadweight loss. For South-East Asia, the immediate gain is clear: cheap Chinese solar panels and batteries arrive in large volumes, electricity becomes cheaper, and governments can pursue energy security without paying European prices. But the gains are not without risks. Some of the flow is not for domestic use at all: goods are repackaged and sold on to Western markets, helping China avoid tariffs, which exposes the region to retaliation if Western governments extend restrictions to goods routed through South-East Asia. And if the war shock fades and Gulf energy becomes cheap again, the boom could slow as quickly as it arrived, while importing everything forgoes the chance to build a domestic industry. The evaluation, then, is mixed but leans positive in the short run. European protection raises prices and slows adoption in Europe, at a net welfare cost, while South-East Asia gains cheaper energy and faster renewable growth. The risk is that the gain rests on fragile foundations — a war-driven price shock and a tariff-evasion route — neither of which the region controls."
+              }
+            ],
+            "bedtime_duration": "About 2 minutes",
+            "morning_duration": "About 7 minutes"
           }
         ];
 
@@ -560,7 +769,7 @@
           return out.length ? out : [text];
         }
 
-        GUIDES.forEach(function (g) {
+        function buildChunks(g, mode) {
           var chunks = [];
           splitSentences(g.background).forEach(function (s) {
             chunks.push({ text: s, section: "Background" });
@@ -574,18 +783,42 @@
               section: "Vocabulary " + (i + 1) + " of " + g.vocabulary.length
             });
           });
-          g.how_to_read.forEach(function (point, i) {
-            chunks.push({
-              text: point,
-              section: "How to read " + (i + 1) + " of " + g.how_to_read.length
+          var modelStart = -1;
+          if (mode === "morning") {
+            g.how_to_read.forEach(function (point, i) {
+              chunks.push({
+                text: point,
+                section: "How to read " + (i + 1) + " of " + g.how_to_read.length
+              });
             });
-          });
-          g.chunks = chunks;
+            g.tasks.forEach(function (t) {
+              var sents = splitSentences(t.text);
+              sents.forEach(function (s, i) {
+                chunks.push({ text: i === 0 ? t.label + ". " + s : s, section: t.label });
+              });
+            });
+            modelStart = chunks.length;
+            g.model_answers.forEach(function (ma) {
+              var sents = splitSentences(ma.text);
+              sents.forEach(function (s, i) {
+                chunks.push({ text: i === 0 ? ma.label + ". " + s : s, section: ma.label });
+              });
+            });
+          }
+          return { chunks: chunks, modelStart: modelStart };
+        }
+
+        GUIDES.forEach(function (g) {
+          g.modes = {
+            bedtime: buildChunks(g, "bedtime"),
+            morning: buildChunks(g, "morning")
+          };
         });
 
         /* ---------- Render guide lists ---------- */
         var guideListEl = document.getElementById("guideList");
         var rowEls = [];
+        var rowDurEls = [];
         GUIDES.forEach(function (g, i) {
           var li = document.createElement("li");
           var btn = document.createElement("button");
@@ -600,13 +833,14 @@
             "</span>" +
             '<span class="guide-meta">' +
               '<span class="badge">' + escapeHtml(g.badge) + "</span>" +
-              '<span class="duration">' + escapeHtml(g.duration) + "</span>" +
+              '<span class="duration">' + escapeHtml(g.bedtime_duration) + "</span>" +
               '<span class="playing-tag" hidden>Now playing</span>' +
             "</span>";
           btn.addEventListener("click", function () { selectGuide(i, true); });
           li.appendChild(btn);
           guideListEl.appendChild(li);
           rowEls.push(btn);
+          rowDurEls.push(btn.querySelector(".duration"));
         });
 
         var lockedListEl = document.getElementById("lockedList");
@@ -639,11 +873,13 @@
         var chosenVoice = null;
 
         var state = {
+          mode: "bedtime",
           guide: 0,
           chunk: 0,
           playing: false,
           paused: false,
           started: false,
+          gatePassed: false,
           token: 0
         };
 
@@ -703,7 +939,8 @@
           setTimeout(refreshVoice, 600);
         }
 
-        function currentChunks() { return GUIDES[state.guide].chunks; }
+        function currentModeData() { return GUIDES[state.guide].modes[state.mode]; }
+        function currentChunks() { return currentModeData().chunks; }
 
         function updateUI() {
           var g = GUIDES[state.guide];
@@ -752,6 +989,12 @@
           u.onend = function () {
             if (myToken !== state.token || state.paused || !state.playing) return;
             state.chunk += 1;
+            if (state.mode === "morning" && !state.gatePassed &&
+                state.chunk === currentModeData().modelStart) {
+              state.gatePassed = true;
+              pauseAtGate();
+              return;
+            }
             updateUI();
             speakCurrent();
           };
@@ -759,6 +1002,12 @@
             if (myToken !== state.token || state.paused || !state.playing) return;
             if (ev && (ev.error === "canceled" || ev.error === "interrupted")) return;
             state.chunk += 1;
+            if (state.mode === "morning" && !state.gatePassed &&
+                state.chunk === currentModeData().modelStart) {
+              state.gatePassed = true;
+              pauseAtGate();
+              return;
+            }
             updateUI();
             speakCurrent();
           };
@@ -792,12 +1041,22 @@
           updateUI();
         }
 
+        function pauseAtGate() {
+          state.paused = true;
+          state.playing = false;
+          state.token += 1; /* invalidate the current utterance callbacks */
+          if (synth) synth.cancel();
+          setStatus("Model answers — press play when you have tried the tasks");
+          updateUI();
+        }
+
         function stopPlayback(message) {
           state.token += 1;
           if (synth) synth.cancel();
           state.playing = false;
           state.paused = false;
           state.chunk = 0;
+          state.gatePassed = false;
           if (message) setStatus(message);
           updateUI();
         }
@@ -806,6 +1065,7 @@
           if (state.guide < GUIDES.length - 1) {
             state.guide += 1;
             state.chunk = 0;
+            state.gatePassed = false;
             setStatus("Next guide: " + GUIDES[state.guide].title);
             updateUI();
             speakCurrent();
@@ -815,8 +1075,11 @@
             state.chunk = 0;
             state.guide = 0;
             state.started = false;
+            state.gatePassed = false;
             stopTimer();
-            setStatus("Playlist finished — good night.");
+            setStatus(state.mode === "morning"
+              ? "Briefing finished — good morning."
+              : "Playlist finished — good night.");
             updateUI();
           }
         }
@@ -829,6 +1092,7 @@
           state.playing = false;
           state.paused = false;
           state.started = true;
+          state.gatePassed = false;
           updateUI();
           if (autoplay) {
             startPlayback();
@@ -895,7 +1159,9 @@
             var left = timerEndAt - Date.now();
             if (left <= 0) {
               stopTimer();
-              stopPlayback("Sleep timer finished — narration stopped. Good night.");
+              stopPlayback(state.mode === "morning"
+                ? "Timer finished — narration stopped."
+                : "Sleep timer finished — narration stopped. Good night.");
               return;
             }
             timerCount.textContent = "Narration stops in " + fmt(left);
@@ -907,6 +1173,44 @@
             setTimer(parseInt(b.getAttribute("data-minutes"), 10));
           });
         });
+
+        /* ---------- Mode switcher ---------- */
+        var modeBedtimeBtn = document.getElementById("modeBedtimeBtn");
+        var modeMorningBtn = document.getElementById("modeMorningBtn");
+        var introBedtime = document.getElementById("introBedtime");
+        var introMorning = document.getElementById("introMorning");
+        var guideNote = document.getElementById("guideNote");
+        var timerBlock = document.getElementById("timerBlock");
+
+        function setMode(mode) {
+          state.token += 1;
+          if (synth) synth.cancel();
+          state.mode = mode;
+          state.guide = 0;
+          state.chunk = 0;
+          state.playing = false;
+          state.paused = false;
+          state.started = false;
+          state.gatePassed = false;
+          modeBedtimeBtn.setAttribute("aria-pressed", String(mode === "bedtime"));
+          modeMorningBtn.setAttribute("aria-pressed", String(mode === "morning"));
+          introBedtime.hidden = mode !== "bedtime";
+          introMorning.hidden = mode !== "morning";
+          timerBlock.classList.toggle("quiet", mode === "morning");
+          guideNote.textContent = mode === "morning"
+            ? "The full guide: background, argument, vocabulary, how to read, tasks and model answers. Tap a guide to start listening from the beginning of that guide."
+            : "Background, argument and vocabulary only. Tap a guide to start listening from the beginning of that guide.";
+          GUIDES.forEach(function (g, i) {
+            rowDurEls[i].textContent = mode === "morning" ? g.morning_duration : g.bedtime_duration;
+          });
+          setStatus(mode === "morning"
+            ? "Morning Briefing. Tap play to begin with the first guide."
+            : "Tap play to begin with the first guide.");
+          updateUI();
+        }
+
+        modeBedtimeBtn.addEventListener("click", function () { setMode("bedtime"); });
+        modeMorningBtn.addEventListener("click", function () { setMode("morning"); });
 
         updateUI();
       })();
