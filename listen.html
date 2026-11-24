@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="IB economics revision for bedtime: listen to six short study guides read aloud, with the core argument, key vocabulary and a sleep timer. Free on IB EconLens." />
+    <link rel="canonical" href="https://ibeconlens.geledtech.com/listen.html" />
+    <link rel="icon" href="data:," />
+    <title>Bedtime Listening — IB Economics Revision | IB EconLens</title>
+    <style>
+      :root {
+        --bg: #0b0a08;
+        --surface: #14120e;
+        --surface-2: #1a1712;
+        --line: #2b251b;
+        --text: #d9cfbe;
+        --muted: #a2987f;
+        --faint: #7d7462;
+        --accent: #c2a15c;
+        --accent-ink: #171307;
+        --radius: 14px;
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        font-size: 17px;
+      }
+      a { color: var(--accent); }
+      .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 48px; }
+
+      header.site {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 16px; padding: 20px 0 8px;
+      }
+      .brand { font-weight: 700; letter-spacing: 0.02em; font-size: 18px; color: var(--text); }
+      .brand span { color: var(--accent); }
+      .back-link {
+        display: inline-flex; align-items: center; min-height: 44px;
+        padding: 8px 4px; font-size: 15px; text-decoration: none; color: var(--muted);
+      }
+      .back-link:hover { color: var(--text); }
+
+      h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 600; font-size: 34px; line-height: 1.2; margin: 18px 0 10px;
+      }
+      .intro { color: var(--muted); margin: 0 0 8px; max-width: 56ch; }
+      .intro strong { color: var(--text); font-weight: 600; }
+
+      /* ---------- Player ---------- */
+      .player {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px 20px 20px;
+        margin: 22px 0 30px;
+      }
+      .now-label { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin: 0 0 6px; }
+      .now-title {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 22px; line-height: 1.3; margin: 0 0 6px; font-weight: 600;
+      }
+      .now-meta { color: var(--muted); font-size: 15px; margin: 0 0 14px; min-height: 24px; }
+      .now-meta .dot { margin: 0 8px; color: var(--faint); }
+      .progress-track {
+        height: 6px; border-radius: 3px; background: var(--surface-2);
+        border: 1px solid var(--line); overflow: hidden; margin: 0 0 6px;
+      }
+      .progress-fill { height: 100%; width: 0%; background: var(--accent); transition: width 0.3s ease; }
+      .progress-text { font-size: 13px; color: var(--faint); margin: 0 0 18px; }
+
+      .controls { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+      .ctl {
+        appearance: none; border: 1px solid var(--line); background: var(--surface-2);
+        color: var(--text); border-radius: 999px; cursor: pointer;
+        min-width: 56px; min-height: 56px; padding: 0 14px;
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        font-size: 15px; font-family: inherit;
+      }
+      .ctl:hover { border-color: var(--accent); }
+      .ctl:focus-visible, .timer-btn:focus-visible, .guide-row:focus-visible, a:focus-visible {
+        outline: 2px solid var(--accent); outline-offset: 2px;
+      }
+      .ctl svg { width: 22px; height: 22px; fill: currentColor; flex: none; }
+      .ctl-main {
+        min-width: 76px; min-height: 76px; background: var(--accent); color: var(--accent-ink);
+        border-color: var(--accent); font-weight: 700;
+      }
+      .ctl-main svg { width: 30px; height: 30px; }
+      .ctl[disabled] { opacity: 0.4; cursor: default; }
+      .ctl[disabled]:hover { border-color: var(--line); }
+      .ctl-main[disabled]:hover { border-color: var(--accent); }
+
+      .status { text-align: center; color: var(--muted); font-size: 15px; margin: 16px 0 0; min-height: 24px; }
+
+      .timer-block { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 18px; }
+      .timer-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+      .timer-label { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin: 0; }
+      .timer-count { font-size: 15px; color: var(--muted); font-variant-numeric: tabular-nums; margin: 0; min-height: 24px; }
+      .timer-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+      .timer-btn {
+        appearance: none; flex: 1 1 0; min-width: 64px; min-height: 56px;
+        border: 1px solid var(--line); background: var(--surface-2); color: var(--text);
+        border-radius: 10px; font-size: 16px; font-family: inherit; cursor: pointer; padding: 0 8px;
+      }
+      .timer-btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 700; }
+
+      .notice {
+        border: 1px solid var(--line); background: var(--surface-2); color: var(--muted);
+        border-radius: var(--radius); padding: 14px 16px; font-size: 15px; margin: 0 0 22px;
+      }
+      .notice[hidden] { display: none; }
+
+      /* ---------- Guide list ---------- */
+      h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 22px; font-weight: 600; margin: 30px 0 6px;
+      }
+      .section-note { color: var(--muted); font-size: 15px; margin: 0 0 14px; }
+      .guide-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+      .guide-row {
+        appearance: none; width: 100%; text-align: left; cursor: pointer;
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 16px 18px; color: var(--text); font-family: inherit; font-size: 17px;
+        display: block; min-height: 56px;
+      }
+      .guide-row:hover { border-color: var(--accent); }
+      .guide-row.is-current { border-color: var(--accent); background: var(--surface-2); }
+      .guide-top { display: flex; align-items: flex-start; gap: 12px; }
+      .guide-num {
+        flex: none; width: 30px; height: 30px; border-radius: 999px; margin-top: 2px;
+        border: 1px solid var(--line); color: var(--muted);
+        display: inline-flex; align-items: center; justify-content: center; font-size: 14px;
+      }
+      .guide-row.is-current .guide-num { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 700; }
+      .guide-title { font-weight: 600; line-height: 1.35; margin: 0; }
+      .guide-unit { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 6px 0 0; }
+      .guide-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+      .badge {
+        display: inline-block; font-size: 12.5px; letter-spacing: 0.04em;
+        border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: var(--accent);
+      }
+      .duration { font-size: 14px; color: var(--faint); }
+      .playing-tag { font-size: 13px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+      .playing-tag[hidden] { display: none; }
+
+      /* ---------- Locked rows ---------- */
+      .locked-row {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 16px 18px;
+      }
+      .locked-top { display: flex; align-items: flex-start; gap: 12px; }
+      .lock-icon { flex: none; width: 20px; height: 20px; margin-top: 4px; fill: var(--faint); }
+      .locked-title { font-weight: 600; line-height: 1.35; margin: 0; }
+      .locked-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+      .locked-tag { font-size: 13px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+      .subscribe-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+      .sub-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        min-height: 56px; padding: 10px 20px; border-radius: 10px; text-decoration: none;
+        font-size: 16px; font-weight: 600; border: 1px solid var(--accent);
+      }
+      .sub-btn.primary { background: var(--accent); color: var(--accent-ink); }
+      .sub-btn.ghost { background: transparent; color: var(--accent); }
+
+      footer.site {
+        border-top: 1px solid var(--line); margin-top: 40px; padding-top: 20px;
+        color: var(--faint); font-size: 14px; text-align: center;
+      }
+
+      @media (max-width: 480px) {
+        h1 { font-size: 29px; }
+        .now-title { font-size: 20px; }
+        .controls { gap: 10px; }
+        .sub-btn { flex: 1 1 100%; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .progress-fill { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site">
+        <div class="brand">IB <span>EconLens</span></div>
+        <a class="back-link" href="https://ibeconlens.geledtech.com/">Back to the site</a>
+      </header>
+
+      <main>
+        <h1>Bedtime listening</h1>
+        <p class="intro">
+          Six free study guides, read aloud by your browser: the core argument first,
+          then the key vocabulary. <strong>Each guide is short — about 40 seconds to
+          a minute of listening.</strong> Set a sleep timer, press play, and let the
+          playlist run through in order. Playback only starts when you tap play.
+        </p>
+
+        <p class="notice" id="voiceNotice" hidden></p>
+
+        <section class="player" aria-label="Listening player">
+          <p class="now-label">Now playing</p>
+          <p class="now-title" id="nowTitle">Nothing selected yet</p>
+          <p class="now-meta"><span id="nowSection">Ready when you are</span><span class="dot" aria-hidden="true">·</span><span id="nowPosition">Guide 1 of 6</span></p>
+          <div class="progress-track" role="progressbar" aria-label="Progress through this guide" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <p class="progress-text" id="progressText">0 of 0 sentences</p>
+
+          <div class="controls">
+            <button class="ctl" id="prevBtn" type="button" aria-label="Previous guide">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9.5 12z"/></svg>
+            </button>
+            <button class="ctl ctl-main" id="playBtn" type="button" aria-label="Play">
+              <svg viewBox="0 0 24 24" aria-hidden="true" id="playIcon"><path d="M8 5v14l11-7z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true" id="pauseIcon" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+            </button>
+            <button class="ctl" id="stopBtn" type="button" aria-label="Stop">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+            </button>
+            <button class="ctl" id="nextBtn" type="button" aria-label="Next guide">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l10.5-7z"/></svg>
+            </button>
+          </div>
+
+          <p class="status" id="statusText" aria-live="polite">Tap play to begin with the first guide.</p>
+
+          <div class="timer-block">
+            <div class="timer-head">
+              <p class="timer-label">Sleep timer</p>
+              <p class="timer-count" id="timerCount" aria-live="polite"></p>
+            </div>
+            <div class="timer-row" role="group" aria-label="Sleep timer options">
+              <button class="timer-btn" type="button" data-minutes="0" aria-pressed="true">Off</button>
+              <button class="timer-btn" type="button" data-minutes="15" aria-pressed="false">15 min</button>
+              <button class="timer-btn" type="button" data-minutes="20" aria-pressed="false">20 min</button>
+              <button class="timer-btn" type="button" data-minutes="30" aria-pressed="false">30 min</button>
+            </div>
+          </div>
+        </section>
+
+        <h2>Free guides</h2>
+        <p class="section-note">Tap a guide to start listening from the beginning of that guide.</p>
+        <ol class="guide-list" id="guideList"></ol>
+
+        <h2>Volume 02</h2>
+        <p class="section-note">These guides are part of the subscriber library and are not playable here.</p>
+        <div class="guide-list" id="lockedList"></div>
+      </main>
+
+      <footer class="site">
+        <p>© 2026 Growth Education Limited. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var GUIDES = [
+          {
+            "title": "A shortage of sulphur could hurt mines and farms everywhere",
+            "ib_unit": "Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium. Also useful: Macroeconomics: 3.3 Cost-push inflation.",
+            "badge": "Units 2.2 · 2.3 · 3.3",
+            "duration": "About 40 seconds",
+            "argument": "A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.",
+            "vocabulary": [
+              { "term": "by-product", "definition": "something produced in the course of making something else." },
+              { "term": "refinery", "definition": "a plant that turns crude oil into usable fuels." },
+              { "term": "seaborne", "definition": "carried by ship." },
+              { "term": "exacerbate", "definition": "to make a problem worse." },
+              { "term": "bulk", "definition": "large quantities of unpackaged goods." },
+              { "term": "fertiliser", "definition": "a substance added to soil to help crops grow." },
+              { "term": "squeeze", "definition": "a situation where supply tightens and pressure builds." }
+            ]
+          },
+          {
+            "title": "Another warning sign for China's economy: falling consumer credit",
+            "ib_unit": "Macroeconomics: 3.2 Aggregate demand and aggregate supply, 3.3 Macroeconomic objectives.",
+            "badge": "Units 3.2 · 3.3",
+            "duration": "About 40 seconds",
+            "argument": "Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings. That is a warning sign for domestic demand.",
+            "vocabulary": [
+              { "term": "frugal", "definition": "careful with money, reluctant to spend." },
+              { "term": "purse-strings", "definition": "control over spending (to loosen them is to encourage spending)." },
+              { "term": "mortgage", "definition": "a loan used to buy a home." },
+              { "term": "indebtedness", "definition": "the state of owing money." },
+              { "term": "subsidy", "definition": "a payment by government that lowers a cost or price." },
+              { "term": "big-ticket", "definition": "expensive, bought rarely (cars, renovations)." },
+              { "term": "crackdown", "definition": "strict enforcement action." },
+              { "term": "prudent", "definition": "careful and sensible with money." }
+            ]
+          },
+          {
+            "title": "Lessons from Britain's humiliating IMF bail-out",
+            "ib_unit": "The global economy: 4.5 Exchange rates, 4.6 Balance of payments. Also useful: Macroeconomics: 3.6 Fiscal policy, government debt.",
+            "badge": "Units 4.5 · 4.6 · 3.6",
+            "duration": "About 40 seconds",
+            "argument": "The year 2026 echoes 1976, but the parallels are superficial. Another trip to the IMF is unlikely, because the fundamentals are very different.",
+            "vocabulary": [
+              { "term": "bail-out", "definition": "an emergency loan or rescue for a government, bank or firm in trouble." },
+              { "term": "gilt", "definition": "a British government bond." },
+              { "term": "yield", "definition": "the return a bond pays its holder, as a percentage of its price." },
+              { "term": "sterling", "definition": "the British pound." },
+              { "term": "freefall", "definition": "a rapid, uncontrolled fall." },
+              { "term": "conditionality", "definition": "the conditions a lender (such as the IMF) attaches to a loan." },
+              { "term": "fiscal", "definition": "relating to government revenue and spending." },
+              { "term": "embattled", "definition": "under attack, struggling to survive." }
+            ]
+          },
+          {
+            "title": "China is channelling much more money to poor countries",
+            "ib_unit": "The global economy: 4.7 Sustainable development, 4.10 Development strategies.",
+            "badge": "Units 4.7 · 4.10",
+            "duration": "About 40 seconds",
+            "argument": "As America steps back from multilateral giving, a gap opens. China, though giving more, is neither willing nor able to fill it, while seeking a greater say in the institutions that hand aid out.",
+            "vocabulary": [
+              { "term": "multilateral", "definition": "involving several countries or international organisations together." },
+              { "term": "incumbent", "definition": "the current holder of a position or role." },
+              { "term": "upstart", "definition": "a newcomer challenging an established power." },
+              { "term": "cede", "definition": "to give up power or territory." },
+              { "term": "assertiveness", "definition": "confident, forceful behaviour." },
+              { "term": "arrears", "definition": "money owed and overdue." },
+              { "term": "think-tank", "definition": "an institute that researches policy questions." },
+              { "term": "channel", "definition": "to direct money or resources through a particular route." }
+            ]
+          },
+          {
+            "title": "Can Asian governments prevent a food shock?",
+            "ib_unit": "Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium, 2.7 Role of government in microeconomics. Also useful: The global economy: 4.9 Barriers to development; Macroeconomics: 3.3 Inflation.",
+            "badge": "Units 2.2 · 2.3 · 2.7 · 4.9 · 3.3",
+            "duration": "About 40 seconds",
+            "argument": "A fierce El Nino is hitting Asian countries already weakened by an energy shock, threatening food supplies. Governments must decide whether they can prevent a shock, and how.",
+            "vocabulary": [
+              { "term": "monsoon", "definition": "the seasonal wind system that brings most of South Asia's rain." },
+              { "term": "drought", "definition": "a long period with abnormally low rainfall." },
+              { "term": "anomaly", "definition": "a deviation from what is normal or expected." },
+              { "term": "receding", "definition": "going back, withdrawing (of water levels)." },
+              { "term": "exposed", "definition": "left vulnerable to harm." },
+              { "term": "grappling", "definition": "struggling with a difficult problem." },
+              { "term": "havoc", "definition": "widespread damage or disorder." },
+              { "term": "livelihood", "definition": "the means by which people earn a living." }
+            ]
+          },
+          {
+            "title": "China's exports of clean tech to South-East Asia are soaring",
+            "ib_unit": "The global economy: 4.1 Benefits of international trade, 4.2 Types of trade protection. Also useful: 4.3 Arguments for and against trade control / protection.",
+            "badge": "Units 4.1 · 4.2 · 4.3",
+            "duration": "About 1 minute",
+            "argument": "Chinese clean-technology exports are shifting rapidly from Europe to South-East Asia, where governments welcome rather than resist them. Europe is curbing the inflow while South-East Asian demand surges, sharpened by the war over the Strait of Hormuz and pressure on electricity prices. Both sides gain in the short run, but dependence and tariff evasion raise questions.",
+            "vocabulary": [
+              { "term": "clean technology (clean tech)", "definition": "equipment that produces energy with low or no carbon emissions, such as solar panels, batteries and electric vehicles." },
+              { "term": "tariff", "definition": "a tax imposed on imported goods, which raises their price in the domestic market." },
+              { "term": "quota", "definition": "a limit on the quantity of a good that may be imported over a given period." },
+              { "term": "energy security", "definition": "reliable access to affordable energy, without dependence on a single source that could be cut off." },
+              { "term": "gigawatt (GW)", "definition": "a unit of power equal to one billion watts; used to measure the capacity of power plants." },
+              { "term": "repackaging (for re-export)", "definition": "sending imported goods on to another market, sometimes after relabelling, so that their origin is less visible." }
+            ]
+          }
+        ];
+
+        var LOCKED = [
+          { "title": "The panic over personalised pricing is overdone", "badge": "Unit 2.5" },
+          { "title": "Bond yields are rising everywhere—except China", "badge": "Unit 3.5" },
+          { "title": "China's efforts to strengthen its safety net fuel public anger", "badge": "Unit 3.4" },
+          { "title": "Africa's solar revolution is vast and speedy", "badge": "Units 4.8–4.9" }
+        ];
+
+        var SUB_MONTHLY = "https://buy.stripe.com/eVqcN452C4Lk6k299L9k403";
+        var SUB_ANNUAL = "https://buy.stripe.com/dRm4gy0Mmgu2cIq2Ln9k402";
+
+        /* ---------- Build sentence chunks per guide ---------- */
+        function splitSentences(text) {
+          var parts = text.match(/[^.!?]+[.!?]+["']?\s*/g);
+          if (!parts) return [text];
+          var out = [];
+          for (var i = 0; i < parts.length; i++) {
+            var s = parts[i].replace(/\s+/g, " ").trim();
+            if (s) out.push(s);
+          }
+          return out.length ? out : [text];
+        }
+
+        GUIDES.forEach(function (g) {
+          var chunks = [];
+          splitSentences(g.argument).forEach(function (s) {
+            chunks.push({ text: s, section: "Argument" });
+          });
+          g.vocabulary.forEach(function (v, i) {
+            chunks.push({
+              text: v.term + ". " + v.definition,
+              section: "Vocabulary " + (i + 1) + " of " + g.vocabulary.length
+            });
+          });
+          g.chunks = chunks;
+        });
+
+        /* ---------- Render guide lists ---------- */
+        var guideListEl = document.getElementById("guideList");
+        var rowEls = [];
+        GUIDES.forEach(function (g, i) {
+          var li = document.createElement("li");
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "guide-row";
+          btn.setAttribute("aria-label", "Play guide " + (i + 1) + ": " + g.title);
+          btn.innerHTML =
+            '<span class="guide-top">' +
+              '<span class="guide-num" aria-hidden="true">' + (i + 1) + "</span>" +
+              '<span><span class="guide-title">' + escapeHtml(g.title) + "</span>" +
+              '<span class="guide-unit" style="display:block">' + escapeHtml(g.ib_unit) + "</span></span>" +
+            "</span>" +
+            '<span class="guide-meta">' +
+              '<span class="badge">' + escapeHtml(g.badge) + "</span>" +
+              '<span class="duration">' + escapeHtml(g.duration) + "</span>" +
+              '<span class="playing-tag" hidden>Now playing</span>' +
+            "</span>";
+          btn.addEventListener("click", function () { selectGuide(i, true); });
+          li.appendChild(btn);
+          guideListEl.appendChild(li);
+          rowEls.push(btn);
+        });
+
+        var lockedListEl = document.getElementById("lockedList");
+        LOCKED.forEach(function (g) {
+          var div = document.createElement("div");
+          div.className = "locked-row";
+          div.innerHTML =
+            '<div class="locked-top">' +
+              '<svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z"/></svg>' +
+              '<p class="locked-title">' + escapeHtml(g.title) + "</p>" +
+            "</div>" +
+            '<div class="locked-meta">' +
+              '<span class="badge">' + escapeHtml(g.badge) + "</span>" +
+              '<span class="locked-tag">Subscribers only</span>' +
+            "</div>" +
+            '<div class="subscribe-row">' +
+              '<a class="sub-btn primary" href="' + SUB_MONTHLY + '" target="_blank" rel="noopener">Subscribe — monthly</a>' +
+              '<a class="sub-btn ghost" href="' + SUB_ANNUAL + '" target="_blank" rel="noopener">Subscribe — annual</a>' +
+            "</div>";
+          lockedListEl.appendChild(div);
+        });
+
+        function escapeHtml(s) {
+          return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+                  .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+        }
+
+        /* ---------- Speech engine ---------- */
+        var synth = ("speechSynthesis" in window) ? window.speechSynthesis : null;
+        var chosenVoice = null;
+
+        var state = {
+          guide: 0,
+          chunk: 0,
+          playing: false,
+          paused: false,
+          started: false,
+          token: 0
+        };
+
+        var nowTitle = document.getElementById("nowTitle");
+        var nowSection = document.getElementById("nowSection");
+        var nowPosition = document.getElementById("nowPosition");
+        var progressBar = document.getElementById("progressBar");
+        var progressFill = document.getElementById("progressFill");
+        var progressText = document.getElementById("progressText");
+        var statusText = document.getElementById("statusText");
+        var playBtn = document.getElementById("playBtn");
+        var playIcon = document.getElementById("playIcon");
+        var pauseIcon = document.getElementById("pauseIcon");
+        var prevBtn = document.getElementById("prevBtn");
+        var nextBtn = document.getElementById("nextBtn");
+        var stopBtn = document.getElementById("stopBtn");
+        var voiceNotice = document.getElementById("voiceNotice");
+
+        function pickVoice() {
+          if (!synth) return null;
+          var voices = synth.getVoices();
+          if (!voices || !voices.length) return null;
+          var i, v;
+          for (i = 0; i < voices.length; i++) { v = voices[i]; if (/^en[-_]GB/i.test(v.lang || "")) return v; }
+          for (i = 0; i < voices.length; i++) { v = voices[i]; if (/^en[-_]US/i.test(v.lang || "")) return v; }
+          for (i = 0; i < voices.length; i++) { v = voices[i]; if (/^en/i.test(v.lang || "")) return v; }
+          return null;
+        }
+
+        function refreshVoice() {
+          chosenVoice = pickVoice();
+          if (synth && !chosenVoice && synth.getVoices().length) {
+            showVoiceNotice("No English speech voice was found in this browser, so listening is unavailable here. The guide list below is still yours to read.");
+            playBtn.disabled = true;
+          } else if (synth && chosenVoice) {
+            voiceNotice.hidden = true;
+            playBtn.disabled = false;
+          }
+        }
+
+        function showVoiceNotice(msg) {
+          voiceNotice.textContent = msg;
+          voiceNotice.hidden = false;
+        }
+
+        if (!synth) {
+          showVoiceNotice("This browser does not support spoken playback, so listening is unavailable here. The guide list below is still yours to read.");
+          playBtn.disabled = true;
+          prevBtn.disabled = true;
+          nextBtn.disabled = true;
+          stopBtn.disabled = true;
+        } else {
+          refreshVoice();
+          if (typeof synth.onvoiceschanged !== "undefined") {
+            synth.onvoiceschanged = refreshVoice;
+          }
+          setTimeout(refreshVoice, 600);
+        }
+
+        function currentChunks() { return GUIDES[state.guide].chunks; }
+
+        function updateUI() {
+          var g = GUIDES[state.guide];
+          var chunks = currentChunks();
+          nowTitle.textContent = g.title;
+          nowPosition.textContent = "Guide " + (state.guide + 1) + " of " + GUIDES.length;
+          if (state.started && chunks.length) {
+            var c = chunks[Math.min(state.chunk, chunks.length - 1)];
+            nowSection.textContent = state.playing || state.paused ? c.section : "Ready";
+            var done = state.chunk;
+            var pct = chunks.length ? Math.round((done / chunks.length) * 100) : 0;
+            progressFill.style.width = pct + "%";
+            progressBar.setAttribute("aria-valuenow", String(pct));
+            progressText.textContent = done + " of " + chunks.length + " sentences";
+          } else {
+            nowSection.textContent = "Ready when you are";
+            progressFill.style.width = "0%";
+            progressBar.setAttribute("aria-valuenow", "0");
+            progressText.textContent = "0 of " + chunks.length + " sentences";
+          }
+          playIcon.style.display = state.playing ? "none" : "";
+          pauseIcon.style.display = state.playing ? "" : "none";
+          playBtn.setAttribute("aria-label", state.playing ? "Pause" : (state.paused ? "Resume" : "Play"));
+          rowEls.forEach(function (el, i) {
+            var isCur = i === state.guide && state.started;
+            el.classList.toggle("is-current", isCur);
+            var tag = el.querySelector(".playing-tag");
+            if (tag) tag.hidden = !isCur;
+          });
+        }
+
+        function setStatus(msg) { statusText.textContent = msg; }
+
+        function speakCurrent() {
+          if (!synth) return;
+          var chunks = currentChunks();
+          if (state.chunk >= chunks.length) { onGuideFinished(); return; }
+          if (!chosenVoice) refreshVoice();
+          var myToken = ++state.token;
+          var chunk = chunks[state.chunk];
+          var u = new SpeechSynthesisUtterance(chunk.text);
+          if (chosenVoice) { u.voice = chosenVoice; u.lang = chosenVoice.lang; }
+          else { u.lang = "en-GB"; }
+          u.rate = 0.95;
+          u.pitch = 1;
+          u.onend = function () {
+            if (myToken !== state.token || state.paused || !state.playing) return;
+            state.chunk += 1;
+            updateUI();
+            speakCurrent();
+          };
+          u.onerror = function (ev) {
+            if (myToken !== state.token || state.paused || !state.playing) return;
+            if (ev && (ev.error === "canceled" || ev.error === "interrupted")) return;
+            state.chunk += 1;
+            updateUI();
+            speakCurrent();
+          };
+          updateUI();
+          synth.speak(u);
+        }
+
+        function startPlayback() {
+          if (!synth) return;
+          if (!chosenVoice) {
+            refreshVoice();
+            if (!chosenVoice && synth.getVoices().length) {
+              setStatus("No English speech voice is available in this browser.");
+              return;
+            }
+          }
+          state.playing = true;
+          state.paused = false;
+          state.started = true;
+          setStatus("Playing. Tap pause any time — it resumes from the same sentence.");
+          speakCurrent();
+        }
+
+        function pausePlayback() {
+          if (!state.playing) return;
+          state.paused = true;
+          state.playing = false;
+          state.token += 1; /* invalidate the current utterance callbacks */
+          if (synth) synth.cancel();
+          setStatus("Paused. Tap play to resume from the same sentence.");
+          updateUI();
+        }
+
+        function stopPlayback(message) {
+          state.token += 1;
+          if (synth) synth.cancel();
+          state.playing = false;
+          state.paused = false;
+          state.chunk = 0;
+          if (message) setStatus(message);
+          updateUI();
+        }
+
+        function onGuideFinished() {
+          if (state.guide < GUIDES.length - 1) {
+            state.guide += 1;
+            state.chunk = 0;
+            setStatus("Next guide: " + GUIDES[state.guide].title);
+            updateUI();
+            speakCurrent();
+          } else {
+            state.playing = false;
+            state.paused = false;
+            state.chunk = 0;
+            state.guide = 0;
+            state.started = false;
+            stopTimer();
+            setStatus("Playlist finished — good night.");
+            updateUI();
+          }
+        }
+
+        function selectGuide(i, autoplay) {
+          state.token += 1;
+          if (synth) synth.cancel();
+          state.guide = i;
+          state.chunk = 0;
+          state.playing = false;
+          state.paused = false;
+          state.started = true;
+          updateUI();
+          if (autoplay) {
+            startPlayback();
+          } else {
+            setStatus("Selected: " + GUIDES[i].title + ". Tap play to listen.");
+          }
+        }
+
+        playBtn.addEventListener("click", function () {
+          if (state.playing) { pausePlayback(); }
+          else { startPlayback(); }
+        });
+        stopBtn.addEventListener("click", function () {
+          stopPlayback("Stopped. Tap play to start this guide from the beginning.");
+        });
+        nextBtn.addEventListener("click", function () {
+          var wasActive = state.playing;
+          var target = Math.min(state.guide + 1, GUIDES.length - 1);
+          selectGuide(target, wasActive);
+          if (!wasActive) setStatus("Selected: " + GUIDES[target].title + ". Tap play to listen.");
+        });
+        prevBtn.addEventListener("click", function () {
+          var wasActive = state.playing;
+          var target = Math.max(state.guide - 1, 0);
+          selectGuide(target, wasActive);
+          if (!wasActive) setStatus("Selected: " + GUIDES[target].title + ". Tap play to listen.");
+        });
+
+        /* ---------- Sleep timer ---------- */
+        var timerCount = document.getElementById("timerCount");
+        var timerBtns = Array.prototype.slice.call(document.querySelectorAll(".timer-btn"));
+        var timerInterval = null;
+        var timerEndAt = 0;
+
+        function fmt(ms) {
+          var totalSec = Math.max(0, Math.ceil(ms / 1000));
+          var m = Math.floor(totalSec / 60);
+          var s = totalSec % 60;
+          return m + ":" + (s < 10 ? "0" : "") + s;
+        }
+
+        function stopTimer() {
+          if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+          timerEndAt = 0;
+          timerCount.textContent = "";
+          timerBtns.forEach(function (b) {
+            b.setAttribute("aria-pressed", b.getAttribute("data-minutes") === "0" ? "true" : "false");
+          });
+        }
+
+        function setTimer(minutes) {
+          if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+          timerBtns.forEach(function (b) {
+            b.setAttribute("aria-pressed", String(parseInt(b.getAttribute("data-minutes"), 10) === minutes));
+          });
+          if (!minutes) {
+            timerEndAt = 0;
+            timerCount.textContent = "";
+            return;
+          }
+          timerEndAt = Date.now() + minutes * 60 * 1000;
+          timerCount.textContent = "Narration stops in " + fmt(timerEndAt - Date.now());
+          timerInterval = setInterval(function () {
+            var left = timerEndAt - Date.now();
+            if (left <= 0) {
+              stopTimer();
+              stopPlayback("Sleep timer finished — narration stopped. Good night.");
+              return;
+            }
+            timerCount.textContent = "Narration stops in " + fmt(left);
+          }, 500);
+        }
+
+        timerBtns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            setTimer(parseInt(b.getAttribute("data-minutes"), 10));
+          });
+        });
+
+        updateUI();
+      })();
+    </script>
+  </body>
+</html>
