@@ -307,6 +307,61 @@ The evaluation, then, is mixed but leans positive in the short run. European pro
 
 IB EconLens, Volume 02, Single 1 of 5. Guide model: no original text reproduced.
 
+---
+
+# IB EconLens: Single 1 of 5
+
+Free guide — this guide is free to all readers. The other four guides in Volume 03 are for subscribers.
+
+Europe, 14 November 2026 issue. Volume 03. Guide model: this file contains no original article text. Read the original first (school subscription), then use this guide.
+
+## How to use this single
+
+Read the original first, then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps. Attempt the tasks before reading the model answers. A model is one strong answer, not the only answer.
+
+# Europe living beyond its means
+
+Europe, 14 November 2026 issue.
+
+IB unit: 3.6 Fiscal policy: government spending, taxation, budget deficits and government debt. Also useful: 3.5 Monetary policy — higher interest rates raise the cost of servicing government debt.
+Best IB use: IA commentary (macro) or Paper 1 essay evidence.
+
+What it argues. Europe spends far more on pensions and welfare than it can afford, and the gap is now catching up with it. Five countries carry public debt at or above 100% of GDP, and ten are under the EU's excessive-deficit procedure. Yet fragmented parliaments and populist politics make the needed cuts almost impossible to agree. Even careful Germany is under strain; France is the most worrying case. If governments cannot forge majorities for difficult decisions, the bond markets will impose those choices in a crisis.
+
+Before you read. EU countries devote nearly 30% of GDP to public social spending, against less than 20% in America, and spend 10% of GDP on public pensions, nearly twice the American share. EU rules cap government debt at 60% of GDP and budget deficits at 3%; ten countries, including Belgium, France and Italy, are now in the excessive-deficit procedure for breaking them. France will spend 91 billion euros on interest payments in 2027, up from 79 billion in 2026. In Germany, social spending has risen to around 30% of GDP, and social-security charges equal about 42% of gross wages, projected to reach nearly 50% by 2040. In France, the government plans to cut the deficit from 5.4% of GDP in 2026 to 5% in 2027, including a freeze in nominal terms on most pensions and civil-service pay — while 85% of French voters say curbing debt is urgent, 56% also say the pension age should be lower.
+
+Key vocabulary.
+- budget deficit: the amount by which government spending exceeds tax revenue in a given year.
+- government (public) debt: the total amount a government owes, built up from past budget deficits.
+- debt-to-GDP ratio: government debt expressed as a percentage of GDP; used to judge whether debt is sustainable.
+- excessive-deficit procedure: the EU process that pressures countries breaking the debt and deficit rules to correct course.
+- debt brake: a constitutional rule limiting government borrowing, as in Germany.
+- fiscal consolidation: reducing a budget deficit, usually by cutting spending, raising taxes, or both.
+
+How to read it.
+- The article tours countries from the most strained to the most worrying. For each, ask two questions: how big is the fiscal gap, and what stops the government closing it?
+- Read the numbers as ratios, not just levels. A deficit of 5% of GDP or debt of 112% of GDP only means something against the EU's 60% debt and 3% deficit limits — compare each figure with those benchmarks.
+- The article includes a chart of German social spending as a share of GDP. Read it as a trend: note where the line sits now, how far it has risen above its pre-pandemic level, and what that implies for future tax rates.
+
+Europe wants a level of public spending it can no longer afford, and its fractured politics cannot agree the cuts — so the bond markets may end up imposing them.
+]
+Tasks.
+- A. Analysis. Analyse why the author moves from country to country — Belgium, the Netherlands, Germany, France — rather than treating Europe as one case. What does each country add to the argument? Support your answer with two details.
+- B. Logic. The article says most French voters think curbing debt is urgent, yet most also want a lower pension age, and populist leaders promise to protect pensions and cut the retirement age. What does this contradiction do to the claim that the problem is simply that governments lack the will to act? Explain whose incentives are in conflict.
+- C. IA commentary (800 words). Using this article as your extract, analyse the effects of the French government's planned fiscal consolidation — spending cuts including a freeze on pensions and civil-service pay — on the French economy, with an AD/AS diagram. Evaluate whether cutting spending is the best way to reduce the budget deficit.
+
+## Model answers (read after attempting the tasks)
+
+Task A model. The country tour is the argument: the same fiscal problem appears in different political forms, and that variety is the point. Belgium shows a government collapsing over a budget, its five-party coalition unable to agree even modest cuts such as raising VAT. Germany shows that even a country with a debt brake now faces a crunch, with social spending at 30% of GDP and over 100 billion euros of consolidation needed by 2030. France is the climax: a parliament split into three hostile blocs, a prime minister pushing a budget with a pension freeze, and populists promising the opposite. Together the cases show the problem is not one weak government but a structural mismatch between what voters want and what budgets allow.
+
+Task B model. The contradiction shifts the blame from governments to voters, and that changes the logic. If the problem were only weak leadership, a braver government could fix it; but the poll evidence shows voters themselves demand both lower debt and more generous pensions. Politicians who promise both are responding rationally to what voters reward, not ignoring the arithmetic. The conflict is between voters' short-run interest in current spending and their long-run interest in sustainable finances. That is why the warning lands on the bond markets: when democratic politics cannot resolve the contradiction, rising borrowing costs eventually will.
+
+Task C model: IA commentary. The French government's plan is a contractionary fiscal policy: cutting government spending to reduce a budget deficit of 5.4% of GDP. On an AD/AS diagram, lower government spending (G) shifts AD left from AD1 to AD2. Real GDP falls from Y1 to Y2 and the price level falls from PL1 to PL2, so the policy is contractionary and deflationary in the short run. The fall is likely to be large: pensioners and public-sector workers have a high marginal propensity to consume, so freezing their incomes removes spending from the economy quickly.
+The effects on the economy's stakeholders pull in opposite directions. The government gains fiscal space: a smaller deficit means less new borrowing, and lower debt over time reduces interest payments — already 91 billion euros in 2027. But households lose in the short run: pensioners and public-sector workers see real incomes fall as prices rise while pay is frozen. Lower incomes cut consumption, hitting firms' revenues and possibly raising unemployment.
+Whether spending cuts are the best way to reduce the deficit depends on the alternatives and the time horizon. Raising taxes could close the gap with less damage to the poorest, but France already has a high tax burden, and higher taxes could discourage work and investment. Structural reforms such as raising the pension age would improve the long-run position, but they are exactly what voters oppose, and they take years to deliver savings.
+The evaluation, then, is that the cuts are necessary but costly and politically fragile. In the short run they reduce demand, incomes and growth, and risk a backlash that could bring down the government — France has had four prime ministers in three years. Doing nothing is worse, however: debt keeps rising, and the eventual correction would be imposed by the bond markets rather than chosen by parliament. The pension freeze is defensible as a first step, since pensions are the largest budget item, but without reforms voters accept, the deficit will return. The policy is the least bad option, not a solution.
+
+IB EconLens, Volume 03, Single 1 of 5. Guide model: no original text reproduced.
 
 ---
 
