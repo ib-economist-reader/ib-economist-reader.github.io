@@ -168,6 +168,22 @@
       .duration { font-size: 14px; color: var(--faint); }
       .playing-tag { font-size: 13px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
       .playing-tag[hidden] { display: none; }
+      .badge.exam {
+        color: var(--text); background: var(--surface-2); border-color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* ---------- Marks note (Morning Briefing, display only) ---------- */
+      .marks-note {
+        border: 1px solid var(--accent); background: var(--surface-2);
+        border-radius: 10px; padding: 12px 14px; margin-top: 16px;
+        font-size: 15px; color: var(--muted); text-align: left; line-height: 1.55;
+      }
+      .marks-note[hidden] { display: none; }
+      .marks-note .marks-label {
+        display: block; font-size: 12.5px; letter-spacing: 0.1em;
+        text-transform: uppercase; color: var(--accent); margin-bottom: 4px; font-weight: 700;
+      }
 
       /* ---------- Locked rows ---------- */
       .locked-row {
@@ -267,6 +283,11 @@
 
           <p class="status" id="statusText" aria-live="polite">Tap play to begin with the first guide.</p>
 
+          <div class="marks-note" id="marksNote" hidden>
+            <span class="marks-label" id="marksLabel">Marks</span>
+            <span id="marksText"></span>
+          </div>
+
           <div class="timer-block" id="timerBlock">
             <div class="timer-head">
               <p class="timer-label">Sleep timer</p>
@@ -308,6 +329,7 @@
             "title": "A shortage of sulphur could hurt mines and farms everywhere",
             "ib_unit": "Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium. Also useful: Macroeconomics: 3.3 Cost-push inflation.",
             "badge": "Units 2.2 · 2.3 · 3.3",
+            "exam_badges": ["Paper 1 (a) · 10 marks", "Paper 2", "IA · 14 marks"],
             "background": "Sulphur is a by-product of turning oil into fuel, so a refining squeeze is automatically a sulphur squeeze. Russia had already banned sulphur exports, cutting shipments from 4.8 million tonnes in 2025 (15% of globally traded volumes) to 1.8 million tonnes in 2026 so far. In February, Middle Eastern solid bulk sulphur fetched USD 500 a tonne, up from USD 340 a year earlier. The Strait of Hormuz closure trapped nearly a quarter of global sulphur production and half of seaborne exports; shipments remain two-thirds below pre-war levels.",
             "argument": "A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.",
             "vocabulary": [
@@ -380,6 +402,7 @@
             "title": "Another warning sign for China's economy: falling consumer credit",
             "ib_unit": "Macroeconomics: 3.2 Aggregate demand and aggregate supply, 3.3 Macroeconomic objectives.",
             "badge": "Units 3.2 · 3.3",
+            "exam_badges": ["Paper 1 (a) · 10 marks", "Paper 2", "IA · 14 marks"],
             "background": "Short-term loans to consumers fell by 8.3% in September compared with a year earlier, the steepest drop on record. In August the stock of consumer loans was the lowest since the harsh zero-covid lockdowns. During a public holiday at the start of October, the typical holidaymaker spent 2% less than in the same festive period in 2025. Household debt stood at 60% of GDP in 2020, stayed flat, then declined slightly (rich countries as a whole are just below 70%). The property crash means fewer mortgages and early repayments. The finance ministry has been subsidising banks so they can charge lower interest on consumer loans for big-ticket items such as new cars and home renovations.",
             "argument": "Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings. That is a warning sign for domestic demand.",
             "vocabulary": [
@@ -456,6 +479,7 @@
             "title": "Lessons from Britain's humiliating IMF bail-out",
             "ib_unit": "The global economy: 4.5 Exchange rates, 4.6 Balance of payments. Also useful: Macroeconomics: 3.6 Fiscal policy, government debt.",
             "badge": "Units 4.5 · 4.6 · 3.6",
+            "exam_badges": ["Paper 1 (a) · 10 marks", "Paper 2", "Paper 1 (b) · 15 marks"],
             "background": "In 1976, sterling's freefall forced Chancellor Denis Healey to turn back from a plane on 28 September and apply for an emergency IMF loan. A USD 3.9 billion bail-out, agreed in December, imposed conditions of the sort normally reserved for the world's weakest economies. Then: inflation 13.7%, ten-year gilt yields 15.7%, marginal tax rates as high as 98%. Now: inflation 3.8% (IMF estimate), ten-year gilt yields 5.4%, though Britain pays more to borrow than any other G7 country. The Chancellor prepares a budget on 28 October.",
             "argument": "The year 2026 echoes 1976, but the parallels are superficial. Another trip to the IMF is unlikely, because the fundamentals are very different.",
             "vocabulary": [
@@ -532,6 +556,7 @@
             "title": "China is channelling much more money to poor countries",
             "ib_unit": "The global economy: 4.7 Sustainable development, 4.10 Development strategies.",
             "badge": "Units 4.7 · 4.10",
+            "exam_badges": ["Paper 1 (a) · 10 marks", "Paper 2", "Paper 1 (b) · 15 marks"],
             "background": "America has tired of the international institutions it helped create: last year the aid it channelled through multilateral organisations such as the World Bank and the UN fell by half, it has withdrawn from the World Health Organisation, and it still owes the WHO money. China has put up more cash, but cautiously. The article frames the situation with an idea from the economic historian Charles Kindleberger: danger arises when a stabilising power gives up its global role before an emerging power is ready or willing to take it on. The article draws on estimates by researchers at the Centre for Global Development in Washington.",
             "argument": "As America steps back from multilateral giving, a gap opens. China, though giving more, is neither willing nor able to fill it, while seeking a greater say in the institutions that hand aid out.",
             "vocabulary": [
@@ -608,6 +633,7 @@
             "title": "Can Asian governments prevent a food shock?",
             "ib_unit": "Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium, 2.7 Role of government in microeconomics. Also useful: The global economy: 4.9 Barriers to development; Macroeconomics: 3.3 Inflation.",
             "badge": "Units 2.2 · 2.3 · 2.7 · 4.9 · 3.3",
+            "exam_badges": ["Paper 1 (a) · 10 marks", "Paper 2", "IA · 14 marks"],
             "background": "El Nino is a recurring climate pattern: shifts in Pacific winds bring hotter, drier conditions to much of South and South-East Asia. This episode began in May and is due to peak next month; on one daily measure, sea-surface temperature anomalies have already exceeded the peak of every previous event on record. The World Meteorological Organisation expects it to last into February. India's monsoon, which supplies nearly 70% of annual rainfall, ended about 13% below normal, the driest in a decade. Indonesia is enduring its worst fire season for 11 years. Seven provinces in the Philippines are already in drought, and officials in Manila have warned that the capital's water supply may soon be reduced.",
             "argument": "A fierce El Nino is hitting Asian countries already weakened by an energy shock, threatening food supplies. Governments must decide whether they can prevent a shock, and how.",
             "vocabulary": [
@@ -684,6 +710,7 @@
             "title": "China's exports of clean tech to South-East Asia are soaring",
             "ib_unit": "The global economy: 4.1 Benefits of international trade, 4.2 Types of trade protection. Also useful: 4.3 Arguments for and against trade control / protection.",
             "badge": "Units 4.1 · 4.2 · 4.3",
+            "exam_badges": ["Paper 1 (a) · 10 marks", "Paper 2", "IA · 14 marks"],
             "background": "Chinese producers of solar panels, batteries and electric vehicles once looked mainly to Europe, where demand grew as households and governments moved away from fossil fuels. European governments, worried about their own industries, have begun restricting the inflow, including EV quotas. Meanwhile, exports to South-East Asia have risen fast: in the first nine months of 2026, China's exports of solar technology to the region rose by almost 60% measured by output capacity, while exports to Europe fell by 11%. In May 2026 the Philippines became the world's second-largest buyer of Chinese solar panels. Some goods are repackaged and sold on to Western markets, helping China avoid American and European tariffs. Governments in the region are nevertheless keen buyers: Laos has suspended fossil-fuelled vehicle imports, and Indonesia's president has promised to raise solar capacity from about 1.5 GW to 100 GW by 2029.",
             "argument": "Chinese clean-technology exports are shifting rapidly from Europe to South-East Asia, where governments welcome rather than resist them. Europe is curbing the inflow while South-East Asian demand surges, sharpened by the war over the Strait of Hormuz and pressure on electricity prices. Both sides gain in the short run, but dependence and tariff evasion raise questions.",
             "vocabulary": [
@@ -752,6 +779,7 @@
             "title": "Europe living beyond its means",
             "ib_unit": "3.6 Fiscal policy: government spending, taxation, budget deficits and government debt. Also useful: 3.5 Monetary policy — higher interest rates raise the cost of servicing government debt.",
             "badge": "Units 3.6 · 3.5",
+            "exam_badges": ["Paper 1 (a) · 10 marks", "Paper 2", "IA · 14 marks"],
             "background": "EU countries devote nearly 30% of GDP to public social spending, against less than 20% in America, and spend 10% of GDP on public pensions, nearly twice the American share. EU rules cap government debt at 60% of GDP and budget deficits at 3%; ten countries, including Belgium, France and Italy, are now in the excessive-deficit procedure for breaking them. France will spend 91 billion euros on interest payments in 2027, up from 79 billion in 2026. In Germany, social spending has risen to around 30% of GDP, and social-security charges equal about 42% of gross wages, projected to reach nearly 50% by 2040. In France, the government plans to cut the deficit from 5.4% of GDP in 2026 to 5% in 2027, including a freeze in nominal terms on most pensions and civil-service pay — while 85% of French voters say curbing debt is urgent, 56% also say the pension age should be lower.",
             "argument": "Europe spends far more on pensions and welfare than it can afford, and the gap is now catching up with it. Five countries carry public debt at or above 100% of GDP, and ten are under the EU's excessive-deficit procedure. Yet fragmented parliaments and populist politics make the needed cuts almost impossible to agree. Even careful Germany is under strain; France is the most worrying case. If governments cannot forge majorities for difficult decisions, the bond markets will impose those choices in a crisis.",
             "vocabulary": [
@@ -832,8 +860,51 @@
           { "title": "Bangladesh is no longer a development superstar", "badge": "Units 4.8–4.9" }
         ];
 
+        /* Exam badges for every locked row (Volume 02 and Volume 03) */
+        var IA_BADGES = ["Paper 1 (a) · 10 marks", "Paper 2", "IA · 14 marks"];
+
         var SUB_MONTHLY = "https://buy.stripe.com/eVqcN452C4Lk6k299L9k403";
         var SUB_ANNUAL = "https://buy.stripe.com/dRm4gy0Mmgu2cIq2Ln9k402";
+
+        /* Marks notes, one per model answer, in guide order.
+           Display only in Morning Briefing — never narrated. */
+        var MARKS = [
+          [
+            "Marks: 9–10 band — the diagram is fully explained, the shift is correctly linked to higher input costs, terminology is accurate throughout, and the article's figures are used as evidence. It would fall to the 7–8 band if the diagram were drawn but not explained, or if the elasticity reasoning were left out.",
+            "Marks: 5/5 (Paper 2 short answer) — the two causes are separated with precise figures and the distinction is tied to duration and remedy. It would lose a mark if it only listed the causes without explaining why keeping them apart matters.",
+            "Marks: 10/14 — A 2/3 (shift described in words; a drawn, labelled diagram is still needed for 3/3), B 2/2, C 3/3, D 1/3 (no key concept named or linked — the main loss), E 2/3 (case for intervention working is thinner than the case against). Strength: the inelastic-demand reasoning."
+          ],
+          [
+            "Marks: 9–10 band — the AD shift is correctly linked to consumption, the output, price-level and unemployment effects are all stated, the multiplier is explained, and article data are used. It would fall to the 7–8 band if only the shift were stated without its consequences, or if the diagram were left unexplained.",
+            "Marks: 5/5 (Paper 2 short answer) — mortgage and consumer credit are separated, the subsidy evidence is used, and a qualified version is stated. It would lose a mark if it accepted \"frugal\" uncritically.",
+            "Marks: 11/14 — A 2/3 (AD shift and multiplier described in words; a drawn, labelled AD/AS diagram is still needed for 3/3), B 2/2, C 3/3, D 1/3 (no key concept named or linked — the main loss), E 3/3 (three limits plus the transfers alternative, with its cost noted). Strength: the evaluation tests the policy against the real constraint, confidence."
+          ],
+          [
+            "Marks: 9–10 band — both curves are shifted in the right directions, depreciation and its consequences (import prices, inflation) are stated, and article evidence is used to show the scale. It would fall to the 7–8 band if only one curve were shifted, or if depreciation were asserted without its consequences.",
+            "Marks: 5/5 (Paper 2 short answer) — the mechanism test is applied cleanly: political timing is separated from what moves yields, the exchange rate or inflation. It would lose a mark if it treated narrative resemblance as evidence.",
+            "Marks: 10–12 band (Paper 1 (b)) — theory is complete on both sides, real examples are effective (2008, pandemic, G7 borrowing costs) and the conclusion judges the claim. It stays out of the 13–15 band because there is no diagram, and the case against leans on general claims rather than a worked counter-example. The TOK extension carries no Paper 1 marks. Strength: the \"cannot\" versus \"less likely\" distinction."
+          ],
+          [
+            "Marks: 9–10 band — the public-good characteristics are stated, the MSB/MPB gap is explained through the diagram, and under-provision is linked to the article's funding fall. It would fall to the 7–8 band if the diagram were described without explaining why MSB exceeds MPB, or without linking the funding cut to the size of the gap.",
+            "Marks: 5/5 (Paper 2 short answer) — direction and scale are separated precisely, using the halving of US multilateral aid. It would lose a mark if it confused \"giving more\" with \"replacing America\".",
+            "Marks: 10–12 band (Paper 1 (b)) — the comparison is structured, article evidence sharpens it (coordination gap, voice versus outcomes) and the conclusion is judged. It stays out of the 13–15 band because there is no diagram and the closing claim about recipient ownership is asserted rather than shown with a concrete case. Strength: the governance-gap reframing."
+          ],
+          [
+            "Marks: 9–10 band — the shift is correctly linked to drought, the price and quantity effects are stated, inelastic demand is used to explain the size of the price rise, and article data are used. It would fall to the 7–8 band if the elasticity reasoning were missing or the diagram unexplained.",
+            "Marks: 5/5 (Paper 2 short answer) — the full chain is given with figures, and three points where government can break it are marked. It would lose a mark if the chain stopped at \"prices rise\" without the intervention points.",
+            "Marks: 11/14 — A 2/3 (supply shift described in words; a drawn, labelled diagram is still needed for 3/3), B 2/2, C 3/3, D 1/3 (no key concept named or linked — the main loss), E 3/3 (export bans and transfers genuinely weighed, fiscal limit noted). Strength: the beggar-thy-neighbour evaluation."
+          ],
+          [
+            "Marks: 9–10 band — the substitute mechanism is fully explained, the demand shift is distinguished from a movement along the curve, the diagram is described with labelled shifts (D1 to D2, P1 to P2, Q1 to Q2), and the article's evidence (the 60% rise) is tied to the shift. The diagram is described here and must be drawn and labelled; without it, the 7–8 band.",
+            "Marks: 4/5 (Paper 2 short answer) — both causes are named and the duration argument follows from each. The lost mark: it does not say which cause drives the 60% rise, treating the two as equal.",
+            "Marks: 9/14 — A 2/3 (shift described, P1–P2, Q1–Q2, but no diagram drawn); B 2/2; C 2/3 (Europe applied; SE Asia link asserted, not traced); D 1/3 (no key concept named); E 2/3 (balanced, but thin against the gain)."
+          ],
+          [
+            "Marks: 9–10 band — theory fully explained, diagram complete (axes, AD1 to AD2, E1 to E2, Y1 to Y2, PL1 to PL2), terminology accurate; draw and label the diagram in the exam — an undrawn diagram falls to 7–8.",
+            "Marks: 4/5 (Paper 2 short answer). Strength: the voter contradiction is tied to conflicting incentives. Loses 1 mark: the poll evidence is stated generally, without the article's figures.",
+            "Marks: 10/14 — A 2/3, B 2/2, C 3/3, D 1/3, E 2/3. Shifts described but no diagram shown; no key concept named; evaluation balanced but long-run growth not weighed."
+          ]
+        ];
 
         /* ---------- Build sentence chunks per guide ---------- */
         function splitSentences(text) {
@@ -850,6 +921,16 @@
 
         function buildChunks(g, mode) {
           var chunks = [];
+          var marksList = [];
+          if (mode === "morning") {
+            var isEssay = g.exam_badges && g.exam_badges.indexOf("Paper 1 (b) · 15 marks") !== -1;
+            chunks.push({
+              text: isEssay
+                ? "This guide trains Paper 1 (a) (10 marks), Paper 2 and Paper 1 (b) (15 marks)."
+                : "This guide trains Paper 1 (a) (10 marks), Paper 2 and IA (14 marks).",
+              section: "Exam focus"
+            });
+          }
           splitSentences(g.background).forEach(function (s) {
             chunks.push({ text: s, section: "Background" });
           });
@@ -882,12 +963,18 @@
               sents.forEach(function (s, i) {
                 chunks.push({ text: i === 0 ? ma.label + ". " + s : s, section: ma.label });
               });
+              if (ma.marks) {
+                marksList.push({ end: chunks.length, label: ma.label, marks: ma.marks });
+              }
             });
           }
-          return { chunks: chunks, modelStart: modelStart };
+          return { chunks: chunks, modelStart: modelStart, marksList: marksList };
         }
 
-        GUIDES.forEach(function (g) {
+        GUIDES.forEach(function (g, gi) {
+          g.model_answers.forEach(function (ma, mi) {
+            if (MARKS[gi] && MARKS[gi][mi]) ma.marks = MARKS[gi][mi];
+          });
           g.modes = {
             bedtime: buildChunks(g, "bedtime"),
             morning: buildChunks(g, "morning")
@@ -912,6 +999,9 @@
             "</span>" +
             '<span class="guide-meta">' +
               '<span class="badge">' + escapeHtml(g.badge) + "</span>" +
+              (g.exam_badges || []).map(function (b) {
+                return '<span class="badge exam">' + escapeHtml(b) + "</span>";
+              }).join("") +
               '<span class="duration">' + escapeHtml(g.bedtime_duration) + "</span>" +
               '<span class="playing-tag" hidden>Now playing</span>' +
             "</span>";
@@ -933,6 +1023,9 @@
             "</div>" +
             '<div class="locked-meta">' +
               '<span class="badge">' + escapeHtml(g.badge) + "</span>" +
+              IA_BADGES.map(function (b) {
+                return '<span class="badge exam">' + escapeHtml(b) + "</span>";
+              }).join("") +
               '<span class="locked-tag">Subscribers only</span>' +
             "</div>" +
             '<div class="subscribe-row">' +
@@ -979,6 +1072,9 @@
         var nextBtn = document.getElementById("nextBtn");
         var stopBtn = document.getElementById("stopBtn");
         var voiceNotice = document.getElementById("voiceNotice");
+        var marksNote = document.getElementById("marksNote");
+        var marksLabel = document.getElementById("marksLabel");
+        var marksText = document.getElementById("marksText");
 
         function pickVoice() {
           if (!synth) return null;
@@ -1042,6 +1138,22 @@
             progressFill.style.width = "0%";
             progressBar.setAttribute("aria-valuenow", "0");
             progressText.textContent = "0 of " + chunks.length + " sentences";
+          }
+          /* Marks note: Morning Briefing only, shown on screen once a
+             model answer has finished playing. Never narrated. */
+          var shownMarks = null;
+          if (state.mode === "morning" && state.started) {
+            var ml = currentModeData().marksList || [];
+            for (var k = 0; k < ml.length; k++) {
+              if (state.chunk >= ml[k].end) shownMarks = ml[k];
+            }
+          }
+          if (shownMarks) {
+            marksLabel.textContent = shownMarks.label + " — marks";
+            marksText.textContent = shownMarks.marks;
+            marksNote.hidden = false;
+          } else {
+            marksNote.hidden = true;
           }
           playIcon.style.display = state.playing ? "none" : "";
           pauseIcon.style.display = state.playing ? "" : "none";

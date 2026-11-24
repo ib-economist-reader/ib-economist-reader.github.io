@@ -284,6 +284,15 @@
   .gcard .thesis{font-size:15px; color:var(--ink-soft); line-height:1.6; margin:0}
   .gcard .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:14px}
   .tag{font-size:12.5px; border:1px solid var(--line); border-radius:var(--radius-full); padding:4px 10px; color:var(--ink-soft); background:var(--paper-2)}
+  .exam-chips{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px}
+  .echip{font-size:12.5px; font-weight:700; border:1px solid var(--red); border-radius:var(--radius-full); padding:4px 10px; color:var(--red); background:var(--paper); white-space:nowrap}
+  .exam-link{margin:10px 0 0; font-size:14.5px; line-height:1.6; color:var(--ink-soft)}
+  .paper-filter{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:22px 0 2px}
+  .paper-filter .pf-label{font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-right:4px}
+  .pf-btn{appearance:none; font-family:inherit; font-size:14.5px; font-weight:600; border:1px solid var(--line); border-radius:var(--radius-full); padding:8px 16px; background:var(--paper); color:var(--ink); cursor:pointer}
+  .pf-btn:hover{border-color:var(--ink)}
+  .pf-btn[aria-pressed="true"]{background:var(--red); border-color:var(--red); color:#fff}
+  .pf-empty{margin:18px 0 0; padding:16px 18px; border:1px solid var(--line); border-radius:var(--radius-md); background:var(--paper-2); font-size:15.5px}
   .gcard .go{margin-top:auto; padding-top:14px; font-size:14.5px; font-weight:700; color:var(--red)}
   /* Volume 02: free badge + locked subscriber previews */
   .free-badge{font-size:12px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:#fff; background:var(--red); border-radius:var(--radius-full); padding:4px 10px; line-height:1.3; white-space:nowrap}
@@ -508,42 +517,56 @@
     <section class="block" id="guides">
       <div class="sec-head"><span class="no">05</span><h2>Free sample — Sample Volume 01</h2><span class="sec-note">All 5 guides, fully open</span></div>
       <p>One full volume, free. All five guides below are complete on this page — background, breakdown, vocabulary, chart reading, tasks and model answers. No card, no sign-up needed to read them. This is exactly the format every weekly volume follows — and each new volume, like Volume 02 below, also opens with one guide that is free for everyone, published in full on this site.</p>
+      <div class="paper-filter" role="group" aria-label="Browse guides by exam paper">
+        <span class="pf-label">Browse by paper</span>
+        <button type="button" class="pf-btn" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="pf-btn" data-filter="ia" aria-pressed="false">IA</button>
+        <button type="button" class="pf-btn" data-filter="p1" aria-pressed="false">Paper 1</button>
+        <button type="button" class="pf-btn" data-filter="p2" aria-pressed="false">Paper 2</button>
+        <button type="button" class="pf-btn" data-filter="p3" aria-pressed="false">Paper 3</button>
+      </div>
+      <p class="pf-empty" id="pf-empty" hidden>No guide trains Paper 3 yet. Paper 3-style tasks arrive from Volume 04 where the article supports a quantitative question.</p>
       <div class="guide-grid" role="list">
-        <button type="button" class="gcard" data-open="1" role="listitem">
+        <button type="button" class="gcard" data-papers="p1a p2 ia" data-open="1" role="listitem">
           <span class="g-top"><span class="idx">1</span><span class="unit-badge">Unit 2 · Microeconomics</span></span>
           <span class="unit">2.2 Supply · 2.3 Equilibrium</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>When sulphur runs short: the hidden input crisis for mines and farms</h3>
           <p class="thesis">A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.</p>
           <span class="tags"><span class="tag">IA commentary (micro)</span><span class="tag">Supply &amp; demand diagram</span></span>
           <span class="go">Read the guide →</span>
         </button>
-        <button type="button" class="gcard" data-open="2" role="listitem">
+        <button type="button" class="gcard" data-papers="p1a p2 ia" data-open="2" role="listitem">
           <span class="g-top"><span class="idx">2</span><span class="unit-badge">Unit 3 · Macroeconomics</span></span>
           <span class="unit">3.2 AD/AS · 3.3 Objectives</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>China's households stop borrowing: what falling consumer credit signals</h3>
           <p class="thesis">Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings. That is a warning sign for domestic demand.</p>
           <span class="tags"><span class="tag">IA commentary (macro)</span><span class="tag">AD/AS diagram</span></span>
           <span class="go">Read the guide →</span>
         </button>
-        <button type="button" class="gcard" data-open="3" role="listitem">
+        <button type="button" class="gcard" data-papers="p1a p2 p1b" data-open="3" role="listitem">
           <span class="g-top"><span class="idx">3</span><span class="unit-badge">Unit 4 · Global economy</span></span>
           <span class="unit">4.5 Exchange rates · 4.6 Balance of payments</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">Paper 1 (b) · 15 marks</span></span>
           <h3>Britain and the IMF: why 2026 is not 1976</h3>
           <p class="thesis">The year 2026 echoes 1976, but the parallels are superficial. Another trip to the IMF is unlikely, because the fundamentals are very different.</p>
           <span class="tags"><span class="tag">IA commentary (global)</span><span class="tag">Paper 1 essay evidence</span><span class="tag">TOK extension</span></span>
           <span class="go">Read the guide →</span>
         </button>
-        <button type="button" class="gcard" data-open="4" role="listitem">
+        <button type="button" class="gcard" data-papers="p1a p2 p1b" data-open="4" role="listitem">
           <span class="g-top"><span class="idx">4</span><span class="unit-badge">Unit 4 · Global economy</span></span>
           <span class="unit">4.7 Sustainable development · 4.10 Development strategies</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">Paper 1 (b) · 15 marks</span></span>
           <h3>More money for poorer countries: China's growing role in global aid</h3>
           <p class="thesis">As America steps back from multilateral giving, a gap opens. China, though giving more, is neither willing nor able to fill it, while seeking a greater say in the institutions that hand aid out.</p>
           <span class="tags"><span class="tag">IA commentary (global)</span><span class="tag">Paper 2 data response</span></span>
           <span class="go">Read the guide →</span>
         </button>
-        <button type="button" class="gcard" data-open="5" role="listitem">
+        <button type="button" class="gcard" data-papers="p1a p2 ia" data-open="5" role="listitem">
           <span class="g-top"><span class="idx">5</span><span class="unit-badge">Unit 2 · Micro &amp; development</span></span>
           <span class="unit">2.2 · 2.3 · 2.7 Intervention</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>Asia's food shock: can governments stop prices from surging?</h3>
           <p class="thesis">A fierce El Niño is hitting Asian countries already weakened by an energy shock, threatening food supplies. Governments must decide whether they can prevent a shock, and how.</p>
           <span class="tags"><span class="tag">IA commentary (micro)</span><span class="tag">Supply &amp; demand diagram</span></span>
@@ -566,17 +589,19 @@
       <div class="sec-head"><span class="no">06</span><h2>Volume 02 — November 2026</h2><span class="sec-note">First paid weekly volume</span></div>
       <p>Volume 02 is published here, on this website — new volumes now appear on the site each week rather than arriving by email. Guide 1 is free for everyone: read it in full on this page, in exactly the same format as the Sample Volume 01 guides, or download it as a PDF. Guides 2–5 are for subscribers; the previews below show each guide's title, syllabus unit and what it covers.</p>
       <div class="guide-grid" role="list">
-        <button type="button" class="gcard" data-open="6" role="listitem">
+        <button type="button" class="gcard" data-papers="p1a p2 ia" data-open="6" role="listitem">
           <span class="g-top"><span class="idx">1</span><span class="unit-badge">Unit 4 · Global economy</span><span class="free-badge">Free guide</span></span>
           <span class="unit">4.1 Benefits of trade · 4.2 Types of trade protection</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>China's exports of clean tech to South-East Asia are soaring</h3>
           <p class="thesis">Chinese clean-technology exports are shifting rapidly from Europe to South-East Asia, where governments welcome rather than resist them. Both sides gain in the short run, but dependence and tariff evasion raise questions.</p>
           <span class="tags"><span class="tag">IA commentary (global)</span><span class="tag">Paper 1 essay evidence</span><span class="tag">Supply &amp; demand diagram</span></span>
           <span class="go">Read the free guide →</span>
         </button>
-        <div class="gcard locked" role="listitem">
+        <div class="gcard locked" data-papers="p1a p2 ia" role="listitem">
           <span class="g-top"><span class="idx">2</span><span class="unit-badge">Unit 2 · Microeconomics</span></span>
           <span class="unit">2.5 Elasticity of demand</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>The panic over personalised pricing is overdone</h3>
           <p class="thesis">Lawmakers are rushing to ban personalised pricing, but the panic is overdone: charging different customers different prices can leave most of them better off, and firms have good reasons to hold back.</p>
           <div class="lock-box">
@@ -587,9 +612,10 @@
             </div>
           </div>
         </div>
-        <div class="gcard locked" role="listitem">
+        <div class="gcard locked" data-papers="p1a p2 ia" role="listitem">
           <span class="g-top"><span class="idx">3</span><span class="unit-badge">Unit 3 · Macroeconomics</span></span>
           <span class="unit">3.5 Monetary policy</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>Bond yields are rising everywhere—except China</h3>
           <p class="thesis">Bond yields are climbing in most of the world, but China's have fallen to record lows — driven less by central-bank rate cuts than by a structural shift in what the economy borrows for, and savers fleeing a weak stock market.</p>
           <div class="lock-box">
@@ -600,9 +626,10 @@
             </div>
           </div>
         </div>
-        <div class="gcard locked" role="listitem">
+        <div class="gcard locked" data-papers="p1a p2 ia" role="listitem">
           <span class="g-top"><span class="idx">4</span><span class="unit-badge">Unit 3 · Macroeconomics</span></span>
           <span class="unit">3.4 Inequality and poverty</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>China's efforts to strengthen its safety net fuel public anger</h3>
           <p class="thesis">China's push to widen and enforce its social-security system is meeting resistance: workers who are asked to pay more see high payments, unequal benefits and an uncertain payoff.</p>
           <div class="lock-box">
@@ -613,9 +640,10 @@
             </div>
           </div>
         </div>
-        <div class="gcard locked" role="listitem">
+        <div class="gcard locked" data-papers="p1a p2 ia" role="listitem">
           <span class="g-top"><span class="idx">5</span><span class="unit-badge">Unit 4 · Global economy</span></span>
           <span class="unit">4.8 Measuring development · 4.9 Barriers to development</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>Africa's solar revolution is vast and speedy</h3>
           <p class="thesis">Africa's solar boom is far larger and faster than official figures suggest, because most of it is small, scattered and privately bought rather than built by utilities.</p>
           <div class="lock-box">
@@ -655,17 +683,19 @@
       <div class="sec-head"><span class="no">07</span><h2>Volume 03 — November 2026</h2><span class="sec-note">Second paid weekly volume</span></div>
       <p>Volume 03 is published here, on this website. Guide 1 is free for everyone: read it in full on this page, in exactly the same format as the Sample Volume 01 guides, or download it as a PDF. Guides 2–5 are for subscribers; the previews below show each guide's title, syllabus unit and what it covers.</p>
       <div class="guide-grid" role="list">
-        <button type="button" class="gcard" data-open="7" role="listitem">
+        <button type="button" class="gcard" data-papers="p1a p2 ia" data-open="7" role="listitem">
           <span class="g-top"><span class="idx">1</span><span class="unit-badge">Unit 3 · Macroeconomics</span><span class="free-badge">Free guide</span></span>
           <span class="unit">3.6 Fiscal policy · 3.5 Monetary policy</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>Europe living beyond its means</h3>
           <p class="thesis">Europe spends far more on pensions and welfare than it can afford, and the gap is now catching up with it. Five countries carry public debt at or above 100% of GDP, yet fragmented parliaments and populist politics make the needed cuts almost impossible to agree.</p>
           <span class="tags"><span class="tag">IA commentary (macro)</span><span class="tag">Paper 1 essay evidence</span><span class="tag">AD/AS diagram</span></span>
           <span class="go">Read the free guide →</span>
         </button>
-        <div class="gcard locked" role="listitem">
+        <div class="gcard locked" data-papers="p1a p2 ia" role="listitem">
           <span class="g-top"><span class="idx">2</span><span class="unit-badge">Unit 3 · Macroeconomics</span></span>
           <span class="unit">3.6 Fiscal policy · 3.7 Supply-side policies · 4.2 Trade protection</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>The future of Trumponomics</h3>
           <p class="thesis">After heavy midterm losses, the president faces a Congress controlled by the opposition, so his remaining years will be shaped less by one-party lawmaking than by vetoes, deadlines and bargains — fiscal deals are the likeliest ground for compromise, at the cost of a larger deficit.</p>
           <div class="lock-box">
@@ -676,9 +706,10 @@
             </div>
           </div>
         </div>
-        <div class="gcard locked" role="listitem">
+        <div class="gcard locked" data-papers="p1a p2 ia" role="listitem">
           <span class="g-top"><span class="idx">3</span><span class="unit-badge">Unit 4 · Global economy</span></span>
           <span class="unit">4.2 Types of trade protection · 4.3 Trade control arguments</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>How China continues to evade America's tech-export rules</h3>
           <p class="thesis">American export controls on advanced chips were meant to slow China's development of artificial intelligence, but they are leaking badly — through smuggling, middlemen and remote access to computing power abroad — while China builds its own chip industry fast enough to make the controls pointless.</p>
           <div class="lock-box">
@@ -689,9 +720,10 @@
             </div>
           </div>
         </div>
-        <div class="gcard locked" role="listitem">
+        <div class="gcard locked" data-papers="p1a p2 ia" role="listitem">
           <span class="g-top"><span class="idx">4</span><span class="unit-badge">Unit 4 · Global economy</span></span>
           <span class="unit">4.2 Types of trade protection · 4.3 Trade control arguments · 4.1 Benefits of trade</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>Europe tightens sanctions on Russia. America loosens them</h3>
           <p class="thesis">The Western sanctions regime against Russia is splitting in two: the European Union is adding names to its blacklist faster than ever, while the United States is loosening its own restrictions — and the EU's regime is slow, narrow and weakly enforced, so Russia keeps selling its oil elsewhere.</p>
           <div class="lock-box">
@@ -702,9 +734,10 @@
             </div>
           </div>
         </div>
-        <div class="gcard locked" role="listitem">
+        <div class="gcard locked" data-papers="p1a p2 ia" role="listitem">
           <span class="g-top"><span class="idx">5</span><span class="unit-badge">Unit 4 · Global economy</span></span>
           <span class="unit">4.8 Measuring development · 4.9 Barriers to development · Unit 3 Macroeconomics</span>
+          <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
           <h3>Bangladesh is no longer a development superstar</h3>
           <p class="thesis">Bangladesh was once a surprising development success despite weak politics, but corruption under the former regime has left its banks close to insolvent, credit is drying up, growth is slowing, and poverty is rising again — the banking crisis is now the main barrier to further development.</p>
           <div class="lock-box">
@@ -879,12 +912,14 @@
     </nav>
 
     <!-- Guide 1 -->
-    <article class="reader-page" id="reader-1">
+    <article class="reader-page" id="reader-1" data-papers="p1a p2 ia">
       <div class="redbar" aria-hidden="true"></div>
       <div class="r-head">
         <div class="r-kicker">Guide 1 · Microeconomics</div>
+        <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
         <h2>When sulphur runs short: the hidden input crisis for mines and farms</h2>
         <p class="r-unit"><b>IB unit:</b> Unit 2 Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium. <i>Also useful:</i> Unit 3 Macroeconomics: 3.3 Cost-push inflation.<br /><b>Best IB use:</b> IA commentary (micro) with a supply-and-demand diagram.</p>
+        <p class="exam-link">Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + IA (micro commentary, 14 marks). Paper 3 not covered by this guide.</p>
       </div>
       <div class="pullquote">A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.</div>
       <div class="r-sec"><h3>What it argues</h3><p>A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.</p></div>
@@ -927,12 +962,14 @@
     </article>
 
     <!-- Guide 2 -->
-    <article class="reader-page" id="reader-2" hidden>
+    <article class="reader-page" id="reader-2" hidden data-papers="p1a p2 ia">
       <div class="redbar" aria-hidden="true"></div>
       <div class="r-head">
         <div class="r-kicker">Guide 2 · Macroeconomics</div>
+        <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
         <h2>China's households stop borrowing: what falling consumer credit signals</h2>
         <p class="r-unit"><b>IB unit:</b> Unit 3 Macroeconomics: 3.2 Aggregate demand and aggregate supply, 3.3 Macroeconomic objectives.<br /><b>Best IB use:</b> IA commentary (macro) with an AD/AS diagram.</p>
+        <p class="exam-link">Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + IA (macro commentary, 14 marks). Paper 3 not covered by this guide.</p>
       </div>
       <div class="pullquote">Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings.</div>
       <div class="r-sec"><h3>What it argues</h3><p>Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings. That is a warning sign for domestic demand.</p></div>
@@ -973,12 +1010,14 @@
     </article>
 
     <!-- Guide 3 -->
-    <article class="reader-page" id="reader-3" hidden>
+    <article class="reader-page" id="reader-3" hidden data-papers="p1a p2 p1b">
       <div class="redbar" aria-hidden="true"></div>
       <div class="r-head">
         <div class="r-kicker">Guide 3 · The global economy — international</div>
+        <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">Paper 1 (b) · 15 marks</span></span>
         <h2>Britain and the IMF: why 2026 is not 1976</h2>
         <p class="r-unit"><b>IB unit:</b> Unit 4 The global economy: 4.5 Exchange rates, 4.6 Balance of payments. <i>Also useful:</i> Unit 3 Macroeconomics: 3.6 Fiscal policy, government debt.<br /><b>Best IB use:</b> IA commentary (global) or Paper 1 essay evidence.</p>
+        <p class="exam-link">Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + Paper 1 (b) essay (15 marks). Paper 3 not covered by this guide.</p>
       </div>
       <div class="pullquote">The year 2026 echoes 1976, but the parallels are superficial.</div>
       <div class="r-sec"><h3>What it argues</h3><p>The year 2026 echoes 1976, but the parallels are superficial. Another trip to the IMF is unlikely, because the fundamentals are very different.</p></div>
@@ -1020,12 +1059,14 @@
     </article>
 
     <!-- Guide 4 -->
-    <article class="reader-page" id="reader-4" hidden>
+    <article class="reader-page" id="reader-4" hidden data-papers="p1a p2 p1b">
       <div class="redbar" aria-hidden="true"></div>
       <div class="r-head">
         <div class="r-kicker">Guide 4 · The global economy — development</div>
+        <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">Paper 1 (b) · 15 marks</span></span>
         <h2>More money for poorer countries: China's growing role in global aid</h2>
         <p class="r-unit"><b>IB unit:</b> Unit 4 The global economy: 4.7 Sustainable development, 4.10 Development strategies.<br /><b>Best IB use:</b> IA commentary (global) or Paper 2 data-response evidence.</p>
+        <p class="exam-link">Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response (alternative prompt) + Paper 1 (b) essay (15 marks). Paper 3 not covered by this guide.</p>
       </div>
       <div class="pullquote">As America steps back from multilateral giving, a gap opens.</div>
       <div class="r-sec"><h3>What it argues</h3><p>As America steps back from multilateral giving, a gap opens. China, though giving more, is neither willing nor able to fill it, while seeking a greater say in the institutions that hand aid out.</p></div>
@@ -1066,12 +1107,14 @@
     </article>
 
     <!-- Guide 5 -->
-    <article class="reader-page" id="reader-5" hidden>
+    <article class="reader-page" id="reader-5" hidden data-papers="p1a p2 ia">
       <div class="redbar" aria-hidden="true"></div>
       <div class="r-head">
         <div class="r-kicker">Guide 5 · Microeconomics and development</div>
+        <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
         <h2>Asia's food shock: can governments stop prices from surging?</h2>
         <p class="r-unit"><b>IB unit:</b> Unit 2 Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium, 2.7 Role of government in microeconomics. <i>Also useful:</i> Unit 4 The global economy: 4.9 Barriers to development; Unit 3 Macroeconomics: 3.3 Inflation.<br /><b>Best IB use:</b> IA commentary (micro) with a supply-and-demand diagram.</p>
+        <p class="exam-link">Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + IA (micro commentary, 14 marks). Paper 3 not covered by this guide.</p>
       </div>
       <div class="pullquote">A fierce El Niño is hitting Asian countries already weakened by an energy shock, threatening food supplies.</div>
       <div class="r-sec"><h3>What it argues</h3><p>A fierce El Niño is hitting Asian countries already weakened by an energy shock, threatening food supplies. Governments must decide whether they can prevent a shock, and how.</p></div>
@@ -1112,12 +1155,14 @@
     </article>
 
     <!-- Volume 02 · Guide 1 (free) -->
-    <article class="reader-page" id="reader-6" hidden>
+    <article class="reader-page" id="reader-6" hidden data-papers="p1a p2 ia">
       <div class="redbar" aria-hidden="true"></div>
       <div class="r-head">
         <div class="r-kicker">Volume 02 · Guide 1 of 5 · Free guide</div>
+        <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
         <h2>China's exports of clean tech to South-East Asia are soaring</h2>
         <p class="r-unit"><b>IB unit:</b> Unit 4 The global economy: 4.1 Benefits of international trade, 4.2 Types of trade protection. <i>Also useful:</i> 4.3 Arguments for and against trade control / protection.<br /><b>Best IB use:</b> IA commentary (global) or Paper 1 essay evidence.</p>
+        <p class="exam-link">Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + IA (global commentary, 14 marks). Paper 3 not covered by this guide.</p>
         <p class="r-unit" style="margin-top:10px"><b>Free guide.</b> This guide is free to all readers; guides 2–5 of Volume 02 are for subscribers. <a href="2026-11-14-chinas-exports-of-clean-tech-to-south-east-asia-are-soaring-guide.pdf">Download this guide as a PDF</a>.</p>
       </div>
       <div class="pullquote">Chinese clean-technology exports are shifting rapidly from Europe to South-East Asia, where governments welcome rather than resist them.</div>
@@ -1167,12 +1212,14 @@
     </article>
 
     <!-- Volume 03 · Guide 1 (free) -->
-    <article class="reader-page" id="reader-7" hidden>
+    <article class="reader-page" id="reader-7" hidden data-papers="p1a p2 ia">
       <div class="redbar" aria-hidden="true"></div>
       <div class="r-head">
         <div class="r-kicker">Volume 03 · Guide 1 of 5 · Free guide</div>
+        <span class="exam-chips"><span class="echip">Paper 1 (a) · 10 marks</span><span class="echip">Paper 2</span><span class="echip">IA · 14 marks</span></span>
         <h2>Europe living beyond its means</h2>
         <p class="r-unit"><b>IB unit:</b> Unit 3 Macroeconomics: 3.6 Fiscal policy: government spending, taxation, budget deficits and government debt. <i>Also useful:</i> 3.5 Monetary policy — higher interest rates raise the cost of servicing government debt.<br /><b>Best IB use:</b> IA commentary (macro) or Paper 1 essay evidence.</p>
+        <p class="exam-link">Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + IA (macro commentary, 14 marks). Paper 3 not covered by this guide.</p>
         <p class="r-unit" style="margin-top:10px"><b>Free guide.</b> This guide is free to all readers; guides 2–5 of Volume 03 are for subscribers. <a href="2026-11-14-europe-living-beyond-its-means-guide.pdf">Download this guide as a PDF</a>.</p>
       </div>
       <div class="pullquote">Europe wants a level of public spending it can no longer afford, and its fractured politics cannot agree the cuts — so the bond markets may end up imposing them.</div>
@@ -1275,6 +1322,28 @@
       this.setAttribute('aria-expanded', open ? 'true' : 'false');
       var sign = this.querySelector('.sign');
       if(sign){ sign.textContent = open ? '－' : '＋'; }
+    });
+  }
+  var pfBtns = document.querySelectorAll('.pf-btn');
+  var pfCards = document.querySelectorAll('.gcard[data-papers]');
+  var pfEmpty = document.getElementById('pf-empty');
+  function paperMatch(papers, filter){
+    if(filter === 'all') return true;
+    var list = papers.split(' ');
+    if(filter === 'p1') return list.indexOf('p1a') !== -1 || list.indexOf('p1b') !== -1;
+    return list.indexOf(filter) !== -1;
+  }
+  for(var p=0;p<pfBtns.length;p++){
+    pfBtns[p].addEventListener('click', function(){
+      var filter = this.getAttribute('data-filter');
+      for(var b=0;b<pfBtns.length;b++){ pfBtns[b].setAttribute('aria-pressed', pfBtns[b] === this ? 'true' : 'false'); }
+      var visible = 0;
+      for(var c=0;c<pfCards.length;c++){
+        var show = paperMatch(pfCards[c].getAttribute('data-papers'), filter);
+        pfCards[c].hidden = !show;
+        if(show) visible++;
+      }
+      if(pfEmpty){ pfEmpty.hidden = visible !== 0; }
     });
   }
 })();

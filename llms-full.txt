@@ -1,20 +1,29 @@
 # IB EconLens — full text of the free guides
 
-> IB EconLens turns weekly global current affairs into IB Diploma Economics revision guides. Each guide gives background, argument breakdown, vocabulary, chart reading, three tasks and model answers, with the IB syllabus unit labelled. This file contains the full text of the free guides only. Subscriber guides are not included. Site: https://ibeconlens.geledtech.com/ — see llms.txt for the site map.
+> IB EconLens turns weekly global current affairs into IB Diploma Economics revision guides. Each guide gives background, argument breakdown, vocabulary, chart reading, three exam-labelled tasks and model answers with marks notes, with the IB syllabus unit labelled. This file contains the full text of the free guides only. Subscriber guides are not included. Site: https://ibeconlens.geledtech.com/ — see llms.txt for the site map.
+
+---
 
 ---
 
 ## A shortage of sulphur could hurt mines and farms everywhere (Sample Volume 01)
 
+# IB EconLens: Single 1 of 5
+
+**Paper 1 (a) · 10 marks** · **Paper 2** · **IA · 14 marks**
+
 ## How to use this single
 
-Read the original first , then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps (same-word distractors, pronoun reference). Attempt the tasks before reading the model answers at the end of this file. A model is one strong answer, not the only answer.
+Read the original first, then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps (same-word distractors, pronoun reference). Attempt the tasks before reading the model answers at the end of this file. A model is one strong answer, not the only answer.
 
 # A shortage of sulphur could hurt mines and farms everywhere
 
-IB unit: Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium. Also useful: Macroeconomics: 3.3 Cost-push inflation.
+Finance and economics, 17 October 2026 issue.
+
+IB unit: Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium. *Also useful:* Macroeconomics: 3.3 Cost-push inflation.
 Best IB use: IA commentary (micro) with a supply-and-demand diagram.
 
+Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + IA (micro commentary, 14 marks). Paper 3 not covered by this guide.
 What it argues. A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.
 
 Before you read. Sulphur is a by-product of turning oil into fuel, so a refining squeeze is automatically a sulphur squeeze. Russia had already banned sulphur exports, cutting shipments from 4.8 million tonnes in 2025 (15% of globally traded volumes) to 1.8 million tonnes in 2026 so far. In February, Middle Eastern solid bulk sulphur fetched USD 500 a tonne, up from USD 340 a year earlier. The Strait of Hormuz closure trapped nearly a quarter of global sulphur production and half of seaborne exports; shipments remain two-thirds below pre-war levels.
@@ -32,40 +41,55 @@ How to read it.
 - The article opens with diesel (the loud shock) and then pivots to sulphur (the quiet one). Why start with the familiar story? What does the pivot do to your sense of the problem's scale?
 - The case is built almost entirely on quantities and prices. List them, and for each one ask: what exactly does this number prove?
 - Note the language of quietness: "quieter side-effect", "only beginning to show". What tone does that set, and what does it imply about the damage still to come?
+- Reading note. The author opens with diesel, the shock readers already understand, then pivots to sulphur, its quieter side-effect. The pivot builds a causal chain — war, refineries cut off, fuel squeeze, then sulphur starved — and reframes the crisis as an input story, wider than the price at the pump.
 
-A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.
+**A war-driven squeeze on refining has produced a quieter second shock: sulphur, a by-product input for fertiliser, mining and chipmaking, is scarce, and the damage is only beginning to show.**
+]
 Tasks.
-- A. Analysis. Analyse the diesel-to-sulphur pivot as a structural choice. Why does the author not open with sulphur itself? Support your answer with two details from the article.
-- B. Logic. The article states that sulphur markets were already tight before the war. What does that do to a simple "the war caused it" reading? Name the two causes a good commentary must keep separate.
-- C. IA commentary (800 words). Using this article as your extract, analyse the effect of the sulphur shortage on the market for fertiliser, with a supply-and-demand diagram. Evaluate one possible response, such as a subsidy to fertiliser producers or a strategic stockpile.
+- A. Paper 1 (a) · 10 marks. Use a supply-and-demand diagram to explain how the sulphur shortage pushes up the price of fertiliser.
+- B. Paper 2 data response. The article states that sulphur markets were already tight before the war. What does that do to a simple "the war caused it" reading? Name the two causes a good commentary must keep separate.
+- C. IA commentary (800 words) — IA · 14 marks. Using this article as your extract, analyse the effect of the sulphur shortage on the market for fertiliser, with a supply-and-demand diagram. Evaluate one possible response, such as a subsidy to fertiliser producers or a strategic stockpile.
 
 ## Model answers (read after attempting the tasks)
 
-Task A model. The author opens with diesel for a reason: it is the shock readers already understand. Fuel prices are visible at the pump, and the war's effect on refineries is an established story. Sulphur, by contrast, is invisible to most readers, yet it is produced by the same refining process. By starting with the familiar shock and then revealing its quieter side-effect, the author builds a causal chain the reader can follow (war, refineries cut off, fuel squeeze) and then extends it one link further (refining produces sulphur, so the same disruption starves fertiliser, mining and chipmaking). The pivot reframes the crisis: it is no longer only a fuel story but an input story, wider than the price at the pump suggests. The warning that the damage is only beginning to show raises the stakes rather than settling them: the reader is left expecting more damage, not less. That is why the structure works. The familiar story earns attention, and the pivot spends it on the unfamiliar one.
+Task A model. Sulphur is an input in fertiliser production, so a shortage raises producers' costs of production. On a supply-and-demand diagram for fertiliser, the supply curve shifts left, from S1 to S2. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. The size of the price rise depends on the elasticity of demand: fertiliser has few short-term substitutes and is essential for crop yields, so demand is price-inelastic. The price therefore rises proportionately more than quantity falls, and farmers' total spending on fertiliser increases even though they buy less. The article's figures show the mechanism at work: Middle Eastern sulphur reached USD 500 a tonne, up from USD 340 a year earlier, while the Strait of Hormuz closure trapped nearly a quarter of global production. A leftward supply shift caused by higher input costs is exactly what the diagram shows.
 
-Task B model. Two causes must be kept separate. First, pre-war tightness: Russia had already banned sulphur exports, cutting shipments from 4.8 million tonnes in 2025 to 1.8 million tonnes in 2026 so far, while attacks on Red Sea shipping and the threat of American tariffs on Canada added further pressure. Prices had already risen from USD 340 to USD 500 a tonne before the Hormuz closure. Second, the war shock itself: the Strait's closure trapped nearly a quarter of global production and half of seaborne exports, leaving shipments two-thirds below pre-war levels. The distinction matters because the two causes imply different durations and remedies: a war shock may reverse with a ceasefire, but structural tightness will not.
+Marks: 9–10 band — the diagram is fully explained, the shift is correctly linked to higher input costs, terminology is accurate throughout, and the article's figures are used as evidence. It would fall to the 7–8 band if the diagram were drawn but not explained, or if the elasticity reasoning were left out.
+
+Task B model. Two causes must be kept separate. First, pre-war tightness: Russia had already banned sulphur exports, cutting shipments from 4.8 million tonnes in 2025 to 1.8 million tonnes in 2026 so far, Prices had already risen from USD 340 to USD 500 a tonne before the Hormuz closure. Second, the war shock itself: the Strait's closure trapped nearly a quarter of global production and half of seaborne exports, leaving shipments two-thirds below pre-war levels. The distinction matters because the two causes imply different durations and remedies: a war shock may reverse with a ceasefire, but structural tightness will not.
+
+Marks: 5/5 (Paper 2 short answer) — the two causes are separated with precise figures and the distinction is tied to duration and remedy. It would lose a mark if it only listed the causes without explaining why keeping them apart matters.
 
 Task C model: IA commentary. The market for fertiliser is a useful place to see the sulphur shortage at work. Sulphur is an input in fertiliser production, so a shortage raises producers' costs. On a supply-and-demand diagram, the supply curve for fertiliser shifts left, from S1 to S2. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. Because fertiliser is an essential input with few short-term substitutes, demand for it is relatively price-inelastic: the price rise is proportionately large while the quantity fall is small, so farmers' total spending on fertiliser rises even as they use less of it.
 
-The effects spread beyond the diagram. Farmers face higher costs and thinner margins; some will cut fertiliser use, which lowers crop yields and tightens food supply further. Consumers then face higher food prices. The same input shock hits mining and chipmaking, so industries compete for the same scarce sulphur, pushing its price higher still. The burden is uneven: low-income households spend a larger share of income on food, so a fertiliser-driven food price rise hits them hardest.
+The effects spread beyond the diagram. Farmers face higher costs and thinner margins; some will cut fertiliser use, which lowers crop yields and tightens food supply further. Consumers then face higher food prices. The burden is uneven: low-income households spend a larger share of income on food, so a fertiliser-driven food price rise hits them hardest.
 
-Can policy fix this? A subsidy to fertiliser producers would cushion farmers in the short term, but it has clear limits. It burdens the government budget, it may keep inefficient producers alive, and it does not increase the supply of sulphur itself: it treats the symptom, not the cause. Strategic stockpiles and diversified sourcing would build resilience, but they are slow and costly to assemble, and they cannot be created after the shortage has arrived. In the long run, recycling sulphur and developing alternative processes would address the structural cause, but that takes years.
+Can policy fix this? A subsidy to fertiliser producers would cushion farmers in the short term, but it has clear limits. It burdens the government budget, it does not increase the supply of sulphur itself: it treats the symptom, not the cause. Strategic stockpiles would build resilience, but they are slow and costly to assemble, and they cannot be created after the shortage has arrived. 
 
 The evaluation, then, is mixed. Government action can cushion the blow and buy time, especially for the poorest consumers, but it cannot cure a physical shortage. The priority should be protecting vulnerable households while supply adjusts, rather than pretending the price signal can be wished away.
+
+Marks: 10/14 — A 2/3 (shift described in words; a drawn, labelled diagram is still needed for 3/3), B 2/2, C 3/3, D 1/3 (no key concept named or linked — the main loss), E 2/3 (case for intervention working is thinner than the case against). Strength: the inelastic-demand reasoning.
 
 ---
 
 ## Another warning sign for China's economy: falling consumer credit (Sample Volume 01)
 
+# IB EconLens: Single 2 of 5
+
+**Paper 1 (a) · 10 marks** · **Paper 2** · **IA · 14 marks**
+
 ## How to use this single
 
-Read the original first , then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps (same-word distractors, pronoun reference). Attempt the tasks before reading the model answers at the end of this file. A model is one strong answer, not the only answer.
+Read the original first, then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps (same-word distractors, pronoun reference). Attempt the tasks before reading the model answers at the end of this file. A model is one strong answer, not the only answer.
 
 # Another warning sign for China's economy: falling consumer credit
+
+Finance and economics, 17 October 2026 issue.
 
 IB unit: Macroeconomics: 3.2 Aggregate demand and aggregate supply, 3.3 Macroeconomic objectives.
 Best IB use: IA commentary (macro) with an AD/AS diagram.
 
+Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + IA (macro commentary, 14 marks). Paper 3 not covered by this guide.
 What it argues. Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings. That is a warning sign for domestic demand.
 
 Before you read. Short-term loans to consumers fell by 8.3% in September compared with a year earlier, the steepest drop on record. In August the stock of consumer loans was the lowest since the harsh zero-covid lockdowns. During a public holiday at the start of October, the typical holidaymaker spent 2% less than in the same festive period in 2025. Household debt stood at 60% of GDP in 2020, stayed flat, then declined slightly (rich countries as a whole are just below 70%). The property crash means fewer mortgages and early repayments. The finance ministry has been subsidising banks so they can charge lower interest on consumer loans for big-ticket items such as new cars and home renovations.
@@ -84,36 +108,51 @@ How to read it.
 - Find the sentence beginning "Yet that does not explain...". What is the author signalling there, and why does the argument need a second explanation?
 - The property crash explains mortgages, but not consumer credit. How does the author separate the two stories instead of merging them?
 - The article sets a policy (subsidised loan rates) against an outcome (falling credit). What would you need to know before judging whether the policy failed?
+- Reading note. The author builds the 'warning sign' from data, not mood: the 8.3% fall in short-term consumer loans is the steepest on record, the August loan stock is the lowest since the zero-covid lockdowns, and holiday spending fell 2%. A record break turns a vague impression of frugality into a measurable break with the past, and the spending figure confirms the borrowing data reflect real spending.
 
-Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings.
+**Chinese households are borrowing less and spending less, despite government efforts to loosen their purse-strings.**
+]
 Tasks.
-- A. Analysis. Analyse how the author uses data to build a "warning sign". Which single number does the most work, and why? Quote or paraphrase it precisely.
-- B. Logic trap. "Households are borrowing less because they are frugal." The article offers this explanation and then qualifies it. State the qualified version in your own words, without letting "frugal" carry the whole explanation.
-- C. IA commentary (800 words). Using this article as your extract, analyse the effect of falling consumption on aggregate demand, with an AD/AS diagram. Evaluate the interest-rate subsidy policy: why might cheaper loans fail to raise borrowing?
+- A. Paper 1 (a) · 10 marks. Use an AD/AS diagram to explain how falling consumption affects real output and the price level in China.
+- B. Paper 2 data response. "Households are borrowing less because they are frugal." The article offers this explanation and then qualifies it. State the qualified version in your own words, without letting "frugal" carry the whole explanation.
+- C. IA commentary (800 words) — IA · 14 marks. Using this article as your extract, analyse the effect of falling consumption on aggregate demand, with an AD/AS diagram. Evaluate the interest-rate subsidy policy: why might cheaper loans fail to raise borrowing?
 
 ## Model answers (read after attempting the tasks)
 
-Task A model. The number that does the most work is the 8.3% fall in short-term consumer loans in September, described as the steepest drop on record. A record break converts a vague mood, households are "frugal", into a measurable break with the past: this is not normal caution but something historically unusual. It is reinforced by the August stock of consumer loans being the lowest since the zero-covid lockdowns, a comparison that frames the fall against an extreme benchmark. The holiday figure, spending 2% less than in the same festive period in 2025, then confirms that the borrowing data reflect real spending, not a statistical quirk. Together the three numbers move the reader from impression to evidence: the warning sign is not a feeling but a fact.
+Task A model. Consumption is the largest component of aggregate demand, so falling consumption shifts aggregate demand left, from AD1 to AD2, on an AD/AS diagram. Real output falls from Y1 to Y2 and the price level comes under downward pressure, from P1 to P2. Unemployment is likely to rise as firms cut production in response to weaker demand. The fall is amplified by the multiplier: lower spending means lower incomes for others, who then spend less in turn, so the final fall in output is larger than the initial fall in consumption. The article's evidence fits the diagram: short-term consumer loans fell 8.3% in September, the steepest drop on record, and holiday spending fell 2%. The mechanism is a demand-side contraction, not a supply shock: the economy moves down along the aggregate supply curve as demand falls.
+
+Marks: 9–10 band — the AD shift is correctly linked to consumption, the output, price-level and unemployment effects are all stated, the multiplier is explained, and article data are used. It would fall to the 7–8 band if only the shift were stated without its consequences, or if the diagram were left unexplained.
 
 Task B model. Households are borrowing less, but frugality is only part of the story. The property crash has cut mortgage demand and encouraged early repayment, and a mortgage is the largest loan most households take on, so that alone would shrink total borrowing. Consumer credit, however, has fallen even though the finance ministry subsidises banks to charge lower interest on loans for big-ticket items such as cars and renovations. If cheaper loans cannot lift borrowing, the cause is more likely weak confidence about incomes and house prices, or banks reluctant to lend, than a simple change in household character. The article's qualified version is therefore: borrowing is falling because demand is weak and credit conditions are tight, not merely because households have become careful.
+
+Marks: 5/5 (Paper 2 short answer) — mortgage and consumer credit are separated, the subsidy evidence is used, and a qualified version is stated. It would lose a mark if it accepted "frugal" uncritically.
 
 Task C model: IA commentary. Consumption is the largest component of aggregate demand in most economies, so falling consumption shifts aggregate demand left, from AD1 to AD2, on an AD/AS diagram. Real output falls, the price level comes under downward pressure, and unemployment is likely to rise as firms cut production. The multiplier amplifies the effect: lower spending means lower incomes for others, which leads to further spending cuts, so the initial fall in consumption produces a larger final fall in output.
 
 The government's response has been to subsidise banks so they can offer lower interest rates on consumer loans for big-ticket items. The evaluation of this policy is sceptical. First, cheaper loans help only if households want to borrow, and with house prices falling and incomes uncertain, confidence, not the interest rate, is the binding constraint. Second, banks may pocket the subsidy or lend only to the safest borrowers, so transmission to actual borrowing is weak. Third, the subsidy targets big-ticket items while the weakness is broad-based, so it misses much of the problem. Direct transfers to households would likely do more, because lower-income households have a higher propensity to spend, but they cost the budget and add to government debt. The policy treats a demand problem as a price problem: it may help at the margin, but it cannot by itself reverse a confidence-driven contraction.
 
+Marks: 11/14 — A 2/3 (AD shift and multiplier described in words; a drawn, labelled AD/AS diagram is still needed for 3/3), B 2/2, C 3/3, D 1/3 (no key concept named or linked — the main loss), E 3/3 (three limits plus the transfers alternative, with its cost noted). Strength: the evaluation tests the policy against the real constraint, confidence.
+
 ---
 
 ## Lessons from Britain's humiliating IMF bail-out (Sample Volume 01)
 
+# IB EconLens: Single 3 of 5
+
+**Paper 1 (a) · 10 marks** · **Paper 2** · **Paper 1 (b) · 15 marks**
+
 ## How to use this single
 
-Read the original first , then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps (same-word distractors, pronoun reference). Attempt the tasks before reading the model answers at the end of this file. A model is one strong answer, not the only answer.
+Read the original first, then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps (same-word distractors, pronoun reference). Attempt the tasks before reading the model answers at the end of this file. A model is one strong answer, not the only answer.
 
 # Lessons from Britain's humiliating IMF bail-out
 
-IB unit: The global economy: 4.5 Exchange rates, 4.6 Balance of payments. Also useful: Macroeconomics: 3.6 Fiscal policy, government debt.
+Britain, 17 October 2026 issue.
+
+IB unit: The global economy: 4.5 Exchange rates, 4.6 Balance of payments. *Also useful:* Macroeconomics: 3.6 Fiscal policy, government debt.
 Best IB use: IA commentary (global) or Paper 1 essay evidence.
 
+Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + Paper 1 (b) essay (15 marks). Paper 3 not covered by this guide.
 What it argues. The year 2026 echoes 1976, but the parallels are superficial. Another trip to the IMF is unlikely, because the fundamentals are very different.
 
 Before you read. In 1976, sterling's freefall forced Chancellor Denis Healey to turn back from a plane on 28 September and apply for an emergency IMF loan. A USD 3.9 billion bail-out, agreed in December, imposed conditions of the sort normally reserved for the world's weakest economies. Then: inflation 13.7%, ten-year gilt yields 15.7%, marginal tax rates as high as 98%. Now: inflation 3.8% (IMF estimate), ten-year gilt yields 5.4%, though Britain pays more to borrow than any other G7 country. The Chancellor prepares a budget on 28 October.
@@ -132,38 +171,53 @@ How to read it.
 - The article builds the parallel first, then dismantles it. Track where the turn happens and what evidence marks it.
 - The 1976-versus-2026 comparison does the persuading. Pick two pairs of numbers and state, in one sentence each, what each pair proves.
 - Note the word choice: "humiliating", "sketchiest". What stance does that language reveal, and does it weaken or strengthen the analysis?
+- Reading note. The 1976 parallel works emotionally before it works logically: a Chancellor turning back from a plane primes the reader to fear repetition. The article then tests the parallel against fundamentals — inflation 13.7% then against 3.8% now, gilt yields 15.7% against 5.4% — so the reader arrives worried and leaves reassured. A reader who stops at the parallel carries away a fear the evidence does not support.
 
-The year 2026 echoes 1976, but the parallels are superficial.
+**The year 2026 echoes 1976, but the parallels are superficial.**
+]
 Tasks.
-- A. Analysis. Analyse the historical parallel as a rhetorical device. What does the 1976 parallel make the reader feel before the evidence arrives, and how does the article then redirect that feeling?
-- B. Logic. "In both years the embattled Labour Party appointed a new prime minister." Is this evidence of an economic parallel, or a coincidence? How do you tell the difference?
-- C. Essay / TOK. "A country that issues its own currency cannot face a 1976-style crisis." Evaluate this claim, using the article's evidence. TOK extension: is historical analogy a valid form of economic evidence, and what are its limits?
+- A. Paper 1 (a) · 10 marks. Use a foreign-exchange market diagram to explain how a loss of confidence in sterling can cause the pound to depreciate.
+- B. Paper 2 data response. "In both years the embattled Labour Party appointed a new prime minister." Is this evidence of an economic parallel, or a coincidence? How do you tell the difference?
+- C. Essay — Paper 1 (b) · 15 marks. "A country that issues its own currency cannot face a 1976-style crisis." Evaluate this claim, using the article's evidence. TOK extension: is historical analogy a valid form of economic evidence, and what are its limits?
 
 ## Model answers (read after attempting the tasks)
 
-Task A model. The parallel works emotionally before it works logically. 1976 is remembered as a humiliation: a Chancellor turning back from a plane, a loan with conditions normally reserved for the world's weakest economies. Invoking that memory primes the reader to fear repetition. The article then redirects that feeling with the comparison of fundamentals: inflation 13.7% then against 3.8% now, ten-year gilt yields 15.7% against 5.4%. The turn is where the analysis actually happens: the reader arrives worried and leaves reassured, not because the parallel was wrong but because it was tested. That is the device's strength. It lets the reader feel the risk first and think it through second. And it is also its danger, because a reader who stops at the parallel will carry away a fear the evidence does not support.
+Task A model. On a foreign-exchange market diagram for sterling, the price of the pound is set by demand for and supply of sterling. A loss of confidence makes investors sell sterling-denominated assets, increasing the supply of sterling on the market and reducing demand for it. The supply curve shifts right and the demand curve shifts left, so the exchange rate falls from E1 to E2: sterling depreciates. Depreciation raises the price of imports, which pushes up inflation, and it raises the cost of servicing foreign-currency debt. The article shows why confidence matters: in 1976 sterling's freefall forced Britain to seek a USD 3.9 billion IMF loan, while in 2026 inflation of 3.8% and gilt yields of 5.4% are far below 1976 levels, so the same mechanism has produced a much smaller fall. The diagram explains the direction of the effect; the scale depends on the fundamentals.
+
+Marks: 9–10 band — both curves are shifted in the right directions, depreciation and its consequences (import prices, inflation) are stated, and article evidence is used to show the scale. It would fall to the 7–8 band if only one curve were shifted, or if depreciation were asserted without its consequences.
 
 Task B model. It is a coincidence, not economic evidence. The test is mechanism: does the fact transmit economic pressure? A shared party, a new prime minister two years into office, even a shared surname (Healey) describe political timing; they do not move bond yields, the exchange rate or inflation. The economic parallels, bond yields, inflation, competitiveness, energy shocks, do carry causal weight, because each one affects borrowing costs, purchasing power or trade. Confusing the two is the classic correlation trap: narrative resemblance is not an economic mechanism, and an argument built on it will collapse as soon as the mechanisms are examined.
 
-Task C model: essay. A government that issues its own currency borrows in that currency, so it cannot be forced to default in the way a foreign-currency borrower can. The central bank can always buy government bonds, as it did in 2008 and during the pandemic. The 1976 crisis also occurred under different monetary arrangements, when sterling's international role and exchange-rate commitments constrained policy in ways that no longer apply. On this view, a 1976-style crisis, understood as running out of money, is close to impossible.
+Marks: 5/5 (Paper 2 short answer) — the mechanism test is applied cleanly: political timing is separated from what moves yields, the exchange rate or inflation. It would lose a mark if it treated narrative resemblance as evidence.
 
-The case against is strong, however. A currency can still fall sharply, raising import prices and inflation. Bond markets can demand much higher yields, raising debt-service costs: Britain already pays more to borrow than any other G7 country. And fiscal space is political as well as technical. Markets judge credibility, and an IMF programme is often about credibility rather than cash: a government may not need the money but may need the market to believe it will act. The article's own evidence points this way. Inflation and yields are far below 1976 levels, yet borrowing costs are still the highest in the G7, which suggests markets are pricing risk, not just fundamentals.
+Task C model: essay. A government that issues its own currency borrows in that currency, so it cannot be forced to default in the way a foreign-currency borrower can. The central bank can always buy government bonds, as it did in 2008 and during the pandemic. On this view, a 1976-style crisis, understood as running out of money, is close to impossible.
+
+The case against is strong, however. A currency can still fall sharply, raising import prices and inflation. Bond markets can demand much higher yields, raising debt-service costs: Britain already pays more to borrow than any other G7 country. Markets judge credibility, and an IMF programme is often about credibility rather than cash: a government may not need the money but may need the market to believe it will act. The article's own evidence points this way. Inflation and yields are far below 1976 levels, yet borrowing costs are still the highest in the G7, which suggests markets are pricing risk, not just fundamentals.
 
 The defensible conclusion is therefore weaker than the claim. "Cannot" is too strong; "less likely, and different in form" is the version the evidence supports. As a TOK extension: historical analogy is useful for generating hypotheses, watch bond yields, watch sterling, but weak as proof, because it selects similarities and hides differences. It is valid only when the underlying mechanisms match, not merely the surface features.
+
+Marks: 10–12 band (Paper 1 (b)) — theory is complete on both sides, real examples are effective (2008, pandemic, G7 borrowing costs) and the conclusion judges the claim. It stays out of the 13–15 band because there is no diagram, and the case against leans on general claims rather than a worked counter-example. The TOK extension carries no Paper 1 marks. Strength: the "cannot" versus "less likely" distinction.
 
 ---
 
 ## China is channelling much more money to poor countries (Sample Volume 01)
 
+# IB EconLens: Single 4 of 5
+
+**Paper 1 (a) · 10 marks** · **Paper 2** · **Paper 1 (b) · 15 marks**
+
 ## How to use this single
 
-Read the original first , then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps (same-word distractors, pronoun reference). Attempt the tasks before reading the model answers at the end of this file. A model is one strong answer, not the only answer.
+Read the original first, then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps (same-word distractors, pronoun reference). Attempt the tasks before reading the model answers at the end of this file. A model is one strong answer, not the only answer.
 
 # China is channelling much more money to poor countries
+
+China, 17 October 2026 issue.
 
 IB unit: The global economy: 4.7 Sustainable development, 4.10 Development strategies.
 Best IB use: IA commentary (global) or Paper 2 data-response evidence.
 
+Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response (alternative prompt) + Paper 1 (b) essay (15 marks). Paper 3 not covered by this guide.
 What it argues. As America steps back from multilateral giving, a gap opens. China, though giving more, is neither willing nor able to fill it, while seeking a greater say in the institutions that hand aid out.
 
 Before you read. America has tired of the international institutions it helped create: last year the aid it channelled through multilateral organisations such as the World Bank and the UN fell by half, it has withdrawn from the World Health Organisation, and it still owes the WHO money. China has put up more cash, but cautiously. The article frames the situation with an idea from the economic historian Charles Kindleberger: danger arises when a stabilising power gives up its global role before an emerging power is ready or willing to take it on. The article draws on estimates by researchers at the Centre for Global Development in Washington.
@@ -182,36 +236,51 @@ How to read it.
 - The article opens with two "traps": the Thucydides trap and the Kindleberger trap. What does each frame make you expect, and which one does the article actually use?
 - The argument rests on who gives what, through which institutions. Before judging the conclusion, map the actors: the US, China, the World Bank, the UN, the WHO.
 - Note the author's stance. Words such as "sadly" (of the absent rivalry) reveal a view of great-power competition. Does that stance help or hurt the analysis?
+- Reading note. The opening names two traps, then sets one aside: the Thucydides trap (rivalry) is discarded so the Kindleberger trap (a stabiliser stepping back before a successor is ready) lands harder. The discarded frame reframes the story from competition to gap, and signals the author's stance — rivalry would at least be energetic, while the actual danger is a vacuum.
 
-As America steps back from multilateral giving, a gap opens.
+**As America steps back from multilateral giving, a gap opens.**
+]
 Tasks.
-- A. Analysis. Analyse the two-trap opening. Why introduce a frame the article then sets aside? What does the discarded frame do for the reader?
-- B. Logic. "China is giving more" and "China cannot fill the gap" sound contradictory. Reconcile them in two sentences, using the article's focus on multilateral channels.
-- C. IA commentary / essay. Using this article as your extract, evaluate whether multilateral aid is more effective than bilateral aid for development. Or, as a Paper 2 question: discuss the view that aid is driven by donor interests rather than recipient needs.
+- A. Paper 1 (a) · 10 marks. Use a diagram to explain why global public goods, such as disease control, are under-provided when multilateral funding falls.
+- B. Paper 2 data response. "China is giving more" and "China cannot fill the gap" sound contradictory. Reconcile them in two sentences, using the article's focus on multilateral channels.
+- C. Essay — Paper 1 (b) · 15 marks. Using this article as your extract, evaluate whether multilateral aid is more effective than bilateral aid for development. Or, as a Paper 2 question: discuss the view that aid is driven by donor interests rather than recipient needs.
 
 ## Model answers (read after attempting the tasks)
 
-Task A model. The discarded Thucydides frame does real work. It names what the reader might expect, a rising power challenging an incumbent, a contest for influence, and then sets it aside, so that the Kindleberger frame lands harder: the danger is not rivalry but absence, a stabiliser stepping back before a successor is ready or willing to take over. The discarded frame also signals the author's stance: rivalry, the article implies, would at least be energetic, whereas the actual danger is a vacuum, sadly empty. The opening therefore reframes the story from competition to gap, and the reader who understands that reframing understands the article's thesis before the evidence arrives.
+Task A model. Disease control is a global public good: it is non-rival and non-excludable, so the market provides too little of it. On a diagram, the marginal social benefit (MSB) of disease control lies above the marginal private benefit (MPB), because countries other than the one paying also gain. The market provides quantity Qm, where MPB equals marginal cost, but the socially optimal quantity is Qs, where MSB equals marginal cost, so Qs is greater than Qm: the good is under-provided. When multilateral funding falls — US aid through multilateral organisations fell by half — the gap widens: fewer programmes are funded, and the under-provision grows. That is why the article warns of a gap rather than a simple funding shortfall: the market failure is in coordination, and only pooled, multilateral funding can move provision towards Qs.
+
+Marks: 9–10 band — the public-good characteristics are stated, the MSB/MPB gap is explained through the diagram, and under-provision is linked to the article's funding fall. It would fall to the 7–8 band if the diagram were described without explaining why MSB exceeds MPB, or without linking the funding cut to the size of the gap.
 
 Task B model. There is no contradiction, because the two statements describe different things: direction and scale. "Giving more" describes China's direction of travel: its contributions through multilateral channels have risen. "Cannot fill the gap" describes the scale of the hole left by the United States, whose aid through multilateral organisations fell by half, and China's willingness and capacity relative to that hole. Beijing, the article argues, seeks a greater say in the institutions that hand aid out rather than replacing American funding outright. Direction is real; scale is insufficient. Confusing the two is how a true statement, "China gives more", becomes a false conclusion, "China has replaced America".
+
+Marks: 5/5 (Paper 2 short answer) — direction and scale are separated precisely, using the halving of US multilateral aid. It would lose a mark if it confused "giving more" with "replacing America".
 
 Task C model: essay. Multilateral aid pools resources, coordinates donors, and is less tied to any single donor's commercial or political interests, so it can support global public goods such as health and climate programmes. Its weaknesses are speed and accountability: it is slow, bureaucratic, and voting power still reflects donor wealth, so influence follows money even inside a multilateral body. Bilateral aid is faster and donor-controlled, and it can be targeted precisely, but it is often tied to donor exports or contracts, and it fragments recipient planning when many donors pursue separate projects.
 
 The article's evidence sharpens the comparison. The American retreat from multilateral organisations creates a coordination gap that bilateral deals cannot easily replace: fifty bilateral programmes do not add up to one coordinated health system. China's multilateral rise, meanwhile, buys institutional voice, but voice is not the same as development outcomes, and a seat at the table does not guarantee that funds reach the poorest. The evaluation, then, is that effectiveness depends less on the channel than on recipient ownership, transparency, and whether aid builds domestic capacity or creates dependence. The channel matters, but the gap the article describes is a governance gap as much as a funding gap: who decides matters as much as who pays.
 
+Marks: 10–12 band (Paper 1 (b)) — the comparison is structured, article evidence sharpens it (coordination gap, voice versus outcomes) and the conclusion is judged. It stays out of the 13–15 band because there is no diagram and the closing claim about recipient ownership is asserted rather than shown with a concrete case. Strength: the governance-gap reframing.
+
 ---
 
 ## Can Asian governments prevent a food shock? (Sample Volume 01)
 
+# IB EconLens: Single 5 of 5
+
+**Paper 1 (a) · 10 marks** · **Paper 2** · **IA · 14 marks**
+
 ## How to use this single
 
-Read the original first , then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps (same-word distractors, pronoun reference). Attempt the tasks before reading the model answers at the end of this file. A model is one strong answer, not the only answer.
+Read the original first, then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps (same-word distractors, pronoun reference). Attempt the tasks before reading the model answers at the end of this file. A model is one strong answer, not the only answer.
 
 # Can Asian governments prevent a food shock?
 
-IB unit: Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium, 2.7 Role of government in microeconomics. Also useful: The global economy: 4.9 Barriers to development; Macroeconomics: 3.3 Inflation.
+Asia, 17 October 2026 issue.
+
+IB unit: Microeconomics: 2.2 Supply, 2.3 Competitive market equilibrium, 2.7 Role of government in microeconomics. *Also useful:* The global economy: 4.9 Barriers to development; Macroeconomics: 3.3 Inflation.
 Best IB use: IA commentary (micro) with a supply-and-demand diagram.
 
+Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + IA (micro commentary, 14 marks). Paper 3 not covered by this guide.
 What it argues. A fierce El Nino is hitting Asian countries already weakened by an energy shock, threatening food supplies. Governments must decide whether they can prevent a shock, and how.
 
 Before you read. El Nino is a recurring climate pattern: shifts in Pacific winds bring hotter, drier conditions to much of South and South-East Asia. This episode began in May and is due to peak next month; on one daily measure, sea-surface temperature anomalies have already exceeded the peak of every previous event on record. The World Meteorological Organisation expects it to last into February. India's monsoon, which supplies nearly 70% of annual rainfall, ended about 13% below normal, the driest in a decade. Indonesia is enduring its worst fire season for 11 years. Seven provinces in the Philippines are already in drought, and officials in Manila have warned that the capital's water supply may soon be reduced.
@@ -230,22 +299,30 @@ How to read it.
 - The opening lists scattered local events: dead fish in a Cambodian lake, a submerged village exposed in Indonesia, a water warning in Manila. What argument does a list like that build before any data appears?
 - Two shocks run through the article: the climate shock and the energy shock. How does the article connect them, and why does that connection matter for policy?
 - The title is a question. What would count as an answer, and what evidence would you need before accepting one?
+- Reading note. The opening piles up small local events — dead fish in a Cambodian lake, a submerged village exposed in Indonesia, a water warning in Manila — before any data appears. The list shows rather than argues: the shock is already here, in many places. The risk is that anecdote outruns evidence, which is why the article then adds the data, a monsoon 13% below normal and the worst Indonesian fire season in 11 years.
 
-A fierce El Nino is hitting Asian countries already weakened by an energy shock, threatening food supplies.
+**A fierce El Nino is hitting Asian countries already weakened by an energy shock, threatening food supplies.**
+]
 Tasks.
-- A. Analysis. Analyse the opening list as a technique. What effect does piling up small local events have, compared with opening with a statistic?
-- B. Logic chain. "El Nino causes food prices to rise" is too short. Write the full chain in your own words (El Nino, drought, harvests, supply, prices), and mark the points where government action could break it.
-- C. IA commentary (800 words). Using this article as your extract, analyse the effect of a supply shock on the market for a staple food, with a supply-and-demand diagram. Evaluate two responses: export bans and subsidies, one against the other.
+- A. Paper 1 (a) · 10 marks. Use a supply-and-demand diagram to explain how drought pushes up the price of a staple food.
+- B. Paper 2 data response. "El Nino causes food prices to rise" is too short. Write the full chain in your own words (El Nino, drought, harvests, supply, prices), and mark the points where government action could break it.
+- C. IA commentary (800 words) — IA · 14 marks. Using this article as your extract, analyse the effect of a supply shock on the market for a staple food, with a supply-and-demand diagram. Evaluate two responses: export bans and subsidies, one against the other.
 
 ## Model answers (read after attempting the tasks)
 
-Task A model. The list works by accumulation. Each event is small and local: dead fish in a Cambodian lake, a submerged village exposed by falling water in Indonesia, a warning about Manila's water supply. But together they form a pattern the reader assembles before any expert speaks. A statistic argues; a list shows. The effect is immediacy and breadth: the shock is already here, in many places, not a forecast for next year. The risk of the technique is that anecdote can mislead: local events may not sum to a regional crisis, and a vivid list can outrun its evidence. That is why the article then adds the data, a monsoon 13% below normal, the worst Indonesian fire season in 11 years, converting impression into evidence. The list opens the case; the data closes it.
+Task A model. Drought reduces harvests, so the supply of a staple food falls. On a supply-and-demand diagram, the supply curve shifts left, from S1 to S2. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. Because a staple food is a necessity, demand is price-inelastic: the price rises proportionately more than quantity falls, so households spend more for less food. The article's figures show the mechanism: India's monsoon ended about 13% below normal, the driest in a decade, and Indonesia suffered its worst fire season in 11 years. The burden is uneven: low-income households spend a larger share of income on food, so the same price rise hits them hardest. A supply shock, not stronger demand, is what the diagram explains.
 
-Task B model. El Nino shifts Pacific winds, bringing hotter, drier conditions to South and South-East Asia. The monsoon, which supplies nearly 70% of India's annual rainfall, ends about 13% below normal; drought takes hold in seven Philippine provinces, and Indonesia suffers its worst fire season in 11 years. Harvests fall, so the supply of food shifts left and food prices rise. Because food is a necessity, demand is price-inelastic: the price rise is large, the quantity fall is small, and households spend more for less, with the heaviest burden on low-income families. Governments can break the chain at three points: before the harvest (irrigation, drought-resistant crops, early warning); at the market (releasing strategic reserves, targeted cash transfers rather than price ceilings, which discourage supply); and at the border (resisting export bans, which lower domestic prices briefly but cut farmer incentives, shrink supply further, and export the shock to importers, where it can spiral).
+Marks: 9–10 band — the shift is correctly linked to drought, the price and quantity effects are stated, inelastic demand is used to explain the size of the price rise, and article data are used. It would fall to the 7–8 band if the elasticity reasoning were missing or the diagram unexplained.
 
-Task C model: IA commentary. Drought shifts the supply of a staple food left, from S1 to S2, on a supply-and-demand diagram. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. Because a staple is a necessity, demand is price-inelastic: the price rise is proportionately large, the quantity fall is small, and total spending on the staple rises. The burden falls hardest on low-income households, for whom food is a large share of the budget, so the shock quickly becomes a food-security problem rather than a mere price problem.
+Task B model. El Nino shifts Pacific winds, bringing hotter, drier conditions to South and South-East Asia. The monsoon, which supplies nearly 70% of India's annual rainfall, ends about 13% below normal; drought takes hold in seven Philippine provinces, and Indonesia suffers its worst fire season in 11 years. Harvests fall, so the supply of food shifts left and food prices rise. Because food is a necessity, demand is price-inelastic: the price rise is large, the quantity fall is small, and households spend more for less, with the heaviest burden on low-income families. Governments can break the chain at three points: before the harvest; at the market (targeted cash transfers rather than price ceilings, which discourage supply); and at the border (resisting export bans, which lower domestic prices briefly but cut farmer incentives and export the shock to importers).
 
-Two responses can be evaluated. Export bans help domestic consumers briefly by keeping food at home, but they reduce farmer incomes and incentives, which lowers future supply, and they push prices up for import-dependent neighbours. That is a beggar-thy-neighbour policy: it exports the shock, invites retaliation, and can spiral into a wider crisis. Subsidies and transfers, by contrast, protect consumers without destroying the price signal: targeted cash transfers to low-income households are more efficient than universal subsidies, because they reach those who need help without subsidising those who do not. Their limit is fiscal: they strain government budgets, especially where the shock is region-wide. The conclusion is that the shock itself cannot be prevented by policy, but its human cost can be limited. The best response protects the vulnerable without breaking the market signals farmers need to plant again next season.
+Marks: 5/5 (Paper 2 short answer) — the full chain is given with figures, and three points where government can break it are marked. It would lose a mark if the chain stopped at "prices rise" without the intervention points.
+
+Task C model: IA commentary. Drought shifts the supply of a staple food left, from S1 to S2, on a supply-and-demand diagram. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. Because a staple is a necessity, demand is price-inelastic: the price rise is proportionately large, the quantity fall is small, and total spending on the staple rises.
+
+Two responses can be evaluated. Export bans help domestic consumers briefly by keeping food at home, but they reduce farmer incomes and incentives, which lowers future supply, and they push prices up for import-dependent neighbours. That is a beggar-thy-neighbour policy: it exports the shock, invites retaliation, and can spiral into a wider crisis. Subsidies and transfers, by contrast, protect consumers without destroying the price signal: targeted cash transfers to low-income households are more efficient than universal subsidies, because they reach those who need help without subsidising those who do not. Their limit is fiscal: they strain government budgets. The conclusion is that the shock itself cannot be prevented by policy, but its human cost can be limited. The best response protects the vulnerable without breaking the market signals farmers need to plant again next season.
+
+Marks: 11/14 — A 2/3 (supply shift described in words; a drawn, labelled diagram is still needed for 3/3), B 2/2, C 3/3, D 1/3 (no key concept named or linked — the main loss), E 3/3 (export bans and transfers genuinely weighed, fiscal limit noted). Strength: the beggar-thy-neighbour evaluation.
 
 ---
 
@@ -253,118 +330,133 @@ Two responses can be evaluated. Export bans help domestic consumers briefly by k
 
 # IB EconLens: Single 1 of 5
 
-Free guide — this guide is free to all readers. The other four guides in Volume 02 are for subscribers.
-
-China, 14 November 2026 issue. Volume 02. Guide model: this file contains no original article text. Read the original first (school subscription), then use this guide.
+**Paper 1 (a) · 10 marks** · **Paper 2** · **IA · 14 marks**
 
 ## How to use this single
 
-Read the original first, then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps. Attempt the tasks before reading the model answers. A model is one strong answer, not the only answer.
+Read the original first, then work through the guide. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built? (3) What is the effect, and where is it weakest? Logic beats vocabulary; every claim needs evidence. Attempt the tasks before reading the model answers.
 
 # China's exports of clean tech to South-East Asia are soaring
 
 China, 14 November 2026 issue.
 
-IB unit: The global economy: 4.1 Benefits of international trade, 4.2 Types of trade protection. Also useful: 4.3 Arguments for and against trade control / protection.
+IB unit: The global economy: 4.1 Benefits of international trade, 4.2 Types of trade protection. *Also useful:* 4.3 Arguments for and against trade control / protection.
 Best IB use: IA commentary (global) or Paper 1 essay evidence.
+Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + IA (global commentary, 14 marks). Paper 3 not covered by this guide.
 
-What it argues. Chinese clean-technology exports are shifting rapidly from Europe to South-East Asia, where governments welcome rather than resist them. Europe is curbing the inflow while South-East Asian demand surges, sharpened by the war over the Strait of Hormuz and pressure on electricity prices. Both sides gain in the short run, but dependence and tariff evasion raise questions.
+What it argues. Chinese clean-technology exports are shifting rapidly from Europe to South-East Asia, where governments welcome rather than resist them. Europe is curbing the inflow while South-East Asian demand surges, sharpened by the war over the Strait of Hormuz and pressure on electricity prices.
 
-Before you read. Chinese producers of solar panels, batteries and electric vehicles once looked mainly to Europe, where demand grew as households and governments moved away from fossil fuels. European governments, worried about their own industries, have begun restricting the inflow, including EV quotas. Meanwhile, exports to South-East Asia have risen fast: in the first nine months of 2026, China's exports of solar technology to the region rose by almost 60% measured by output capacity, while exports to Europe fell by 11%. In May 2026 the Philippines became the world's second-largest buyer of Chinese solar panels. Some goods are repackaged and sold on to Western markets, helping China avoid American and European tariffs. Governments in the region are nevertheless keen buyers: Laos has suspended fossil-fuelled vehicle imports, and Indonesia's president has promised to raise solar capacity from about 1.5 GW to 100 GW by 2029.
+Before you read. Chinese producers of solar panels, batteries and electric vehicles once looked mainly to Europe. European governments have begun restricting the inflow, including EV quotas. Meanwhile, exports to South-East Asia have risen fast: in the first nine months of 2026, China's exports of solar technology to the region rose by almost 60%, while exports to Europe fell by 11%. In May 2026 the Philippines became the world's second-largest buyer of Chinese solar panels. Some goods are repackaged and sold on to Western markets, avoiding American and European tariffs. Governments in the region are nevertheless keen buyers: Indonesia's president has promised to raise solar capacity from about 1.5 GW to 100 GW by 2029.
 
 Key vocabulary.
-- clean technology (clean tech): equipment that produces energy with low or no carbon emissions, such as solar panels, batteries and electric vehicles.
-- tariff: a tax imposed on imported goods, which raises their price in the domestic market.
-- quota: a limit on the quantity of a good that may be imported over a given period.
-- energy security: reliable access to affordable energy, without dependence on a single source that could be cut off.
-- gigawatt (GW): a unit of power equal to one billion watts; used to measure the capacity of power plants.
-- repackaging (for re-export): sending imported goods on to another market, sometimes after relabelling, so that their origin is less visible.
+- clean technology (clean tech): equipment that produces energy with low or no carbon emissions.
+- tariff: a tax on imported goods, raising their price.
+- quota: a limit on the quantity that may be imported.
+- energy security: reliable access to affordable energy, without dependence on a single source.
+- gigawatt (GW): a unit of power equal to one billion watts.
+- repackaging (for re-export): sending imported goods on to another market, sometimes after relabelling.
 
 How to read it.
-- The article contrasts two destinations for the same exports: Europe, where governments are anxious, and South-East Asia, where they are welcoming. For each region, ask what explains the difference — local industry, or urgent energy needs?
-- The case rests on a mix of trade data and on-the-ground detail. List the numbers, and for each one ask: does it show demand, supply, or a policy decision?
-- Notice the two different reasons the goods cross borders: to be used in South-East Asia, and to be passed on to the West. Keep those two flows separate.
+- The article contrasts two destinations for the same exports: Europe, where governments are anxious, and South-East Asia, where they are welcoming.
+- The case rests on trade data and on-the-ground detail. For each number, ask: does it show demand, supply, or a policy decision?
+- Notice the two reasons the goods cross borders: to be used in South-East Asia, and to be passed on to the West.
+- Reading note. The author opens with Europe — the market readers expect, where the story is about resistance — before turning to South-East Asia, where the same exports meet a welcome. The contrast is the argument: the flow is driven by the policy and industrial context in each destination, not by the product alone. The Philippines, with little domestic industry that feels threatened, shows the point: its priority is building renewable capacity as fast as possible.
 
-Chinese clean-technology exports are shifting rapidly from Europe to South-East Asia, where governments welcome rather than resist them.
+**Chinese clean-technology exports are shifting rapidly from Europe to South-East Asia, where governments welcome rather than resist them.**
+]
 Tasks.
-- A. Analysis. Analyse the contrast between Europe and South-East Asia as a structural choice. Why does the author open with Europe before turning to South-East Asia? Support your answer with two details from the article.
-- B. Logic. The article gives two different explanations for rising South-East Asian demand: the war shock and the region's own energy goals. What does that distinction do to a simple "the war caused it" reading? Name the two causes, and explain why each matters for how long the boom will last.
-- C. IA commentary (800 words). Using this article as your extract, analyse the effects of European trade protection on the market for Chinese clean technology in Europe, with a supply-and-demand diagram. Evaluate whether South-East Asia gains or loses from the resulting redirection of Chinese exports.
+- A. Paper 1 (a) · 10 marks. Using a supply-and-demand diagram, explain how the war over the Strait of Hormuz affected the market for solar panels in South-East Asia.
+- B. Logic (Paper 2 data response). The article gives two different explanations for rising South-East Asian demand: the war shock and the region's own energy goals. What does that distinction do to a simple "the war caused it" reading? Name the two causes, and explain why each matters for how long the boom will last.
+- C. IA commentary (800 words) — IA · 14 marks. Using this article as your extract, analyse the effects of European trade protection on the market for Chinese clean technology in Europe, with a supply-and-demand diagram. Evaluate whether South-East Asia gains or loses from the resulting redirection of Chinese exports.
 
 ## Model answers (read after attempting the tasks)
 
-Task A model. The author opens with Europe for a reason: it is the market readers expect, and the one where the story is about resistance. European demand for green technology has surged, yet governments there are becoming anxious about the effect on their own industries and are trying to curb the inflow, including through quotas on electric vehicles. South-East Asia is then introduced as the contrast: the same exports, the same Chinese firms, but a reception that is welcoming rather than defensive. The contrast shows that the trade flow is not driven by the product alone, but by the policy and industrial context in each destination — the Philippines, for example, has little domestic industry that feels threatened, so its priority is building renewable capacity as fast as possible.
+Task A model. Solar panels are a substitute for oil- and gas-fired electricity. When fighting over the Strait of Hormuz choked supplies from the Gulf, electricity prices in South-East Asia rose, so households and firms looked for cheaper power, and demand for solar panels rose. On a supply-and-demand diagram for solar panels, the demand curve shifts right, from D1 to D2. The equilibrium price rises from P1 to P2 and the equilibrium quantity rises from Q1 to Q2. The article's numbers fit this: exports of solar technology to the region rose by almost 60% in nine months, and the Philippines became the world's second-largest buyer of Chinese panels. This is a change in demand, not a movement along the curve — and if the war shock fades, demand would shift back, which is why the region's own energy targets matter more.
 
-Task B model. Two causes must be kept separate. First, the war shock: fighting over the Strait of Hormuz has choked oil and gas supplies from the Gulf, on which many South-East Asian countries depend, pushing up electricity prices and prompting a scramble for cheaper power. Second, the region's own energy goals: governments want energy security and more renewable capacity, as the vehicle, tax and solar targets in Laos, Malaysia and Indonesia show. The distinction matters because the two causes imply different durations: a war shock may reverse when fighting ends, so demand driven only by high electricity prices could fall back, while demand driven by policy targets is more durable.
+Marks: 9–10 band — the substitute mechanism is fully explained, the demand shift is distinguished from a movement along the curve, the diagram is described with labelled shifts (D1 to D2, P1 to P2, Q1 to Q2), and the article's evidence (the 60% rise) is tied to the shift. The diagram is described here and must be drawn and labelled; without it, the 7–8 band.
 
-Task C model: IA commentary. European protection changes the market for Chinese clean technology in Europe by restricting supply. A quota on electric vehicles, or a tariff on solar panels, limits the quantity of Chinese goods that can enter, or raises their price. On a supply-and-demand diagram for the European market, the supply curve shifts left, from S1 to S2. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2. Demand is relatively price-elastic in the medium term, so the fall in quantity is likely to be significant.
+Task B model. Two causes must be kept separate. First, the war shock: fighting over the Strait of Hormuz has choked Gulf oil and gas supplies, pushing up electricity prices. Second, the region's own energy goals: governments want energy security and more renewable capacity. The distinction matters because the two imply different durations: a war shock may reverse, so war-driven demand could fall back, while policy-driven demand is more durable.
 
-The effects on European producers and consumers pull in opposite directions. Domestic producers gain: they face less competition, can sell more at higher prices, and may invest and hire. Consumers lose: they pay higher prices, and some are priced out of buying clean technology at all, slowing the shift away from fossil fuels. The net welfare effect is a loss: the consumer loss exceeds the producer gain plus any government revenue, leaving a deadweight loss.
+Marks: 4/5 (Paper 2 short answer) — both causes are named and the duration argument follows from each. The lost mark: it does not say which cause drives the 60% rise, treating the two as equal.
 
-For South-East Asia, the immediate gain is clear: cheap Chinese solar panels and batteries arrive in large volumes, electricity becomes cheaper, and governments can pursue energy security without paying European prices. But the gains are not without risks. Some of the flow is not for domestic use at all: goods are repackaged and sold on to Western markets, helping China avoid tariffs, which exposes the region to retaliation if Western governments extend restrictions to goods routed through South-East Asia. And if the war shock fades and Gulf energy becomes cheap again, the boom could slow as quickly as it arrived, while importing everything forgoes the chance to build a domestic industry.
+Task C model: IA commentary. European protection restricts supply: a quota or tariff limits the quantity that can enter, or raises its price. On a supply-and-demand diagram, the supply curve shifts left, from S1 to S2. The equilibrium price rises from P1 to P2 and the equilibrium quantity falls from Q1 to Q2.
 
-The evaluation, then, is mixed but leans positive in the short run. European protection raises prices and slows adoption in Europe, at a net welfare cost, while South-East Asia gains cheaper energy and faster renewable growth. The risk is that the gain rests on fragile foundations — a war-driven price shock and a tariff-evasion route — neither of which the region controls.
+Producers gain: less competition, higher prices, more sales. Consumers lose: higher prices, and some are priced out altogether. The net welfare effect is a loss: the consumer loss exceeds the producer gain plus any government revenue, leaving a deadweight loss.
 
-IB EconLens, Volume 02, Single 1 of 5. Guide model: no original text reproduced.
+For South-East Asia, the immediate gain is clear: cheap Chinese panels and batteries arrive in large volumes, and electricity becomes cheaper. But the gains are not without risks. Some of the flow is not for domestic use at all: goods are repackaged and sold on to Western markets, helping China avoid tariffs, which exposes the region to retaliation. And if the war shock fades and Gulf energy becomes cheap again, the boom could slow as quickly as it arrived
+
+The evaluation is mixed but leans positive in the short run: South-East Asia gains cheaper energy and faster renewable growth, but the gain rests on fragile foundations — a war-driven price shock and a tariff-evasion route — neither of which the region controls.
+
+Marks: 9/14 — A 2/3 (shift described, P1–P2, Q1–Q2, but no diagram drawn); B 2/2; C 2/3 (Europe applied; SE Asia link asserted, not traced); D 1/3 (no key concept named); E 2/3 (balanced, but thin against the gain).
 
 ---
 
+## Europe living beyond its means (Volume 03 (free guide))
+
 # IB EconLens: Single 1 of 5
 
-Free guide — this guide is free to all readers. The other four guides in Volume 03 are for subscribers.
-
-Europe, 14 November 2026 issue. Volume 03. Guide model: this file contains no original article text. Read the original first (school subscription), then use this guide.
+**Paper 1 (a) · 10 marks** · **Paper 2** · **IA · 14 marks**
 
 ## How to use this single
 
-Read the original first, then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Three rules: logic beats vocabulary; every claim needs evidence; watch the traps. Attempt the tasks before reading the model answers. A model is one strong answer, not the only answer.
+Read the original first, then work through the guide. Read to analyse, not to retell. Ask three questions: (1) What is the author's argument or purpose? (2) How is it built (structure, evidence, language)? (3) What is the effect, and where is it weakest? Attempt the tasks before reading the model answers.
 
 # Europe living beyond its means
 
 Europe, 14 November 2026 issue.
 
-IB unit: 3.6 Fiscal policy: government spending, taxation, budget deficits and government debt. Also useful: 3.5 Monetary policy — higher interest rates raise the cost of servicing government debt.
+IB unit: 3.6 Fiscal policy: government spending, taxation, budget deficits and government debt. *Also useful:* 3.5 Monetary policy — higher interest rates raise the cost of servicing government debt.
 Best IB use: IA commentary (macro) or Paper 1 essay evidence.
 
-What it argues. Europe spends far more on pensions and welfare than it can afford, and the gap is now catching up with it. Five countries carry public debt at or above 100% of GDP, and ten are under the EU's excessive-deficit procedure. Yet fragmented parliaments and populist politics make the needed cuts almost impossible to agree. Even careful Germany is under strain; France is the most worrying case. If governments cannot forge majorities for difficult decisions, the bond markets will impose those choices in a crisis.
+Exam link: trains Paper 1 (a) (10 marks) + Paper 2 data response + IA (macro commentary, 14 marks). Paper 3 not covered by this guide.
 
-Before you read. EU countries devote nearly 30% of GDP to public social spending, against less than 20% in America, and spend 10% of GDP on public pensions, nearly twice the American share. EU rules cap government debt at 60% of GDP and budget deficits at 3%; ten countries, including Belgium, France and Italy, are now in the excessive-deficit procedure for breaking them. France will spend 91 billion euros on interest payments in 2027, up from 79 billion in 2026. In Germany, social spending has risen to around 30% of GDP, and social-security charges equal about 42% of gross wages, projected to reach nearly 50% by 2040. In France, the government plans to cut the deficit from 5.4% of GDP in 2026 to 5% in 2027, including a freeze in nominal terms on most pensions and civil-service pay — while 85% of French voters say curbing debt is urgent, 56% also say the pension age should be lower.
+What it argues. Europe spends far more on pensions and welfare than it can afford, and the gap is now catching up with it. Five countries carry public debt at or above 100% of GDP, and ten are under the EU's excessive-deficit procedure. Yet fragmented parliaments and populist politics make the needed cuts almost impossible to agree.
+
+Before you read. EU countries devote nearly 30% of GDP to public social spending, against less than 20% in America, and spend 10% of GDP on public pensions, nearly twice the American share. France will spend 91 billion euros on interest payments in 2027, up from 79 billion in 2026. In France, the government plans to cut the deficit from 5.4% of GDP in 2026 to 5% in 2027, including a freeze in nominal terms on most pensions and civil-service pay — while 85% of French voters say curbing debt is urgent, 56% also say the pension age should be lower.
 
 Key vocabulary.
 - budget deficit: the amount by which government spending exceeds tax revenue in a given year.
 - government (public) debt: the total amount a government owes, built up from past budget deficits.
 - debt-to-GDP ratio: government debt expressed as a percentage of GDP; used to judge whether debt is sustainable.
-- excessive-deficit procedure: the EU process that pressures countries breaking the debt and deficit rules to correct course.
-- debt brake: a constitutional rule limiting government borrowing, as in Germany.
-- fiscal consolidation: reducing a budget deficit, usually by cutting spending, raising taxes, or both.
+- excessive-deficit procedure: the EU process for countries breaking the debt and deficit rules.
 
 How to read it.
 - The article tours countries from the most strained to the most worrying. For each, ask two questions: how big is the fiscal gap, and what stops the government closing it?
 - Read the numbers as ratios, not just levels. A deficit of 5% of GDP or debt of 112% of GDP only means something against the EU's 60% debt and 3% deficit limits — compare each figure with those benchmarks.
 - The article includes a chart of German social spending as a share of GDP. Read it as a trend: note where the line sits now, how far it has risen above its pre-pandemic level, and what that implies for future tax rates.
 
-Europe wants a level of public spending it can no longer afford, and its fractured politics cannot agree the cuts — so the bond markets may end up imposing them.
+Reading note: The author builds the argument by touring countries — Belgium, where a government collapses over a budget; Germany, where even a debt-brake country faces a crunch; France, the climax, with three hostile blocs, a pension freeze and populists promising the opposite. Each case adds a different political form of the same fiscal problem, so read each country for the size of the fiscal gap and what stops the government closing it.
+**Europe wants a level of public spending it can no longer afford, and its fractured politics cannot agree the cuts — so the bond markets may end up imposing them.**
 ]
 Tasks.
-- A. Analysis. Analyse why the author moves from country to country — Belgium, the Netherlands, Germany, France — rather than treating Europe as one case. What does each country add to the argument? Support your answer with two details.
-- B. Logic. The article says most French voters think curbing debt is urgent, yet most also want a lower pension age, and populist leaders promise to protect pensions and cut the retirement age. What does this contradiction do to the claim that the problem is simply that governments lack the will to act? Explain whose incentives are in conflict.
-- C. IA commentary (800 words). Using this article as your extract, analyse the effects of the French government's planned fiscal consolidation — spending cuts including a freeze on pensions and civil-service pay — on the French economy, with an AD/AS diagram. Evaluate whether cutting spending is the best way to reduce the budget deficit.
+- A. Paper 1 (a) · 10 marks. Use an AD/AS diagram to explain how the French government's planned fiscal consolidation — spending cuts including a freeze on pensions and civil-service pay — affects real GDP and the price level in France in the short run.
+- B. Paper 2 data response (short answer). The article says most French voters think curbing debt is urgent, yet most also want a lower pension age, and populist leaders promise to protect pensions and cut the retirement age. What does this contradiction do to the claim that the problem is simply that governments lack the will to act? Explain whose incentives are in conflict.
+- C. IA commentary (800 words) — IA · 14 marks. Using this article as your extract, analyse the effects of the French government's planned fiscal consolidation — spending cuts including a freeze on pensions and civil-service pay — on the French economy, with an AD/AS diagram. Evaluate whether cutting spending is the best way to reduce the budget deficit.
 
 ## Model answers (read after attempting the tasks)
 
-Task A model. The country tour is the argument: the same fiscal problem appears in different political forms, and that variety is the point. Belgium shows a government collapsing over a budget, its five-party coalition unable to agree even modest cuts such as raising VAT. Germany shows that even a country with a debt brake now faces a crunch, with social spending at 30% of GDP and over 100 billion euros of consolidation needed by 2030. France is the climax: a parliament split into three hostile blocs, a prime minister pushing a budget with a pension freeze, and populists promising the opposite. Together the cases show the problem is not one weak government but a structural mismatch between what voters want and what budgets allow.
+Task A model. Fiscal consolidation through spending cuts is a contractionary fiscal policy: lower government spending (G) is a component of aggregate demand, so AD shifts left. On an AD/AS diagram (real GDP on the horizontal axis, price level on the vertical axis), AD shifts from AD1 to AD2 along an upward-sloping SRAS, moving the equilibrium from E1 to E2. Real GDP falls from Y1 to Y2 and the price level falls from PL1 to PL2, so the policy is contractionary and deflationary in the short run. The fall in GDP is likely to be large because pensioners and public-sector workers have a high marginal propensity to consume, so freezing their incomes cuts consumption sharply and the multiplier magnifies the initial fall in G. This is the short run only: SRAS does not shift.
 
-Task B model. The contradiction shifts the blame from governments to voters, and that changes the logic. If the problem were only weak leadership, a braver government could fix it; but the poll evidence shows voters themselves demand both lower debt and more generous pensions. Politicians who promise both are responding rationally to what voters reward, not ignoring the arithmetic. The conflict is between voters' short-run interest in current spending and their long-run interest in sustainable finances. That is why the warning lands on the bond markets: when democratic politics cannot resolve the contradiction, rising borrowing costs eventually will.
+Marks: 9–10 band — theory fully explained, diagram complete (axes, AD1 to AD2, E1 to E2, Y1 to Y2, PL1 to PL2), terminology accurate; draw and label the diagram in the exam — an undrawn diagram falls to 7–8.
 
-Task C model: IA commentary. The French government's plan is a contractionary fiscal policy: cutting government spending to reduce a budget deficit of 5.4% of GDP. On an AD/AS diagram, lower government spending (G) shifts AD left from AD1 to AD2. Real GDP falls from Y1 to Y2 and the price level falls from PL1 to PL2, so the policy is contractionary and deflationary in the short run. The fall is likely to be large: pensioners and public-sector workers have a high marginal propensity to consume, so freezing their incomes removes spending from the economy quickly.
-The effects on the economy's stakeholders pull in opposite directions. The government gains fiscal space: a smaller deficit means less new borrowing, and lower debt over time reduces interest payments — already 91 billion euros in 2027. But households lose in the short run: pensioners and public-sector workers see real incomes fall as prices rise while pay is frozen. Lower incomes cut consumption, hitting firms' revenues and possibly raising unemployment.
+Task B model. The contradiction shifts the blame from governments to voters, and that changes the logic. If the problem were only weak leadership, a braver government could fix it; but the poll evidence shows voters themselves demand both lower debt and more generous pensions. That is why the warning lands on the bond markets: when democratic politics cannot resolve the contradiction, rising borrowing costs eventually will.
+
+Marks: 4/5 (Paper 2 short answer). Strength: the voter contradiction is tied to conflicting incentives. Loses 1 mark: the poll evidence is stated generally, without the article's figures.
+
+Task C model: IA commentary. The French government's plan is a contractionary fiscal policy: cutting government spending to reduce a budget deficit of 5.4% of GDP. On an AD/AS diagram, lower government spending (G) shifts AD left from AD1 to AD2. Real GDP falls from Y1 to Y2 and the price level falls from PL1 to PL2, so the policy is contractionary and deflationary in the short run.
+
+The effects on the economy's stakeholders pull in opposite directions. The government gains fiscal space, but households lose in the short run as real incomes fall, cutting consumption.
+
 Whether spending cuts are the best way to reduce the deficit depends on the alternatives and the time horizon. Raising taxes could close the gap with less damage to the poorest, but France already has a high tax burden, and higher taxes could discourage work and investment. Structural reforms such as raising the pension age would improve the long-run position, but they are exactly what voters oppose, and they take years to deliver savings.
-The evaluation, then, is that the cuts are necessary but costly and politically fragile. In the short run they reduce demand, incomes and growth, and risk a backlash that could bring down the government — France has had four prime ministers in three years. Doing nothing is worse, however: debt keeps rising, and the eventual correction would be imposed by the bond markets rather than chosen by parliament. The pension freeze is defensible as a first step, since pensions are the largest budget item, but without reforms voters accept, the deficit will return. The policy is the least bad option, not a solution.
 
-IB EconLens, Volume 03, Single 1 of 5. Guide model: no original text reproduced.
+The evaluation, then, is that the cuts are necessary but costly and politically fragile. In the short run they reduce demand, incomes and growth, and risk a backlash that could bring down the government — France has had four prime ministers in three years. The pension freeze is defensible as a first step, since pensions are the largest budget item, but without reforms voters accept, the deficit will return. The policy is the least bad option, not a solution.
+
+Marks: 10/14 — A 2/3, B 2/2, C 3/3, D 1/3, E 2/3. Shifts described but no diagram shown; no key concept named; evaluation balanced but long-run growth not weighed.
+
+---
 
 ---
 
 ## Subscription
 
-Monthly volume of 5 guides: USD 9.90/month, or USD 79.20/year (save 33%). Paid subscribers get all guides, all audio versions, and the full archive during subscription. Cancel anytime. Publisher: Growth Education Limited.
+Weekly volume of 5 guides: USD 9.90/month, or USD 79.20/year (save 33%). Paid subscribers get all guides, all audio versions, and the full archive during subscription. Cancel anytime. Publisher: Growth Education Limited.
