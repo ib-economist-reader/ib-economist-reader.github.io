@@ -1,7 +1,7 @@
-# IB Economist Reader
+# IB Economics Reader
 
-The Economist, rebuilt as IB Diploma Economics reading material — Sample Volume 01 (The Economist, 7 November 2026).
+IB Diploma Economics reading material, built from weekly global current affairs — Sample Volume 01.
 
-Guide model: selection + scaffolding + tasks. No original Economist text is reproduced here; students read the originals via a school subscription.
+Guide model: selection + scaffolding + tasks. No original text is reproduced here.
 
 Live site: https://ib-economist-reader.github.io/
