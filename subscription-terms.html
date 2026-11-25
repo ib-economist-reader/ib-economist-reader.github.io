@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Subscription Terms — IB EconLens</title>
+    <style>
+      :root {
+        --bg: #f6f6f4;
+        --surface: #ffffff;
+        --text: #1c1e21;
+        --text-secondary: #4b5563;
+        --text-muted: #6b7280;
+        --border: #e3e4e0;
+        --border-strong: #cfd2cc;
+        --accent: #0b4f4a;
+        --accent-hover: #083c38;
+        --accent-soft: #e6efed;
+        --focus: #0b4f4a;
+        --radius: 12px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121417;
+          --surface: #1a1d21;
+          --text: #eef0f2;
+          --text-secondary: #c3c8cf;
+          --text-muted: #9aa1ab;
+          --border: #2c3036;
+          --border-strong: #3a3f47;
+          --accent: #7fc8bc;
+          --accent-hover: #a5ddd3;
+          --accent-soft: #1e2e2b;
+          --focus: #7fc8bc;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 1px;
+      }
+      a:hover { color: var(--accent-hover); }
+      a:focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      .wrap {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 28px 20px 56px;
+      }
+      @media (min-width: 720px) {
+        .wrap { padding: 44px 32px 72px; }
+      }
+
+      /* Back link */
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 8px 4px;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .back-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+      .back-link svg { flex: none; }
+
+      /* Header */
+      header {
+        margin-top: 28px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--border-strong);
+      }
+      @media (min-width: 720px) {
+        header { margin-top: 40px; padding-bottom: 36px; }
+      }
+      h1 {
+        margin: 0;
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+      }
+      @media (min-width: 720px) {
+        h1 { font-size: 2.625rem; }
+      }
+      .updated {
+        margin: 14px 0 0;
+        color: var(--text-muted);
+        font-size: 0.9375rem;
+      }
+      .intro {
+        margin: 28px 0 0;
+        color: var(--text-secondary);
+        font-size: 1.0625rem;
+      }
+
+      /* Sections */
+      main { counter-reset: section; }
+      section {
+        counter-increment: section;
+        padding: 32px 0 4px;
+      }
+      @media (min-width: 720px) {
+        section { padding-top: 40px; }
+      }
+      section + section {
+        border-top: 1px solid var(--border);
+        margin-top: 28px;
+      }
+      .section-head {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        margin-bottom: 12px;
+      }
+      .section-head::before {
+        content: counter(section, decimal-leading-zero);
+        flex: none;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: var(--accent);
+        background: var(--accent-soft);
+        border-radius: 999px;
+        padding: 3px 9px;
+        line-height: 1.5;
+        transform: translateY(-2px);
+      }
+      h2 {
+        margin: 0;
+        font-size: 1.3125rem;
+        line-height: 1.35;
+        font-weight: 650;
+        letter-spacing: -0.01em;
+      }
+      section p {
+        margin: 0;
+        color: var(--text-secondary);
+        max-width: 68ch;
+      }
+      section p a { font-weight: 500; overflow-wrap: anywhere; }
+
+      /* Footer */
+      footer {
+        margin-top: 52px;
+        padding-top: 28px;
+        border-top: 1px solid var(--border-strong);
+      }
+      .copyright {
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 0.9375rem;
+      }
+      .footer-links {
+        list-style: none;
+        margin: 14px 0 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 8px;
+      }
+      .footer-links li { display: inline-flex; align-items: center; }
+      .footer-links li + li::before {
+        content: "";
+        width: 4px; height: 4px;
+        border-radius: 50%;
+        background: var(--border-strong);
+        margin-right: 8px;
+      }
+      .footer-links a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 8px 4px;
+        font-size: 0.9375rem;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <a class="back-link" href="https://ibeconlens.geledtech.com/">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+          <path d="M10.5 2.5 5 8l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to IB EconLens
+      </a>
+
+      <header>
+        <h1>Subscription Terms — IB EconLens</h1>
+        <p class="updated">Last updated: 25 November 2026.</p>
+        <p class="intro">This page supplements Growth Education Limited's Privacy Policy, Terms of Use and Refund Policy for IB EconLens subscriptions. Where this page and those policies differ on a subscription matter, this page applies.</p>
+      </header>
+
+      <main>
+        <section>
+          <div class="section-head"><h2>Subscription and billing</h2></div>
+          <p>IB EconLens is a recurring subscription: USD 9.90 per month or USD 79.20 per year, charged through Stripe. Your subscription renews automatically until you cancel it.</p>
+        </section>
+
+        <section>
+          <div class="section-head"><h2>Cancellation</h2></div>
+          <p>You can cancel at any time from the Manage subscription link on the IB EconLens website, which takes you to the Stripe Customer Portal. Your access continues until the end of the current billing period and then stops. Cancelling does not refund the current period.</p>
+        </section>
+
+        <section>
+          <div class="section-head"><h2>Refunds</h2></div>
+          <p>Subscription payments are generally final. We will review a refund request if it involves a duplicate payment, a checkout error, failure to receive access, materially incorrect delivery, or an accidental technical issue caused by the checkout or delivery system. Send refund review requests to <a href="mailto:info@geledtech.com">info@geledtech.com</a> within 7 calendar days of the payment, including the purchase email, order reference if available, the product name (IB EconLens), and a clear explanation of the issue. We do not refund a subscription solely because a specific academic result was not achieved.</p>
+        </section>
+
+        <section>
+          <div class="section-head"><h2>Your data</h2></div>
+          <p>To provide the subscription we store your email address and subscription record (customer ID, subscription ID, plan, status and current period end) in Cloudflare KV. Sign-in is by a magic link emailed to you — there is no password. Your browser stores a session token in localStorage for up to 30 days; signing out deletes it. When your subscription ends, your subscription record is deleted. Payments are processed by Stripe; we do not store your card number.</p>
+        </section>
+
+        <section>
+          <div class="section-head"><h2>Students</h2></div>
+          <p>IB EconLens is designed for IB Diploma Economics students. The subscriber is normally a parent or guardian; the student uses the service under that subscription.</p>
+        </section>
+
+        <section>
+          <div class="section-head"><h2>Contact</h2></div>
+          <p>Questions about subscriptions, access or refunds: <a href="mailto:info@geledtech.com">info@geledtech.com</a>.</p>
+        </section>
+      </main>
+
+      <footer>
+        <p class="copyright">© 2026 Growth Education Limited. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="https://www.geledtech.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+          <li><a href="https://www.geledtech.com/terms/" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+          <li><a href="https://www.geledtech.com/refund-policy/" target="_blank" rel="noopener noreferrer">Refund Policy</a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
