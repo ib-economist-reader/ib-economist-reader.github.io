@@ -195,6 +195,11 @@
       .locked-title { font-weight: 600; line-height: 1.35; margin: 0; }
       .locked-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
       .locked-tag { font-size: 13px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+      .locked-row { cursor: pointer; }
+      .locked-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      .signin-prompt { display: block; margin-top: 12px; font-size: 15px; }
+      .signin-prompt[hidden] { display: none; }
+      .guide-num svg { width: 14px; height: 14px; fill: currentColor; }
       .subscribe-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
       .sub-btn {
         display: inline-flex; align-items: center; justify-content: center;
@@ -307,11 +312,11 @@
         <ol class="guide-list" id="guideList"></ol>
 
         <h2>Volume 02</h2>
-        <p class="section-note">These guides are part of the subscriber library and are not playable here.</p>
+        <p class="section-note" id="lockedNote02">These guides are part of the subscriber library and are not playable here.</p>
         <div class="guide-list" id="lockedList"></div>
 
         <h2>Volume 03</h2>
-        <p class="section-note">These guides are part of the subscriber library and are not playable here.</p>
+        <p class="section-note" id="lockedNote03">These guides are part of the subscriber library and are not playable here.</p>
         <div class="guide-list" id="lockedList03"></div>
       </main>
 
@@ -796,17 +801,17 @@
         ];
 
         var LOCKED = [
-          { "title": "The panic over personalised pricing is overdone", "badge": "Unit 2.5" },
-          { "title": "Bond yields are rising everywhere—except China", "badge": "Unit 3.5" },
-          { "title": "China's efforts to strengthen its safety net fuel public anger", "badge": "Unit 3.4" },
-          { "title": "Africa's solar revolution is vast and speedy", "badge": "Units 4.8–4.9" }
+          { "title": "The panic over personalised pricing is overdone", "badge": "Unit 2.5", "slug": "2026-11-14-the-panic-over-personalised-pricing-is-overdone-guide" },
+          { "title": "Bond yields are rising everywhere—except China", "badge": "Unit 3.5", "slug": "2026-11-21-bond-yields-are-rising-everywhere-except-china-guide" },
+          { "title": "China's efforts to strengthen its safety net fuel public anger", "badge": "Unit 3.4", "slug": "2026-11-21-chinas-efforts-to-strengthen-its-safety-net-fuel-public-anger-guide" },
+          { "title": "Africa's solar revolution is vast and speedy", "badge": "Units 4.8–4.9", "slug": "2026-11-14-africas-solar-revolution-is-vast-and-speedy-guide" }
         ];
 
         var LOCKED03 = [
-          { "title": "The future of Trumponomics", "badge": "Unit 3.6" },
-          { "title": "How China continues to evade America's tech-export rules", "badge": "Unit 4.2" },
-          { "title": "Europe tightens sanctions on Russia. America loosens them", "badge": "Units 4.2–4.3" },
-          { "title": "Bangladesh is no longer a development superstar", "badge": "Units 4.8–4.9" }
+          { "title": "The future of Trumponomics", "badge": "Unit 3.6", "slug": "2026-11-14-the-future-of-trumponomics-guide" },
+          { "title": "How China continues to evade America's tech-export rules", "badge": "Unit 4.2", "slug": "2026-11-21-how-china-continues-to-evade-americas-tech-export-rules-guide" },
+          { "title": "Europe tightens sanctions on Russia. America loosens them", "badge": "Units 4.2–4.3", "slug": "2026-11-21-europe-tightens-sanctions-on-russia-america-loosens-them-guide" },
+          { "title": "Bangladesh is no longer a development superstar", "badge": "Units 4.8–4.9", "slug": "2026-11-21-bangladesh-is-no-longer-a-development-superstar-guide" }
         ];
 
         /* Exam badges for every locked row (Volume 02 and Volume 03) */
@@ -961,10 +966,27 @@
           rowDurEls.push(btn.querySelector(".duration"));
         });
 
+        /* ---------- Subscriber sessions (paid guides) ---------- */
+        var WORKER_URL = "https://ib-econlens-stripe-webhook.ckx-leung.workers.dev";
+        var SIGNIN_URL = "https://ibeconlens.geledtech.com/#sign-in";
+        var SESSION_KEY = "ibeconlens_session";
+        /* One entry per paid row, in page order (Volume 02, then Volume 03). */
+        var PAID_ROWS = [];
+
+        function showSigninPrompt(rowEl) {
+          var prompts = document.querySelectorAll(".signin-prompt");
+          for (var i = 0; i < prompts.length; i++) prompts[i].hidden = true;
+          var p = rowEl.querySelector(".signin-prompt");
+          if (p) p.hidden = false;
+        }
+
         function renderLocked(listEl, items) {
         items.forEach(function (g) {
           var div = document.createElement("div");
           div.className = "locked-row";
+          div.setAttribute("role", "button");
+          div.setAttribute("tabindex", "0");
+          div.setAttribute("aria-label", g.title + " — subscribers only");
           div.innerHTML =
             '<div class="locked-top">' +
               '<svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z"/></svg>' +
@@ -980,8 +1002,25 @@
             '<div class="subscribe-row">' +
               '<a class="sub-btn primary" href="' + SUB_MONTHLY + '" target="_blank" rel="noopener">Subscribe — monthly</a>' +
               '<a class="sub-btn ghost" href="' + SUB_ANNUAL + '" target="_blank" rel="noopener">Subscribe — annual</a>' +
-            "</div>";
+            "</div>" +
+            '<span class="signin-prompt" hidden><a href="' + SIGNIN_URL + '">Sign in on the main page to unlock this guide.</a></span>';
+          div.addEventListener("click", function (e) {
+            if (e.target && e.target.closest && e.target.closest("a")) return;
+            showSigninPrompt(div);
+          });
+          div.addEventListener("keydown", function (e) {
+            if (e.target !== div) return;
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              showSigninPrompt(div);
+            }
+          });
           listEl.appendChild(div);
+          PAID_ROWS.push({
+            item: g, listEl: listEl, lockedEl: div,
+            rowEl: null, durEl: null, unitEl: null,
+            loadedIndex: -1, loading: false
+          });
         });
         }
         renderLocked(document.getElementById("lockedList"), LOCKED);
@@ -1354,6 +1393,140 @@
 
         modeBedtimeBtn.addEventListener("click", function () { setMode("bedtime"); });
         modeMorningBtn.addEventListener("click", function () { setMode("morning"); });
+
+        /* ---------- Session validation and paid playback ---------- */
+        var lockedNote02 = document.getElementById("lockedNote02");
+        var lockedNote03 = document.getElementById("lockedNote03");
+        var sessionToken = null;
+        var sessionValid = false;
+        try {
+          sessionToken = window.localStorage.getItem(SESSION_KEY) || null;
+        } catch (e) {
+          sessionToken = null;
+        }
+
+        function unlockPaidRows() {
+          var note = "Subscriber library. Tap a guide to start listening from the beginning of that guide.";
+          lockedNote02.textContent = note;
+          lockedNote03.textContent = note;
+          PAID_ROWS.forEach(function (p, pi) {
+            var btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "guide-row";
+            btn.setAttribute("aria-label", "Play guide: " + p.item.title);
+            btn.innerHTML =
+              '<span class="guide-top">' +
+                '<span class="guide-num" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>' +
+                '<span><span class="guide-title">' + escapeHtml(p.item.title) + "</span>" +
+                '<span class="guide-unit" style="display:block"></span></span>' +
+              "</span>" +
+              '<span class="guide-meta">' +
+                '<span class="badge">' + escapeHtml(p.item.badge) + "</span>" +
+                IA_BADGES.map(function (b) {
+                  return '<span class="badge exam">' + escapeHtml(b) + "</span>";
+                }).join("") +
+                '<span class="duration"></span>' +
+                '<span class="playing-tag" hidden>Now playing</span>' +
+              "</span>";
+            btn.addEventListener("click", function () { playPaidGuide(pi); });
+            p.rowEl = btn;
+            p.durEl = btn.querySelector(".duration");
+            p.unitEl = btn.querySelector(".guide-unit");
+            p.listEl.replaceChild(btn, p.lockedEl);
+          });
+        }
+
+        function relockPaidRows() {
+          sessionValid = false;
+          var note = "These guides are part of the subscriber library and are not playable here.";
+          lockedNote02.textContent = note;
+          lockedNote03.textContent = note;
+          PAID_ROWS.forEach(function (p) {
+            var prompt = p.lockedEl.querySelector(".signin-prompt");
+            if (prompt) prompt.hidden = true;
+            if (p.rowEl && p.rowEl.parentNode === p.listEl) {
+              p.listEl.replaceChild(p.lockedEl, p.rowEl);
+            }
+          });
+        }
+
+        function playPaidGuide(pi) {
+          var p = PAID_ROWS[pi];
+          if (!p || !sessionValid) return;
+          if (p.loadedIndex >= 0) { selectGuide(p.loadedIndex, true); return; }
+          if (p.loading) return;
+          p.loading = true;
+          if (p.rowEl) p.rowEl.disabled = true;
+          setStatus("Loading: " + p.item.title + "…");
+          fetch(WORKER_URL + "/listen/" + encodeURIComponent(p.item.slug), {
+            headers: { "Authorization": "Bearer " + sessionToken }
+          }).then(function (r) {
+            if (r.status === 401 || r.status === 403) {
+              var err = new Error("session");
+              err.session = true;
+              throw err;
+            }
+            if (!r.ok) throw new Error("load");
+            return r.json();
+          }).then(function (data) {
+            var n = (data && data.narration) || {};
+            var g = {
+              title: (data && data.title) || n.title || p.item.title,
+              ib_unit: n.ib_unit || "",
+              badge: p.item.badge,
+              exam_badges: n.badges || IA_BADGES.slice(),
+              background: n.background || "",
+              argument: n.argument || "",
+              vocabulary: n.vocabulary || [],
+              how_to_read: n.how_to_read || [],
+              tasks: n.tasks || [],
+              model_answers: n.model_answers || [],
+              bedtime_duration: "",
+              morning_duration: ""
+            };
+            g.modes = {
+              bedtime: buildChunks(g, "bedtime"),
+              morning: buildChunks(g, "morning")
+            };
+            GUIDES.push(g);
+            p.loadedIndex = GUIDES.length - 1;
+            rowEls[p.loadedIndex] = p.rowEl;
+            rowDurEls[p.loadedIndex] = p.durEl;
+            if (p.unitEl && g.ib_unit) p.unitEl.textContent = g.ib_unit;
+            p.loading = false;
+            if (p.rowEl) p.rowEl.disabled = false;
+            selectGuide(p.loadedIndex, true);
+          }).catch(function (err) {
+            p.loading = false;
+            if (p.rowEl) p.rowEl.disabled = false;
+            if (err && err.session) {
+              try { window.localStorage.removeItem(SESSION_KEY); } catch (e) {}
+              sessionToken = null;
+              relockPaidRows();
+              showSigninPrompt(p.lockedEl);
+            } else {
+              setStatus("This guide could not be loaded. Check your connection and tap it again.");
+            }
+          });
+        }
+
+        function checkSession() {
+          if (!sessionToken) return;
+          fetch(WORKER_URL + "/validate", {
+            headers: { "Authorization": "Bearer " + sessionToken }
+          }).then(function (r) {
+            return r.json();
+          }).then(function (d) {
+            if (d && d.valid === true) {
+              sessionValid = true;
+              unlockPaidRows();
+            }
+          }).catch(function () {
+            /* Network failure: the paid rows stay locked. */
+          });
+        }
+
+        checkSession();
 
         updateUI();
       })();
