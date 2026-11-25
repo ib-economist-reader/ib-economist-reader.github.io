@@ -406,6 +406,22 @@
   .final-cta{border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--paper-2); padding:30px 26px; text-align:left}
   .final-cta h2{font-family:Georgia,serif; font-size:clamp(24px,3.6vw,32px); line-height:1.25; margin:0 0 10px}
   .final-cta p{font-size:16px; color:var(--ink-soft); max-width:40em}
+  /* subscriber unlock */
+  .unlock-box{border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--paper-2); padding:26px; box-shadow:var(--elevation-low)}
+  .unlock-box p{max-width:40em}
+  .unlock-row{display:flex; flex-wrap:wrap; gap:10px}
+  .unlock-row .code-input{flex:1 1 220px; font:inherit; font-size:17px; letter-spacing:.08em; text-transform:uppercase; padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--card); color:var(--ink)}
+  .unlock-row .email-input{flex:1 1 220px; font:inherit; font-size:16px; padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--card); color:var(--ink)}
+  .unlock-msg{margin:14px 0 0; font-size:15px; line-height:1.6}
+  .unlock-msg.err{color:var(--red); font-weight:600}
+  .unlock-status{font-size:19px; font-weight:700; margin:0 0 4px}
+  .unlock-until{font-size:15px; color:var(--ink-soft); margin:0 0 6px}
+  .dl-group{margin-top:18px}
+  .dl-group h3{font-size:16px; margin:0 0 6px}
+  .dl-list{list-style:none; margin:0; padding:0}
+  .dl-list li{display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline; justify-content:space-between; padding:10px 2px; border-bottom:1px solid var(--line-soft); font-size:15.5px; line-height:1.5}
+  .dl-list .dl-link{font-weight:700; white-space:nowrap}
+  .unlock-links{margin:16px 0 0; font-size:15px}
   [hidden]{display:none !important}
   @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 </style>
@@ -842,6 +858,36 @@
       <div class="faq-inline">
         <p class="q">How do I cancel?</p>
         <p class="a">Anytime, in a couple of clicks — no lock-in and no cancellation fee. You keep full access, including the archive, until the end of the period you have already paid for.</p>
+      </div>
+    </section>
+
+    <section class="block" id="unlock">
+      <div class="sec-head"><h2>Already subscribed? Unlock your guides</h2></div>
+      <div class="unlock-box">
+        <div id="unlock-form">
+          <p>Enter the access code from your confirmation email. It unlocks every paid guide as a PDF download.</p>
+          <form id="unlock-code-form" novalidate>
+            <div class="unlock-row">
+              <input class="code-input" id="unlock-code" type="text" placeholder="XXXX-XXXX-XXXX" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Access code" />
+              <button type="submit" class="btn red" id="unlock-btn">Unlock</button>
+            </div>
+          </form>
+          <p class="unlock-msg err" id="unlock-error" role="alert" hidden></p>
+          <p class="unlock-links"><button type="button" class="backbtn" id="resend-toggle" style="margin:0; padding:0; font-size:inherit">Resend my code</button></p>
+          <form id="unlock-resend-form" hidden novalidate>
+            <div class="unlock-row">
+              <input class="email-input" id="unlock-email" type="email" placeholder="you@example.com" autocomplete="email" aria-label="Email address" />
+              <button type="submit" class="btn" id="resend-btn">Send my code</button>
+            </div>
+          </form>
+          <p class="unlock-msg" id="resend-msg" hidden></p>
+        </div>
+        <div id="unlock-done" hidden>
+          <p class="unlock-status" id="unlock-status"></p>
+          <p class="unlock-until" id="unlock-until" hidden></p>
+          <div id="unlock-list"></div>
+          <p class="unlock-links"><button type="button" class="backbtn" id="unlock-forget" style="margin:0; padding:0; font-size:inherit">Forget this code</button></p>
+        </div>
       </div>
     </section>
 
@@ -1401,6 +1447,151 @@
       }
       if(pfEmpty){ pfEmpty.hidden = visible !== 0; }
     });
+  }
+})();
+</script>
+<script>
+(function(){
+  var BASE = 'https://ib-econlens-stripe-webhook.ckx-leung.workers.dev';
+  var KEY = 'ibeconlens_access_code';
+  var formWrap = document.getElementById('unlock-form');
+  var doneWrap = document.getElementById('unlock-done');
+  var codeForm = document.getElementById('unlock-code-form');
+  var codeInput = document.getElementById('unlock-code');
+  var unlockBtn = document.getElementById('unlock-btn');
+  var errEl = document.getElementById('unlock-error');
+  var resendToggle = document.getElementById('resend-toggle');
+  var resendForm = document.getElementById('unlock-resend-form');
+  var emailInput = document.getElementById('unlock-email');
+  var resendBtn = document.getElementById('resend-btn');
+  var resendMsg = document.getElementById('resend-msg');
+  var statusEl = document.getElementById('unlock-status');
+  var untilEl = document.getElementById('unlock-until');
+  var listEl = document.getElementById('unlock-list');
+  var forgetBtn = document.getElementById('unlock-forget');
+  if(!formWrap || !codeForm || !codeInput) return;
+  var MESSAGES = {
+    unknown_code: "That code isn't recognised. Check it and try again.",
+    suspended: "Your subscription payment failed. Update your payment details in Stripe, then try again.",
+    expired: "Your subscription has ended. Resubscribe to get a new code.",
+    rate_limited: "Too many tries. Wait a few minutes and try again."
+  };
+  var NETWORK_MSG = "Couldn't reach the server. Check your connection and try again.";
+  var RESEND_MSG = "If an active subscription exists for this email, the code has been resent.";
+  function formatCode(v){
+    var raw = String(v).toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
+    var parts = [];
+    for(var i = 0; i < raw.length; i += 4){ parts.push(raw.slice(i, i + 4)); }
+    return parts.join('-');
+  }
+  codeInput.addEventListener('input', function(){ codeInput.value = formatCode(codeInput.value); });
+  function showError(msg){ errEl.textContent = msg; errEl.hidden = false; }
+  function hideError(){ errEl.hidden = true; errEl.textContent = ''; }
+  function esc(s){
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function renderUnlocked(data, code){
+    statusEl.textContent = 'Unlocked — ' + (data.plan ? data.plan : 'Subscription');
+    if(data.current_period_end){
+      var d = new Date(data.current_period_end * 1000);
+      untilEl.textContent = 'Access until ' + d.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'});
+      untilEl.hidden = false;
+    } else {
+      untilEl.hidden = true;
+      untilEl.textContent = '';
+    }
+    var order = [], byVol = {};
+    var pdfs = data.pdfs || [];
+    for(var i = 0; i < pdfs.length; i++){
+      var p = pdfs[i];
+      if(p.free) continue;
+      if(!byVol[p.volume]){ byVol[p.volume] = []; order.push(p.volume); }
+      byVol[p.volume].push(p);
+    }
+    var html = '';
+    for(var g = 0; g < order.length; g++){
+      html += '<div class="dl-group"><h3>' + esc(order[g]) + '</h3><ul class="dl-list">';
+      var items = byVol[order[g]];
+      for(var j = 0; j < items.length; j++){
+        html += '<li><span>' + esc(items[j].title) + '</span><a class="dl-link" href="' + BASE + '/pdf/' + encodeURIComponent(items[j].slug) + '?code=' + encodeURIComponent(code) + '">Download</a></li>';
+      }
+      html += '</ul></div>';
+    }
+    listEl.innerHTML = html;
+    formWrap.hidden = true;
+    doneWrap.hidden = false;
+  }
+  function validate(code, fromStorage){
+    hideError();
+    unlockBtn.disabled = true;
+    unlockBtn.textContent = 'Checking...';
+    fetch(BASE + '/validate?code=' + encodeURIComponent(code))
+      .then(function(r){
+        return r.json().then(function(data){ return {status: r.status, data: data}; }, function(){ return {status: r.status, data: null}; });
+      })
+      .then(function(res){
+        var data = res.data;
+        if(data && data.valid){
+          try{ localStorage.setItem(KEY, code); }catch(e){}
+          renderUnlocked(data, code);
+        } else if(data){
+          if(fromStorage){
+            try{ localStorage.removeItem(KEY); }catch(e){}
+            codeInput.value = '';
+          }
+          var reason = data.reason ? data.reason : (res.status === 429 ? 'rate_limited' : 'unknown_code');
+          showError(MESSAGES[reason] || MESSAGES.unknown_code);
+        } else {
+          showError(res.status === 429 ? MESSAGES.rate_limited : NETWORK_MSG);
+        }
+      })
+      .catch(function(){ showError(NETWORK_MSG); })
+      .then(function(){
+        unlockBtn.disabled = false;
+        unlockBtn.textContent = 'Unlock';
+      });
+  }
+  codeForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var code = codeInput.value.trim().toUpperCase();
+    if(!code){ showError(MESSAGES.unknown_code); return; }
+    validate(code, false);
+  });
+  resendToggle.addEventListener('click', function(){
+    resendForm.hidden = !resendForm.hidden;
+    if(!resendForm.hidden){ emailInput.focus(); }
+  });
+  resendForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = emailInput.value.trim();
+    if(!email){ emailInput.focus(); return; }
+    resendBtn.disabled = true;
+    fetch(BASE + '/resend', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email})
+    })
+      .then(function(){}, function(){})
+      .then(function(){
+        resendBtn.disabled = false;
+        resendMsg.textContent = RESEND_MSG;
+        resendMsg.hidden = false;
+      });
+  });
+  forgetBtn.addEventListener('click', function(){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    doneWrap.hidden = true;
+    formWrap.hidden = false;
+    codeInput.value = '';
+    hideError();
+    resendMsg.hidden = true;
+    resendMsg.textContent = '';
+  });
+  var stored = null;
+  try{ stored = localStorage.getItem(KEY); }catch(e){}
+  if(stored){
+    codeInput.value = stored;
+    validate(stored, true);
   }
 })();
 </script>
